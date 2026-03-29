@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallucination: Confident but Wrong — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="13">
+  <header class="page-header">
+    <div class="page-number" data-phase="3">Page 13 of 18</div>
+    <div class="page-title-block">
+      <h1>Hallucination: Confident but Wrong</h1>
+      <p class="page-subtitle">When prediction goes off the rails</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="3">
+      <p>An LLM doesn't "know" things — it predicts likely-sounding continuations. It can generate text that is fluent, confident, and completely false: citing papers that don't exist, stating incorrect facts, fabricating plausible details. This isn't a bug to be patched — it's an inherent consequence of the prediction mechanism.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Hallucination is structural, not a bug — the model optimises for likelihood, not truth</li>
+        <li>Confidence in tone has zero correlation with accuracy</li>
+        <li>This is why human verification remains essential for any factual AI output</li>
+        <li>The model predicts what sounds right, not what is right</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>If models can hallucinate and generate harmful content, how do companies make them safer? The answer involves something surprising: human feedback.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-12.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-14.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { SpotFabrication } from '../js/widgets/spot-fabrication.js';
+
+    initNavigation();
+    const widget = new SpotFabrication(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

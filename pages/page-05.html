@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Words as Numbers — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="5">
+  <header class="page-header">
+    <div class="page-number" data-phase="2">Page 5 of 18</div>
+    <div class="page-title-block">
+      <h1>Words as Numbers</h1>
+      <p class="page-subtitle">Meaning has a shape</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="2">
+      <p>For a computer to work with words, it converts them into numbers — specifically, a list of numbers called a vector. The key insight: words with similar meanings end up with similar numbers. "Happy" and "joyful" are numerically close; "happy" and "forklift" are far apart.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Embeddings are not arbitrary — they encode learned semantic relationships</li>
+        <li>Similar meaning = close in space. This is the foundation of how LLMs "understand"</li>
+        <li>The spatial metaphor extends to relationships between concepts</li>
+        <li>Real embeddings have 768–4096 dimensions, not 2</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>Words have positions in meaning-space. But a word can mean different things — "bank" could be a riverbank or a financial bank. How does the model know which?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-04.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-06.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { WordMap } from '../js/widgets/word-map.js';
+
+    initNavigation();
+    const widget = new WordMap(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

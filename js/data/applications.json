@@ -1,0 +1,310 @@
+{
+  "domains": [
+    {
+      "id": "education",
+      "title": "Education & Teaching",
+      "emoji": "📚",
+      "reliability": "caution",
+      "reliabilityLabel": "Use with caution",
+      "useCases": [
+        {
+          "title": "Personalised explanations",
+          "description": "Generate alternative explanations of difficult concepts tailored to different learning styles or prior knowledge levels.",
+          "mechanisms": ["Prediction", "Temperature", "Prompting"],
+          "mechanismPages": [1, 10, 11],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Explain photosynthesis to a 12-year-old who already understands that plants make food from sunlight, but doesn't know the chemistry yet."
+        },
+        {
+          "title": "Quiz and exercise generation",
+          "description": "Create practice questions, multiple-choice quizzes, and worked examples from a topic or passage of text.",
+          "mechanisms": ["Prompting", "In-Context Learning"],
+          "mechanismPages": [11, 12],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Create 5 multiple-choice questions about the causes of World War I, each with 4 options and an explanation of the correct answer."
+        },
+        {
+          "title": "Essay feedback",
+          "description": "Provide structured feedback on student writing — structure, argument, evidence — but factual accuracy must be verified.",
+          "mechanisms": ["Attention", "Alignment"],
+          "mechanismPages": [7, 14],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Give structured feedback on this GCSE history essay paragraph. Focus on: argument clarity, use of evidence, and historical accuracy. [paste paragraph]"
+        },
+        {
+          "title": "Curriculum planning",
+          "description": "Draft lesson outlines, scheme of work structures, and differentiation ideas — always reviewed by a professional educator.",
+          "mechanisms": ["Prompting", "Temperature"],
+          "mechanismPages": [11, 10],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Create a 6-lesson scheme of work for introducing fractions to Year 5 pupils. Include learning objectives, key activities, and assessment ideas."
+        }
+      ]
+    },
+    {
+      "id": "creative",
+      "title": "Creative Arts",
+      "emoji": "🎨",
+      "reliability": "strong",
+      "reliabilityLabel": "AI is strong here",
+      "useCases": [
+        {
+          "title": "Story and script drafting",
+          "description": "Generate first drafts, explore plot alternatives, write dialogue, or develop character backstories — human creativity drives the final work.",
+          "mechanisms": ["Temperature", "Prediction", "Prompting"],
+          "mechanismPages": [10, 1, 11],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write the opening scene of a short story set in a lighthouse during a storm. Tone: tense, literary fiction. First person, present tense."
+        },
+        {
+          "title": "Lyric and poetry writing",
+          "description": "Compose song lyrics, poems, or spoken word pieces — excellent for generating ideas and drafts to rework.",
+          "mechanisms": ["Temperature", "Patterns"],
+          "mechanismPages": [10, 4],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write a verse for a blues song about a failed road trip. Use the AAB rhyme scheme and include a car metaphor."
+        },
+        {
+          "title": "Style exploration",
+          "description": "Rewrite a passage in a different author's style, literary era, or genre for creative exploration.",
+          "mechanisms": ["In-Context Learning", "Patterns", "Embeddings"],
+          "mechanismPages": [12, 4, 5],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Rewrite this paragraph in the style of Raymond Carver: sparse language, short sentences, understated emotion. [paste paragraph]"
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "title": "Administration",
+      "emoji": "📋",
+      "reliability": "strong",
+      "reliabilityLabel": "AI is strong here",
+      "useCases": [
+        {
+          "title": "Email and document drafting",
+          "description": "Draft professional emails, letters, meeting summaries, and reports quickly — always reviewed and edited before sending.",
+          "mechanisms": ["Prompting", "Alignment"],
+          "mechanismPages": [11, 14],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Draft a polite but firm follow-up email to a contractor who has not responded to our invoice query in two weeks."
+        },
+        {
+          "title": "Meeting notes and summaries",
+          "description": "Paste a transcript or rough notes — AI structures them into action points, decisions, and follow-ups.",
+          "mechanisms": ["Context", "Attention"],
+          "mechanismPages": [6, 7],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Summarise this meeting transcript into: decisions made, action items (with owners), and outstanding questions. [paste transcript]"
+        },
+        {
+          "title": "Policy and procedure drafts",
+          "description": "Generate first drafts of internal policies — must be reviewed by qualified professionals for legal and organisational accuracy.",
+          "mechanisms": ["Prompting", "Alignment"],
+          "mechanismPages": [11, 14],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Draft a social media policy for a small charity with 20 staff. Include: acceptable use, personal accounts, and incident reporting."
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "title": "Health & Social Care",
+      "emoji": "🏥",
+      "reliability": "verify",
+      "reliabilityLabel": "Verify everything",
+      "useCases": [
+        {
+          "title": "Patient information leaflets",
+          "description": "Generate plain-language explanations of conditions or procedures — must be clinically reviewed before use.",
+          "mechanisms": ["Alignment", "Prompting"],
+          "mechanismPages": [14, 11],
+          "reliability": "verify",
+          "reliabilityLabel": "Verify everything",
+          "promptExample": "Write a plain-language explanation of type 2 diabetes for a patient with low health literacy. Avoid jargon. Max 200 words."
+        },
+        {
+          "title": "Care plan structuring",
+          "description": "Help structure person-centred care plan templates and prompts — specific clinical decisions must be made by qualified professionals.",
+          "mechanisms": ["Prompting", "Context"],
+          "mechanismPages": [11, 6],
+          "reliability": "verify",
+          "reliabilityLabel": "Verify everything",
+          "promptExample": "Create a template for a person-centred support plan for an adult with learning disabilities. Include sections for: strengths, goals, daily routine, and risk management."
+        },
+        {
+          "title": "Research summarisation",
+          "description": "Summarise academic papers or guidelines — always check against the original source as summaries can omit nuance or hallucinate details.",
+          "mechanisms": ["Attention", "Hallucination"],
+          "mechanismPages": [7, 13],
+          "reliability": "verify",
+          "reliabilityLabel": "Verify everything",
+          "promptExample": "Summarise the key recommendations from this NICE guideline extract in plain language for a general audience. [paste text]"
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "title": "Engineering & Computing",
+      "emoji": "💻",
+      "reliability": "strong",
+      "reliabilityLabel": "AI is strong here",
+      "useCases": [
+        {
+          "title": "Code generation and completion",
+          "description": "Write functions, debug errors, explain code, and suggest refactors across most programming languages.",
+          "mechanisms": ["Multimodal", "Patterns", "In-Context Learning"],
+          "mechanismPages": [15, 4, 12],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write a Python function that takes a list of dictionaries with 'name' and 'score' keys, and returns the top 3 by score, sorted descending."
+        },
+        {
+          "title": "Code explanation and documentation",
+          "description": "Explain what complex code does in plain language, generate docstrings, or produce README documentation.",
+          "mechanisms": ["Context", "Attention"],
+          "mechanismPages": [6, 7],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Explain what this function does line by line, then write a docstring for it. [paste code]"
+        },
+        {
+          "title": "Architecture and design advice",
+          "description": "Discuss system design trade-offs, suggest patterns, and help evaluate approaches — final decisions require human engineering judgment.",
+          "mechanisms": ["Prompting", "In-Context Learning"],
+          "mechanismPages": [11, 12],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "I'm building a notification system for 100,000 daily users. Compare an event-driven queue approach versus polling. What are the trade-offs?"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "title": "Business & Marketing",
+      "emoji": "📊",
+      "reliability": "caution",
+      "reliabilityLabel": "Use with caution",
+      "useCases": [
+        {
+          "title": "Marketing copy and campaigns",
+          "description": "Draft ad copy, social media posts, email campaigns, and product descriptions — great starting points that need human polish.",
+          "mechanisms": ["Temperature", "Prompting", "Alignment"],
+          "mechanismPages": [10, 11, 14],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write 3 variants of a Facebook ad for a local gym's January membership offer. Each variant should have a different angle: value, community, transformation."
+        },
+        {
+          "title": "Market research synthesis",
+          "description": "Summarise and synthesise market research documents — hallucination risk is real, always verify statistics and claims against original sources.",
+          "mechanisms": ["Context", "Hallucination"],
+          "mechanismPages": [6, 13],
+          "reliability": "verify",
+          "reliabilityLabel": "Verify everything",
+          "promptExample": "Summarise the key trends and opportunities from these three market research excerpts. Highlight contradictions between sources. [paste text]"
+        },
+        {
+          "title": "Business plan sections",
+          "description": "Draft executive summaries, market analysis sections, and value propositions — requires thorough fact-checking of any statistics cited.",
+          "mechanisms": ["Prompting", "Hallucination"],
+          "mechanismPages": [11, 13],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Write a 300-word executive summary for a B2B SaaS product that automates staff scheduling for care homes. Include: problem, solution, market opportunity, ask."
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "Sound & Music Production",
+      "emoji": "🎵",
+      "reliability": "strong",
+      "reliabilityLabel": "AI is strong here",
+      "useCases": [
+        {
+          "title": "Lyrics and song structure",
+          "description": "Generate verses, choruses, bridges, and full song structures — especially useful for writer's block or exploring different styles.",
+          "mechanisms": ["Temperature", "Patterns", "Prediction"],
+          "mechanismPages": [10, 4, 1],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write a chorus and two verses for an indie folk song about leaving a hometown. Key themes: nostalgia, ambivalence, growth. AABB rhyme scheme."
+        },
+        {
+          "title": "Production notes and briefs",
+          "description": "Create reference descriptions for session musicians, mix engineers, or collaborators — describing the sonic vision and mood.",
+          "mechanisms": ["Prompting", "Alignment"],
+          "mechanismPages": [11, 14],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Write a production brief for a track that sounds like late-night drive music. Reference artists for tone, describe the instrumentation and mood."
+        },
+        {
+          "title": "Music theory explanations",
+          "description": "Explain chord progressions, modes, rhythm patterns, and music theory concepts — at any level of complexity.",
+          "mechanisms": ["Prompting", "In-Context Learning"],
+          "mechanismPages": [11, 12],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Explain why the I-IV-V-I chord progression sounds 'resolved'. Use plain language, then show the same concept using music theory terminology."
+        }
+      ]
+    },
+    {
+      "id": "student",
+      "title": "Student Life",
+      "emoji": "🎓",
+      "reliability": "caution",
+      "reliabilityLabel": "Use with caution",
+      "useCases": [
+        {
+          "title": "Essay planning and structuring",
+          "description": "Help develop argument structures, identify counterarguments, and outline essay plans — the writing and thinking should be your own.",
+          "mechanisms": ["Prompting", "Context"],
+          "mechanismPages": [11, 6],
+          "reliability": "caution",
+          "reliabilityLabel": "Use with caution",
+          "promptExample": "Help me plan an essay arguing that social media has had a net negative effect on teenage mental health. Suggest 3 main arguments and potential counterarguments for each."
+        },
+        {
+          "title": "Concept explanations",
+          "description": "Get alternative explanations when lecture notes or textbooks aren't clear — always cross-reference with course materials.",
+          "mechanisms": ["Prediction", "Alignment"],
+          "mechanismPages": [1, 14],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "I don't understand confidence intervals. Explain it as if I understand basic statistics (mean, standard deviation) but not hypothesis testing."
+        },
+        {
+          "title": "Revision tools",
+          "description": "Generate flashcard questions, practice exam questions, and self-quiz materials from your notes.",
+          "mechanisms": ["Prompting", "In-Context Learning"],
+          "mechanismPages": [11, 12],
+          "reliability": "strong",
+          "reliabilityLabel": "AI is strong here",
+          "promptExample": "Create 10 flashcard-style questions from these revision notes. Each question should test understanding, not just recall. [paste notes]"
+        },
+        {
+          "title": "Research starting points",
+          "description": "Get an overview of a topic and identify angles to explore — never cite AI as a source, and always verify any facts independently.",
+          "mechanisms": ["Hallucination", "Training"],
+          "mechanismPages": [13, 9],
+          "reliability": "verify",
+          "reliabilityLabel": "Verify everything",
+          "promptExample": "Give me an overview of the debates around universal basic income, including the main arguments for and against from different political perspectives."
+        }
+      ]
+    }
+  ]
+}

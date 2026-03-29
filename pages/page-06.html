@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Changes Everything — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="6">
+  <header class="page-header">
+    <div class="page-number" data-phase="2">Page 6 of 18</div>
+    <div class="page-title-block">
+      <h1>Context Changes Everything</h1>
+      <p class="page-subtitle">The same word, different meanings</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="2">
+      <p>A word in isolation is ambiguous. An LLM doesn't look up a fixed meaning — it recalculates meaning from the surrounding context. "Bank" near "river" points to one location in meaning-space; "bank" near "money" points somewhere entirely different.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Static word embeddings are a starting point; real LLMs use contextual embeddings</li>
+        <li>This is what makes LLMs far more capable than simple keyword matching</li>
+        <li>The same mechanism explains why word order matters</li>
+        <li>This contextual recalculation happens for every token at every layer</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>Context shifts meaning. But in a long sentence, not every word matters equally. How does the model decide which words to focus on?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-05.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-07.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { MeaningShifter } from '../js/widgets/meaning-shifter.js';
+
+    initNavigation();
+    const widget = new MeaningShifter(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

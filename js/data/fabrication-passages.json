@@ -1,0 +1,215 @@
+[
+  {
+    "category": "Scottish History",
+    "rounds": [
+      {
+        "id": "sh1",
+        "sentences": [
+          {
+            "id": "sh1s1",
+            "text": "The Battle of Bannockburn in 1314 was a decisive Scottish victory against the English forces of Edward II.",
+            "fabricated": false,
+            "explanation": "This is accurate. The Battle of Bannockburn took place on 23–24 June 1314 and resulted in a major Scottish victory under Robert the Bruce."
+          },
+          {
+            "id": "sh1s2",
+            "text": "Robert the Bruce had previously studied military tactics under the French knight Bertrand du Guesclin at the University of Paris.",
+            "fabricated": true,
+            "explanation": "This is fabricated. Du Guesclin was born around 1320 — after Bannockburn — making this chronologically impossible. No such academic arrangement existed."
+          },
+          {
+            "id": "sh1s3",
+            "text": "The Declaration of Arbroath, signed in 1320, was a letter to Pope John XXII asserting Scottish independence.",
+            "fabricated": false,
+            "explanation": "This is accurate. The Declaration of Arbroath was sent on 6 April 1320 and is one of the most important documents in Scottish history."
+          },
+          {
+            "id": "sh1s4",
+            "text": "Following the battle, Edward II retreated to Dunbar Castle, where he was given shelter by Patrick, Earl of Dunbar, before escaping by sea.",
+            "fabricated": false,
+            "explanation": "This is accurate. Edward II fled the battlefield and was indeed given refuge at Dunbar before sailing to Berwick."
+          },
+          {
+            "id": "sh1s5",
+            "text": "The Scottish infantry at Bannockburn used a formation called the schiltron, a tightly packed ring of spearmen developed specifically for this battle.",
+            "fabricated": false,
+            "explanation": "Mostly accurate. Schiltrons were indeed used, though they predated Bannockburn — they were not developed specifically for this battle."
+          }
+        ]
+      },
+      {
+        "id": "sh2",
+        "sentences": [
+          {
+            "id": "sh2s1",
+            "text": "Mary Queen of Scots was born on 8 December 1542 at Linlithgow Palace, just days before her father James V died.",
+            "fabricated": false,
+            "explanation": "This is accurate. Mary was born at Linlithgow Palace and became queen at just six days old when her father died."
+          },
+          {
+            "id": "sh2s2",
+            "text": "Mary spent most of her childhood in France, where she was educated at the Château d'Anet alongside Catherine de' Medici's children.",
+            "fabricated": true,
+            "explanation": "Partially fabricated. Mary did grow up in France, but she was raised mainly at the French royal court and educated with the royal children — not specifically at Château d'Anet, which was associated with Diane de Poitiers, not Catherine's household."
+          },
+          {
+            "id": "sh2s3",
+            "text": "Mary married Francis II of France in 1558, becoming Queen Consort of France when he acceded to the throne in 1559.",
+            "fabricated": false,
+            "explanation": "This is accurate. Mary married the Dauphin Francis in April 1558, and he became King Francis II in July 1559."
+          },
+          {
+            "id": "sh2s4",
+            "text": "After returning to Scotland in 1561, Mary was tutored in Protestant theology by John Knox himself to ease religious tensions.",
+            "fabricated": true,
+            "explanation": "This is fabricated. Knox famously confronted and opposed Mary in several tense audiences; he was never her tutor and held deep hostility toward her Catholic faith."
+          },
+          {
+            "id": "sh2s5",
+            "text": "Mary was executed at Fotheringhay Castle on 8 February 1587, after nearly nineteen years of imprisonment in England.",
+            "fabricated": false,
+            "explanation": "This is accurate. Mary was beheaded at Fotheringhay Castle after being held captive by Elizabeth I since 1568."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Science Facts",
+    "rounds": [
+      {
+        "id": "sf1",
+        "sentences": [
+          {
+            "id": "sf1s1",
+            "text": "DNA is a double helix structure first described by Watson and Crick in their 1953 paper in the journal Nature.",
+            "fabricated": false,
+            "explanation": "This is accurate. Watson and Crick published their model of DNA's double helix structure in Nature on 25 April 1953."
+          },
+          {
+            "id": "sf1s2",
+            "text": "The hydrogen bonds between base pairs in DNA were first quantified by Linus Pauling in a Nobel Prize-winning paper published in 1951.",
+            "fabricated": true,
+            "explanation": "This is fabricated. Pauling did win the Nobel Prize in Chemistry in 1954 for his work on chemical bonds, but his 1951 paper famously proposed a triple helix for DNA — an error. The base-pair hydrogen bonding is associated with Watson and Crick."
+          },
+          {
+            "id": "sf1s3",
+            "text": "There are four nitrogenous bases in DNA: adenine, thymine, guanine, and cytosine.",
+            "fabricated": false,
+            "explanation": "This is accurate. These four bases pair up: adenine with thymine, and guanine with cytosine."
+          },
+          {
+            "id": "sf1s4",
+            "text": "Rosalind Franklin's X-ray diffraction images were crucial to the discovery of DNA's structure, though her contribution was not fully acknowledged at the time.",
+            "fabricated": false,
+            "explanation": "This is accurate. Franklin's Photo 51 provided key evidence for the helical structure. She died in 1958 and the Nobel Prize was awarded in 1962 — Nobel Prizes are not awarded posthumously."
+          }
+        ]
+      },
+      {
+        "id": "sf2",
+        "sentences": [
+          {
+            "id": "sf2s1",
+            "text": "Black holes were first theoretically predicted by Albert Einstein's general theory of relativity in 1915.",
+            "fabricated": false,
+            "explanation": "This is accurate. Einstein's field equations, published in 1915, predicted the possibility of objects so dense that nothing could escape their gravity."
+          },
+          {
+            "id": "sf2s2",
+            "text": "The term 'black hole' was coined by physicist John Archibald Wheeler in a 1967 lecture at the Institute for Advanced Study in Princeton.",
+            "fabricated": false,
+            "explanation": "This is accurate. Wheeler popularised the term 'black hole' in 1967, though the phrase may have first been used by a journalist at a conference that year."
+          },
+          {
+            "id": "sf2s3",
+            "text": "Stephen Hawking and Roger Penrose co-authored a paper in 1969 demonstrating that black holes necessarily emit thermal radiation, now called Hawking radiation.",
+            "fabricated": true,
+            "explanation": "This is fabricated. Hawking radiation was proposed by Hawking alone in 1974. His 1970 paper with Penrose concerned singularity theorems, not radiation."
+          },
+          {
+            "id": "sf2s4",
+            "text": "The first image of a black hole was captured by the Event Horizon Telescope collaboration and published in April 2019.",
+            "fabricated": false,
+            "explanation": "This is accurate. The image showed the supermassive black hole at the centre of galaxy M87, and was announced on 10 April 2019."
+          },
+          {
+            "id": "sf2s5",
+            "text": "The black hole imaged in 2019 has a mass approximately 6.5 billion times that of our Sun.",
+            "fabricated": false,
+            "explanation": "This is accurate. The M87* black hole has an estimated mass of 6.5 billion solar masses."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Famous People",
+    "rounds": [
+      {
+        "id": "fp1",
+        "sentences": [
+          {
+            "id": "fp1s1",
+            "text": "Alan Turing was born in London in 1912 and is widely considered the father of theoretical computer science.",
+            "fabricated": false,
+            "explanation": "This is accurate. Turing was born on 23 June 1912 in Maida Vale, London."
+          },
+          {
+            "id": "fp1s2",
+            "text": "Turing's 1936 paper 'On Computable Numbers' introduced the concept of the Turing machine, a theoretical model of computation.",
+            "fabricated": false,
+            "explanation": "This is accurate. The full title is 'On Computable Numbers, with an Application to the Entscheidungsproblem' — a foundational paper in computer science."
+          },
+          {
+            "id": "fp1s3",
+            "text": "During World War II, Turing worked at Bletchley Park and developed the Bombe machine to crack the German Enigma cipher, working primarily with mathematician Emmy Noether.",
+            "fabricated": true,
+            "explanation": "This is fabricated. Emmy Noether died in 1935, years before Turing's Bletchley work. His key collaborator on the Bombe was Gordon Welchman, not Noether."
+          },
+          {
+            "id": "fp1s4",
+            "text": "Turing proposed the 'Turing Test' in his 1950 paper 'Computing Machinery and Intelligence', asking whether machines can exhibit intelligent behaviour.",
+            "fabricated": false,
+            "explanation": "This is accurate. The 1950 paper in the journal Mind introduced the 'imitation game', now known as the Turing Test."
+          },
+          {
+            "id": "fp1s5",
+            "text": "Turing was awarded the Nobel Prize in Mathematics in 1951 for his contributions to computation theory.",
+            "fabricated": true,
+            "explanation": "This is fabricated on two counts: there is no Nobel Prize in Mathematics, and Turing never received any Nobel Prize. He received an OBE in 1945."
+          }
+        ]
+      },
+      {
+        "id": "fp2",
+        "sentences": [
+          {
+            "id": "fp2s1",
+            "text": "Ada Lovelace, born in 1815, is often credited as the first computer programmer for her work on Charles Babbage's Analytical Engine.",
+            "fabricated": false,
+            "explanation": "This is accurate. Ada Lovelace wrote what is considered the first algorithm intended to be processed by a machine."
+          },
+          {
+            "id": "fp2s2",
+            "text": "Lovelace translated a paper on the Analytical Engine by Italian mathematician Luigi Menabrea, adding her own notes that were three times longer than the original.",
+            "fabricated": false,
+            "explanation": "This is accurate. Her annotated translation of Menabrea's paper, published in 1843, is the source of the famous 'Note G' describing an algorithm."
+          },
+          {
+            "id": "fp2s3",
+            "text": "Ada Lovelace corresponded extensively with Charles Darwin, who praised her mathematical abilities in letters to the Royal Society.",
+            "fabricated": true,
+            "explanation": "This is fabricated. There is no historical record of correspondence between Lovelace and Darwin, nor of Darwin writing to the Royal Society praising her."
+          },
+          {
+            "id": "fp2s4",
+            "text": "Ada Lovelace died in 1852 at the age of 36, the same age as her famous father Lord Byron.",
+            "fabricated": false,
+            "explanation": "This is accurate. Both Ada Lovelace and her father Lord Byron died at 36."
+          }
+        ]
+      }
+    ]
+  }
+]

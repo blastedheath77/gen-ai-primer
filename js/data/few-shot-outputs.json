@@ -1,0 +1,82 @@
+{
+  "tasks": [
+    {
+      "id": "formal",
+      "label": "Formal rewriting",
+      "description": "Transform casual English into formal English",
+      "testInput": "Hey, just wanted to check in about the thing we talked about last week. Can we meet up soon?",
+      "examples": [
+        {
+          "input": "I wanna grab a coffee and chat.",
+          "output": "I would welcome the opportunity to meet for coffee and discuss the matter."
+        },
+        {
+          "input": "Can you send me that report asap? It's kinda urgent.",
+          "output": "I would be grateful if you could forward the report at your earliest convenience, as the matter is time-sensitive."
+        },
+        {
+          "input": "Sorry I missed your call — I was super busy.",
+          "output": "Please accept my apologies for missing your call; I was engaged with a prior commitment."
+        }
+      ],
+      "responses": {
+        "0": "Hey, just wanted to check in about the thing we talked about last week. Can we meet up soon? (No transformation — not enough examples to establish the pattern.)",
+        "1": "I would like to follow up regarding the matter we discussed last week. Would you be available to meet in the near future?",
+        "2": "I am writing to follow up on the matter we discussed during our previous conversation. I would appreciate the opportunity to arrange a meeting at a mutually convenient time.",
+        "3": "I am writing to follow up regarding the subject of our discussion last week. I would welcome the opportunity to meet at a time that is mutually convenient in order to progress this matter further."
+      }
+    },
+    {
+      "id": "5words",
+      "label": "5-word summary",
+      "description": "Summarise any text in exactly five words",
+      "testInput": "The European Space Agency has announced plans to launch a new satellite to monitor global forest cover, deforestation rates, and carbon storage across all continents.",
+      "examples": [
+        {
+          "input": "Scientists have discovered a new species of deep-sea fish that produces its own light and has never been seen before.",
+          "output": "New glowing fish species found."
+        },
+        {
+          "input": "The city council voted last night to ban single-use plastics from all council-owned premises starting next January.",
+          "output": "Council bans single-use plastics."
+        },
+        {
+          "input": "A team of archaeologists has uncovered what they believe to be the remains of a Viking settlement in northern Scotland, dating back to the 9th century.",
+          "output": "Viking settlement found in Scotland."
+        }
+      ],
+      "responses": {
+        "0": "ESA is planning to launch a satellite to monitor global forest cover and deforestation across continents.",
+        "1": "ESA satellite will monitor forests.",
+        "2": "New satellite tracks forest deforestation.",
+        "3": "ESA launches global forest monitor."
+      }
+    },
+    {
+      "id": "scots",
+      "label": "Translate to Scots",
+      "description": "Translate standard English into Scottish vernacular",
+      "testInput": "I'm going to the shops to get some bread. Do you want anything?",
+      "examples": [
+        {
+          "input": "Hello, how are you doing today?",
+          "output": "Awricht, how ye deein the day?"
+        },
+        {
+          "input": "It's very cold outside. I think it might snow.",
+          "output": "It's awfie cauld ootside. Ah think it micht snaw."
+        },
+        {
+          "input": "Don't worry about it — it's not a big deal.",
+          "output": "Dinnae fash yersel — it's nae a big deal."
+        }
+      ],
+      "responses": {
+        "0": "I'm going to the shops to get some bread. Do you want anything?",
+        "1": "Ah'm awa tae the shops tae get some breid. Dae ye want onything?",
+        "2": "Ah'm awa tae the shops tae get some breid. Dae ye want onythin?",
+        "3": "Ah'm awa tae the shoppies tae pick up some breid. Dae ye want onythin frae there?"
+      }
+    }
+  ]
+}

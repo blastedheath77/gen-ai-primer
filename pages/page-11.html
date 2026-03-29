@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompting: Shaping the Output — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="11">
+  <header class="page-header">
+    <div class="page-number" data-phase="3">Page 11 of 18</div>
+    <div class="page-title-block">
+      <h1>Prompting: Shaping the Output</h1>
+      <p class="page-subtitle">Your words, their influence</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="3">
+      <p>Because an LLM generates by continuing a sequence, the text you provide — your prompt — fundamentally shapes what follows. A vague prompt gives vague results. A specific, structured prompt guides the model precisely. Prompting isn't a trick; it's the primary interface between human intent and model behaviour.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Prompting is a skill, not a gimmick</li>
+        <li>The model has no hidden understanding of what you "really mean"</li>
+        <li>Specificity wins: the more precise your prompt, the more useful the output</li>
+        <li>Five techniques (audience, format, persona, constraints, examples) cover ~90% of everyday prompting needs</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>You've been writing instructions. But LLMs can do something remarkable: learn new tasks from just a few examples, right there in the prompt.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-10.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-12.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { PromptLab } from '../js/widgets/prompt-lab.js';
+
+    initNavigation();
+    const widget = new PromptLab(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

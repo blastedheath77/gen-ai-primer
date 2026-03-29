@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature: The Creativity Dial — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="10">
+  <header class="page-header">
+    <div class="page-number" data-phase="3">Page 10 of 18</div>
+    <div class="page-title-block">
+      <h1>Temperature: The Creativity Dial</h1>
+      <p class="page-subtitle">Controlling randomness</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="3">
+      <p>Temperature controls how the model samples from its probability distribution. Low temperature → almost always picks the most likely token (safe, predictable). High temperature → willing to pick less likely tokens (varied, surprising, sometimes nonsensical). This is the mechanical basis of "creativity" in AI.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Temperature is a setting you'll see in most AI tools — now you know what it does</li>
+        <li>It doesn't change what the model "knows" — it changes how it chooses</li>
+        <li>There's no "correct" temperature — it depends on the task (code: low, creative writing: higher)</li>
+        <li>This connects directly to Page 3's probability distributions</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>Temperature controls how the model chooses. But what it's choosing from is shaped by something you control directly: your prompt.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-09.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-11.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { TemperatureDial } from '../js/widgets/temperature-dial.js';
+
+    initNavigation();
+    const widget = new TemperatureDial(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

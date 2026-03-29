@@ -1,0 +1,112 @@
+{
+  "sentences": [
+    {
+      "id": 0,
+      "text": "What is the capital of Scotland?",
+      "outputPrediction": "Edinburgh",
+      "layers": [
+        {
+          "label": "Layer 1 — Surface patterns",
+          "summary": "Spelling & grammar",
+          "detail": "The model identifies individual tokens: 'What', 'is', 'the', 'capital', 'of', 'Scotland', '?'. It recognises this as a question (ends with '?', starts with 'What'). Basic POS tagging: 'What' = interrogative pronoun, 'capital' = noun, 'Scotland' = proper noun. No meaning yet — just form."
+        },
+        {
+          "label": "Layer 2 — Syntactic structure",
+          "summary": "Sentence structure",
+          "detail": "The model parses the grammatical structure: [What] [is] [the capital of Scotland] [?]. It identifies this as a copular question asking for the identity of 'the capital of Scotland'. It links 'capital' with its prepositional phrase 'of Scotland'. 'Scotland' is flagged as a named entity (GPE — geopolitical entity)."
+        },
+        {
+          "label": "Layer 3 — Semantic meaning",
+          "summary": "World knowledge activated",
+          "detail": "The representation now encodes factual world knowledge: Scotland is a country, countries have capitals, the capital of Scotland is Edinburgh. The model activates the Edinburgh–Scotland association from training data. It understands the question is asking for a place name — specifically a capital city."
+        },
+        {
+          "label": "Layer 4 — Response preparation",
+          "summary": "Answer generation",
+          "detail": "The model prepares a direct, factual answer. It knows the expected response format for 'What is X?' questions: a short noun phrase. It retrieves 'Edinburgh' with very high confidence. The response will be concise and definitive: a proper noun followed by a full stop."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "Translate 'hello' into French",
+      "outputPrediction": "Bonjour",
+      "layers": [
+        {
+          "label": "Layer 1 — Surface patterns",
+          "summary": "Tokens & structure",
+          "detail": "Tokens identified: 'Translate', \"'\", 'hello', \"'\", 'into', 'French'. The quotation marks around 'hello' are noted — they signal a word-as-object (use–mention distinction). 'Translate' is an imperative verb. Basic form recognised but no cross-lingual knowledge yet."
+        },
+        {
+          "label": "Layer 2 — Syntactic structure",
+          "summary": "Task type identified",
+          "detail": "The model parses this as a command with structure: [Translate] [object: 'hello'] [destination: French]. It identifies this as a translation task. 'French' is recognised as a language name. The quoted word 'hello' is the source text to be translated."
+        },
+        {
+          "label": "Layer 3 — Semantic meaning",
+          "summary": "Cross-lingual mapping",
+          "detail": "The model accesses its multilingual training data. It knows 'hello' is an English greeting. It maps this to French equivalents: 'bonjour' (formal/general), 'salut' (informal). It considers register — 'hello' is neutral, so 'bonjour' is the most appropriate French equivalent."
+        },
+        {
+          "label": "Layer 4 — Response preparation",
+          "summary": "Output selection",
+          "detail": "The model prepares the translation output. The expected response is a single word. 'Bonjour' wins over 'salut' due to its neutrality and frequency in French translation data. The model outputs 'Bonjour' — capitalised as a standalone response."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Write a poem about rain",
+      "outputPrediction": "A short evocative poem with imagery of rain",
+      "layers": [
+        {
+          "label": "Layer 1 — Surface patterns",
+          "summary": "Tokens & imperative",
+          "detail": "Tokens: 'Write', 'a', 'poem', 'about', 'rain'. The model identifies 'Write' as an imperative verb. 'poem' is a noun (creative writing genre). 'rain' is the topic. No rhyme scheme, length, or style specified — all are under-constrained."
+        },
+        {
+          "label": "Layer 2 — Syntactic structure",
+          "summary": "Creative task decoded",
+          "detail": "Structure: [Write] [a poem] [about rain]. The model recognises this as an open-ended creative generation task. It notes the lack of constraints (no rhyme scheme, no length, no tone specified). This means it must choose from many valid poem forms — haiku, free verse, sonnet, etc."
+        },
+        {
+          "label": "Layer 3 — Semantic meaning",
+          "summary": "Theme and genre knowledge",
+          "detail": "The model activates knowledge about rain as a poetic subject: associations with melancholy, renewal, rhythm, sound (patter, drizzle, downpour). It accesses knowledge of poetic conventions: imagery, metaphor, line breaks, sensory language. It begins to plan structure and imagery choices."
+        },
+        {
+          "label": "Layer 4 — Response preparation",
+          "summary": "Poem generation",
+          "detail": "The model selects free verse as a flexible default. It will open with a striking image, use sensory language (sound, touch, sight), and build to an emotional beat. Rain associations — grey skies, puddles, petrichor, windows — are woven into a compact 4–6 line poem."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Is 7 a prime number?",
+      "outputPrediction": "Yes, 7 is prime",
+      "layers": [
+        {
+          "label": "Layer 1 — Surface patterns",
+          "summary": "Tokens & question form",
+          "detail": "Tokens: 'Is', '7', 'a', 'prime', 'number', '?'. The model sees a yes/no question (starts with 'Is'). '7' is a digit. 'prime' is an adjective. 'number' is a noun. The question structure [Is] [7] [a prime number] is a predicate nominative question."
+        },
+        {
+          "label": "Layer 2 — Syntactic structure",
+          "summary": "Yes/no question parsed",
+          "detail": "The model parses: [Is] [7] [a prime number]? It identifies this as a verification question — the expected answer is 'Yes' or 'No' plus explanation. It recognises 'prime number' as a mathematical concept requiring definition application."
+        },
+        {
+          "label": "Layer 3 — Semantic meaning",
+          "summary": "Mathematical reasoning",
+          "detail": "The model applies the definition of a prime number: a natural number greater than 1 with no divisors other than 1 and itself. It checks 7: divisible by 1? Yes. Divisible by 7? Yes. Divisible by 2, 3, 4, 5, 6? No. Conclusion: 7 is prime. This is pattern-matched from training data, not computed step-by-step."
+        },
+        {
+          "label": "Layer 4 — Response preparation",
+          "summary": "Confident factual answer",
+          "detail": "The model prepares a confident affirmative answer. The response will confirm 'Yes', name 7 as prime, and optionally offer a brief justification (not divisible by any number other than 1 and 7). High confidence — this is a well-represented fact in training data."
+        }
+      ]
+    }
+  ]
+}

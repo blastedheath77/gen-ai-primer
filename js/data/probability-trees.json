@@ -1,0 +1,526 @@
+{
+  "prompts": [
+    {
+      "id": "narrative",
+      "start": "She walked into the",
+      "steps": [
+        {
+          "step": 1,
+          "context": "She walked into the",
+          "predictions": [
+            {"token": "room", "prob": 0.22, "color_rank": 1},
+            {"token": "building", "prob": 0.15, "color_rank": 2},
+            {"token": "kitchen", "prob": 0.12, "color_rank": 3},
+            {"token": "dark", "prob": 0.09, "color_rank": 4},
+            {"token": "hallway", "prob": 0.08, "color_rank": 5},
+            {"token": "house", "prob": 0.07, "color_rank": 6},
+            {"token": "office", "prob": 0.06, "color_rank": 7},
+            {"token": "garden", "prob": 0.05, "color_rank": 8},
+            {"token": "library", "prob": 0.04, "color_rank": 9},
+            {"token": "shop", "prob": 0.03, "color_rank": 10},
+            {"token": "crowded", "prob": 0.03, "color_rank": 11},
+            {"token": "street", "prob": 0.02, "color_rank": 12},
+            {"token": "silence", "prob": 0.01, "color_rank": 13},
+            {"token": "bright", "prob": 0.01, "color_rank": 14},
+            {"token": "empty", "prob": 0.01, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 2,
+          "context": "She walked into the room",
+          "predictions": [
+            {"token": "and", "prob": 0.28, "color_rank": 1},
+            {"token": ",", "prob": 0.22, "color_rank": 2},
+            {"token": "silently", "prob": 0.11, "color_rank": 3},
+            {"token": "to", "prob": 0.09, "color_rank": 4},
+            {"token": "where", "prob": 0.07, "color_rank": 5},
+            {"token": "without", "prob": 0.05, "color_rank": 6},
+            {"token": "carefully", "prob": 0.04, "color_rank": 7},
+            {"token": "slowly", "prob": 0.04, "color_rank": 8},
+            {"token": "before", "prob": 0.03, "color_rank": 9},
+            {"token": "when", "prob": 0.02, "color_rank": 10},
+            {"token": "that", "prob": 0.02, "color_rank": 11},
+            {"token": "only", "prob": 0.01, "color_rank": 12},
+            {"token": "just", "prob": 0.01, "color_rank": 13},
+            {"token": "at", "prob": 0.01, "color_rank": 14},
+            {"token": "in", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 3,
+          "context": "She walked into the room and",
+          "predictions": [
+            {"token": "saw", "prob": 0.31, "color_rank": 1},
+            {"token": "stopped", "prob": 0.18, "color_rank": 2},
+            {"token": "froze", "prob": 0.13, "color_rank": 3},
+            {"token": "looked", "prob": 0.11, "color_rank": 4},
+            {"token": "noticed", "prob": 0.08, "color_rank": 5},
+            {"token": "found", "prob": 0.05, "color_rank": 6},
+            {"token": "gasped", "prob": 0.04, "color_rank": 7},
+            {"token": "realised", "prob": 0.03, "color_rank": 8},
+            {"token": "turned", "prob": 0.02, "color_rank": 9},
+            {"token": "felt", "prob": 0.02, "color_rank": 10},
+            {"token": "heard", "prob": 0.01, "color_rank": 11},
+            {"token": "said", "prob": 0.01, "color_rank": 12},
+            {"token": "waited", "prob": 0.01, "color_rank": 13},
+            {"token": "smiled", "prob": 0.00, "color_rank": 14},
+            {"token": "stood", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 4,
+          "context": "She walked into the room and saw",
+          "predictions": [
+            {"token": "him", "prob": 0.24, "color_rank": 1},
+            {"token": "that", "prob": 0.19, "color_rank": 2},
+            {"token": "the", "prob": 0.17, "color_rank": 3},
+            {"token": "her", "prob": 0.12, "color_rank": 4},
+            {"token": "a", "prob": 0.11, "color_rank": 5},
+            {"token": "what", "prob": 0.06, "color_rank": 6},
+            {"token": "nothing", "prob": 0.04, "color_rank": 7},
+            {"token": "everything", "prob": 0.02, "color_rank": 8},
+            {"token": "someone", "prob": 0.02, "color_rank": 9},
+            {"token": "it", "prob": 0.01, "color_rank": 10},
+            {"token": "no", "prob": 0.01, "color_rank": 11},
+            {"token": "two", "prob": 0.00, "color_rank": 12},
+            {"token": "three", "prob": 0.00, "color_rank": 13},
+            {"token": "his", "prob": 0.00, "color_rank": 14},
+            {"token": "their", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 5,
+          "context": "She walked into the room and saw him",
+          "predictions": [
+            {"token": "standing", "prob": 0.29, "color_rank": 1},
+            {"token": "sitting", "prob": 0.21, "color_rank": 2},
+            {"token": "there", "prob": 0.16, "color_rank": 3},
+            {"token": "at", "prob": 0.09, "color_rank": 4},
+            {"token": "waiting", "prob": 0.08, "color_rank": 5},
+            {"token": "sleeping", "prob": 0.05, "color_rank": 6},
+            {"token": "leaning", "prob": 0.04, "color_rank": 7},
+            {"token": "looking", "prob": 0.03, "color_rank": 8},
+            {"token": "lying", "prob": 0.02, "color_rank": 9},
+            {"token": "reading", "prob": 0.01, "color_rank": 10},
+            {"token": "working", "prob": 0.01, "color_rank": 11},
+            {"token": "staring", "prob": 0.01, "color_rank": 12},
+            {"token": "in", "prob": 0.00, "color_rank": 13},
+            {"token": "near", "prob": 0.00, "color_rank": 14},
+            {"token": "by", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 6,
+          "context": "She walked into the room and saw him standing",
+          "predictions": [
+            {"token": "by", "prob": 0.21, "color_rank": 1},
+            {"token": "at", "prob": 0.18, "color_rank": 2},
+            {"token": "there", "prob": 0.16, "color_rank": 3},
+            {"token": "near", "prob": 0.12, "color_rank": 4},
+            {"token": "in", "prob": 0.10, "color_rank": 5},
+            {"token": "alone", "prob": 0.07, "color_rank": 6},
+            {"token": "with", "prob": 0.05, "color_rank": 7},
+            {"token": "against", "prob": 0.04, "color_rank": 8},
+            {"token": "still", "prob": 0.03, "color_rank": 9},
+            {"token": "outside", "prob": 0.01, "color_rank": 10},
+            {"token": "silently", "prob": 0.01, "color_rank": 11},
+            {"token": "awkwardly", "prob": 0.01, "color_rank": 12},
+            {"token": "motionless", "prob": 0.01, "color_rank": 13},
+            {"token": "quietly", "prob": 0.00, "color_rank": 14},
+            {"token": "beside", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 7,
+          "context": "She walked into the room and saw him standing by the",
+          "predictions": [
+            {"token": "window", "prob": 0.34, "color_rank": 1},
+            {"token": "door", "prob": 0.22, "color_rank": 2},
+            {"token": "fireplace", "prob": 0.14, "color_rank": 3},
+            {"token": "wall", "prob": 0.09, "color_rank": 4},
+            {"token": "desk", "prob": 0.07, "color_rank": 5},
+            {"token": "table", "prob": 0.06, "color_rank": 6},
+            {"token": "bed", "prob": 0.03, "color_rank": 7},
+            {"token": "bookcase", "prob": 0.02, "color_rank": 8},
+            {"token": "stairs", "prob": 0.02, "color_rank": 9},
+            {"token": "lamp", "prob": 0.01, "color_rank": 10},
+            {"token": "radiator", "prob": 0.00, "color_rank": 11},
+            {"token": "shelf", "prob": 0.00, "color_rank": 12},
+            {"token": "sofa", "prob": 0.00, "color_rank": 13},
+            {"token": "curtains", "prob": 0.00, "color_rank": 14},
+            {"token": "mirror", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 8,
+          "context": "She walked into the room and saw him standing by the window",
+          "predictions": [
+            {"token": ".", "prob": 0.27, "color_rank": 1},
+            {"token": ",", "prob": 0.22, "color_rank": 2},
+            {"token": "with", "prob": 0.14, "color_rank": 3},
+            {"token": "looking", "prob": 0.12, "color_rank": 4},
+            {"token": "staring", "prob": 0.08, "color_rank": 5},
+            {"token": "and", "prob": 0.06, "color_rank": 6},
+            {"token": "his", "prob": 0.04, "color_rank": 7},
+            {"token": "gazing", "prob": 0.03, "color_rank": 8},
+            {"token": "in", "prob": 0.02, "color_rank": 9},
+            {"token": "when", "prob": 0.01, "color_rank": 10},
+            {"token": "alone", "prob": 0.01, "color_rank": 11},
+            {"token": "silently", "prob": 0.00, "color_rank": 12},
+            {"token": "still", "prob": 0.00, "color_rank": 13},
+            {"token": "holding", "prob": 0.00, "color_rank": 14},
+            {"token": "that", "prob": 0.00, "color_rank": 15}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abstract",
+      "start": "The most important thing about learning is",
+      "steps": [
+        {
+          "step": 1,
+          "context": "The most important thing about learning is",
+          "predictions": [
+            {"token": "that", "prob": 0.24, "color_rank": 1},
+            {"token": "not", "prob": 0.18, "color_rank": 2},
+            {"token": "the", "prob": 0.14, "color_rank": 3},
+            {"token": "to", "prob": 0.12, "color_rank": 4},
+            {"token": "consistency", "prob": 0.09, "color_rank": 5},
+            {"token": "curiosity", "prob": 0.07, "color_rank": 6},
+            {"token": "practice", "prob": 0.05, "color_rank": 7},
+            {"token": "making", "prob": 0.04, "color_rank": 8},
+            {"token": "being", "prob": 0.03, "color_rank": 9},
+            {"token": "understanding", "prob": 0.02, "color_rank": 10},
+            {"token": "never", "prob": 0.01, "color_rank": 11},
+            {"token": "always", "prob": 0.01, "color_rank": 12},
+            {"token": "engagement", "prob": 0.00, "color_rank": 13},
+            {"token": "effort", "prob": 0.00, "color_rank": 14},
+            {"token": "patience", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 2,
+          "context": "The most important thing about learning is that",
+          "predictions": [
+            {"token": "it", "prob": 0.41, "color_rank": 1},
+            {"token": "you", "prob": 0.27, "color_rank": 2},
+            {"token": "the", "prob": 0.09, "color_rank": 3},
+            {"token": "we", "prob": 0.08, "color_rank": 4},
+            {"token": "mistakes", "prob": 0.05, "color_rank": 5},
+            {"token": "knowledge", "prob": 0.03, "color_rank": 6},
+            {"token": "everyone", "prob": 0.03, "color_rank": 7},
+            {"token": "no", "prob": 0.02, "color_rank": 8},
+            {"token": "progress", "prob": 0.01, "color_rank": 9},
+            {"token": "curiosity", "prob": 0.01, "color_rank": 10},
+            {"token": "practice", "prob": 0.00, "color_rank": 11},
+            {"token": "there", "prob": 0.00, "color_rank": 12},
+            {"token": "effort", "prob": 0.00, "color_rank": 13},
+            {"token": "a", "prob": 0.00, "color_rank": 14},
+            {"token": "one", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 3,
+          "context": "The most important thing about learning is that it",
+          "predictions": [
+            {"token": "never", "prob": 0.26, "color_rank": 1},
+            {"token": "is", "prob": 0.22, "color_rank": 2},
+            {"token": "requires", "prob": 0.15, "color_rank": 3},
+            {"token": "takes", "prob": 0.12, "color_rank": 4},
+            {"token": "can", "prob": 0.09, "color_rank": 5},
+            {"token": "should", "prob": 0.06, "color_rank": 6},
+            {"token": "does", "prob": 0.04, "color_rank": 7},
+            {"token": "must", "prob": 0.03, "color_rank": 8},
+            {"token": "doesn't", "prob": 0.01, "color_rank": 9},
+            {"token": "always", "prob": 0.01, "color_rank": 10},
+            {"token": "has", "prob": 0.01, "color_rank": 11},
+            {"token": "involves", "prob": 0.00, "color_rank": 12},
+            {"token": "works", "prob": 0.00, "color_rank": 13},
+            {"token": "matters", "prob": 0.00, "color_rank": 14},
+            {"token": "happens", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 4,
+          "context": "The most important thing about learning is that it never",
+          "predictions": [
+            {"token": "stops", "prob": 0.38, "color_rank": 1},
+            {"token": "ends", "prob": 0.27, "color_rank": 2},
+            {"token": "really", "prob": 0.12, "color_rank": 3},
+            {"token": "truly", "prob": 0.08, "color_rank": 4},
+            {"token": "comes", "prob": 0.06, "color_rank": 5},
+            {"token": "happens", "prob": 0.04, "color_rank": 6},
+            {"token": "gets", "prob": 0.02, "color_rank": 7},
+            {"token": "feels", "prob": 0.01, "color_rank": 8},
+            {"token": "quite", "prob": 0.01, "color_rank": 9},
+            {"token": "fully", "prob": 0.01, "color_rank": 10},
+            {"token": "actually", "prob": 0.00, "color_rank": 11},
+            {"token": "simply", "prob": 0.00, "color_rank": 12},
+            {"token": "just", "prob": 0.00, "color_rank": 13},
+            {"token": "becomes", "prob": 0.00, "color_rank": 14},
+            {"token": "is", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 5,
+          "context": "The most important thing about learning is that it never stops",
+          "predictions": [
+            {"token": ".", "prob": 0.39, "color_rank": 1},
+            {"token": "\u2014", "prob": 0.16, "color_rank": 2},
+            {"token": ";", "prob": 0.12, "color_rank": 3},
+            {"token": ",", "prob": 0.11, "color_rank": 4},
+            {"token": "being", "prob": 0.08, "color_rank": 5},
+            {"token": "growing", "prob": 0.05, "color_rank": 6},
+            {"token": "surprising", "prob": 0.04, "color_rank": 7},
+            {"token": "challenging", "prob": 0.02, "color_rank": 8},
+            {"token": "until", "prob": 0.01, "color_rank": 9},
+            {"token": "no", "prob": 0.01, "color_rank": 10},
+            {"token": "there", "prob": 0.01, "color_rank": 11},
+            {"token": "when", "prob": 0.00, "color_rank": 12},
+            {"token": "even", "prob": 0.00, "color_rank": 13},
+            {"token": "if", "prob": 0.00, "color_rank": 14},
+            {"token": "unless", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 6,
+          "context": "The most important thing about learning is that it never stops.",
+          "predictions": [
+            {"token": "There", "prob": 0.21, "color_rank": 1},
+            {"token": "Every", "prob": 0.17, "color_rank": 2},
+            {"token": "The", "prob": 0.14, "color_rank": 3},
+            {"token": "Whether", "prob": 0.11, "color_rank": 4},
+            {"token": "No", "prob": 0.09, "color_rank": 5},
+            {"token": "Even", "prob": 0.07, "color_rank": 6},
+            {"token": "You", "prob": 0.06, "color_rank": 7},
+            {"token": "From", "prob": 0.05, "color_rank": 8},
+            {"token": "As", "prob": 0.04, "color_rank": 9},
+            {"token": "A", "prob": 0.03, "color_rank": 10},
+            {"token": "Good", "prob": 0.01, "color_rank": 11},
+            {"token": "We", "prob": 0.01, "color_rank": 12},
+            {"token": "It", "prob": 0.01, "color_rank": 13},
+            {"token": "This", "prob": 0.00, "color_rank": 14},
+            {"token": "Learning", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 7,
+          "context": "The most important thing about learning is that it never stops. Every",
+          "predictions": [
+            {"token": "day", "prob": 0.28, "color_rank": 1},
+            {"token": "experience", "prob": 0.21, "color_rank": 2},
+            {"token": "mistake", "prob": 0.17, "color_rank": 3},
+            {"token": "challenge", "prob": 0.12, "color_rank": 4},
+            {"token": "person", "prob": 0.08, "color_rank": 5},
+            {"token": "moment", "prob": 0.06, "color_rank": 6},
+            {"token": "student", "prob": 0.04, "color_rank": 7},
+            {"token": "question", "prob": 0.02, "color_rank": 8},
+            {"token": "opportunity", "prob": 0.01, "color_rank": 9},
+            {"token": "lesson", "prob": 0.01, "color_rank": 10},
+            {"token": "step", "prob": 0.00, "color_rank": 11},
+            {"token": "class", "prob": 0.00, "color_rank": 12},
+            {"token": "idea", "prob": 0.00, "color_rank": 13},
+            {"token": "book", "prob": 0.00, "color_rank": 14},
+            {"token": "course", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 8,
+          "context": "The most important thing about learning is that it never stops. Every mistake",
+          "predictions": [
+            {"token": "is", "prob": 0.34, "color_rank": 1},
+            {"token": "teaches", "prob": 0.26, "color_rank": 2},
+            {"token": "can", "prob": 0.16, "color_rank": 3},
+            {"token": "you", "prob": 0.09, "color_rank": 4},
+            {"token": "has", "prob": 0.06, "color_rank": 5},
+            {"token": "brings", "prob": 0.04, "color_rank": 6},
+            {"token": "offers", "prob": 0.02, "color_rank": 7},
+            {"token": "makes", "prob": 0.01, "color_rank": 8},
+            {"token": "reveals", "prob": 0.01, "color_rank": 9},
+            {"token": "becomes", "prob": 0.01, "color_rank": 10},
+            {"token": "shows", "prob": 0.00, "color_rank": 11},
+            {"token": "holds", "prob": 0.00, "color_rank": 12},
+            {"token": "matters", "prob": 0.00, "color_rank": 13},
+            {"token": "points", "prob": 0.00, "color_rank": 14},
+            {"token": "leads", "prob": 0.00, "color_rank": 15}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "procedural",
+      "start": "To make a cup of tea, first",
+      "steps": [
+        {
+          "step": 1,
+          "context": "To make a cup of tea, first",
+          "predictions": [
+            {"token": "boil", "prob": 0.38, "color_rank": 1},
+            {"token": "fill", "prob": 0.22, "color_rank": 2},
+            {"token": "heat", "prob": 0.14, "color_rank": 3},
+            {"token": "add", "prob": 0.09, "color_rank": 4},
+            {"token": "you", "prob": 0.06, "color_rank": 5},
+            {"token": "place", "prob": 0.04, "color_rank": 6},
+            {"token": "put", "prob": 0.03, "color_rank": 7},
+            {"token": "prepare", "prob": 0.02, "color_rank": 8},
+            {"token": "get", "prob": 0.01, "color_rank": 9},
+            {"token": "bring", "prob": 0.01, "color_rank": 10},
+            {"token": "warm", "prob": 0.00, "color_rank": 11},
+            {"token": "choose", "prob": 0.00, "color_rank": 12},
+            {"token": "select", "prob": 0.00, "color_rank": 13},
+            {"token": "gather", "prob": 0.00, "color_rank": 14},
+            {"token": "ensure", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 2,
+          "context": "To make a cup of tea, first boil",
+          "predictions": [
+            {"token": "the", "prob": 0.41, "color_rank": 1},
+            {"token": "some", "prob": 0.28, "color_rank": 2},
+            {"token": "water", "prob": 0.21, "color_rank": 3},
+            {"token": "a", "prob": 0.06, "color_rank": 4},
+            {"token": "fresh", "prob": 0.02, "color_rank": 5},
+            {"token": "enough", "prob": 0.01, "color_rank": 6},
+            {"token": "your", "prob": 0.01, "color_rank": 7},
+            {"token": "filtered", "prob": 0.00, "color_rank": 8},
+            {"token": "cold", "prob": 0.00, "color_rank": 9},
+            {"token": "tap", "prob": 0.00, "color_rank": 10},
+            {"token": "plenty", "prob": 0.00, "color_rank": 11},
+            {"token": "hot", "prob": 0.00, "color_rank": 12},
+            {"token": "it", "prob": 0.00, "color_rank": 13},
+            {"token": "this", "prob": 0.00, "color_rank": 14},
+            {"token": "boiling", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 3,
+          "context": "To make a cup of tea, first boil the water",
+          "predictions": [
+            {"token": ".", "prob": 0.27, "color_rank": 1},
+            {"token": "in", "prob": 0.22, "color_rank": 2},
+            {"token": ",", "prob": 0.19, "color_rank": 3},
+            {"token": "and", "prob": 0.14, "color_rank": 4},
+            {"token": "until", "prob": 0.09, "color_rank": 5},
+            {"token": "using", "prob": 0.04, "color_rank": 6},
+            {"token": "first", "prob": 0.02, "color_rank": 7},
+            {"token": "then", "prob": 0.01, "color_rank": 8},
+            {"token": "before", "prob": 0.01, "color_rank": 9},
+            {"token": "thoroughly", "prob": 0.01, "color_rank": 10},
+            {"token": "well", "prob": 0.00, "color_rank": 11},
+            {"token": "fully", "prob": 0.00, "color_rank": 12},
+            {"token": "completely", "prob": 0.00, "color_rank": 13},
+            {"token": "properly", "prob": 0.00, "color_rank": 14},
+            {"token": "carefully", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 4,
+          "context": "To make a cup of tea, first boil the water.",
+          "predictions": [
+            {"token": "Then", "prob": 0.36, "color_rank": 1},
+            {"token": "Next", "prob": 0.24, "color_rank": 2},
+            {"token": "Once", "prob": 0.17, "color_rank": 3},
+            {"token": "Place", "prob": 0.08, "color_rank": 4},
+            {"token": "Add", "prob": 0.07, "color_rank": 5},
+            {"token": "While", "prob": 0.04, "color_rank": 6},
+            {"token": "After", "prob": 0.02, "color_rank": 7},
+            {"token": "Pour", "prob": 0.01, "color_rank": 8},
+            {"token": "Put", "prob": 0.00, "color_rank": 9},
+            {"token": "Allow", "prob": 0.00, "color_rank": 10},
+            {"token": "When", "prob": 0.00, "color_rank": 11},
+            {"token": "Let", "prob": 0.00, "color_rank": 12},
+            {"token": "Now", "prob": 0.00, "color_rank": 13},
+            {"token": "Finally", "prob": 0.00, "color_rank": 14},
+            {"token": "Carefully", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 5,
+          "context": "To make a cup of tea, first boil the water. Then",
+          "predictions": [
+            {"token": "add", "prob": 0.24, "color_rank": 1},
+            {"token": "place", "prob": 0.19, "color_rank": 2},
+            {"token": "pour", "prob": 0.18, "color_rank": 3},
+            {"token": "put", "prob": 0.14, "color_rank": 4},
+            {"token": "allow", "prob": 0.08, "color_rank": 5},
+            {"token": "let", "prob": 0.06, "color_rank": 6},
+            {"token": "wait", "prob": 0.04, "color_rank": 7},
+            {"token": "drop", "prob": 0.02, "color_rank": 8},
+            {"token": "steep", "prob": 0.02, "color_rank": 9},
+            {"token": "fill", "prob": 0.01, "color_rank": 10},
+            {"token": "heat", "prob": 0.01, "color_rank": 11},
+            {"token": "bring", "prob": 0.01, "color_rank": 12},
+            {"token": "use", "prob": 0.00, "color_rank": 13},
+            {"token": "stir", "prob": 0.00, "color_rank": 14},
+            {"token": "prepare", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 6,
+          "context": "To make a cup of tea, first boil the water. Then add",
+          "predictions": [
+            {"token": "a", "prob": 0.34, "color_rank": 1},
+            {"token": "the", "prob": 0.22, "color_rank": 2},
+            {"token": "your", "prob": 0.18, "color_rank": 3},
+            {"token": "milk", "prob": 0.10, "color_rank": 4},
+            {"token": "sugar", "prob": 0.06, "color_rank": 5},
+            {"token": "some", "prob": 0.04, "color_rank": 6},
+            {"token": "one", "prob": 0.02, "color_rank": 7},
+            {"token": "two", "prob": 0.01, "color_rank": 8},
+            {"token": "tea", "prob": 0.01, "color_rank": 9},
+            {"token": "hot", "prob": 0.01, "color_rank": 10},
+            {"token": "cold", "prob": 0.00, "color_rank": 11},
+            {"token": "fresh", "prob": 0.00, "color_rank": 12},
+            {"token": "it", "prob": 0.00, "color_rank": 13},
+            {"token": "boiling", "prob": 0.00, "color_rank": 14},
+            {"token": "just", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 7,
+          "context": "To make a cup of tea, first boil the water. Then add a",
+          "predictions": [
+            {"token": "teabag", "prob": 0.38, "color_rank": 1},
+            {"token": "tea", "prob": 0.21, "color_rank": 2},
+            {"token": "spoonful", "prob": 0.14, "color_rank": 3},
+            {"token": "dash", "prob": 0.09, "color_rank": 4},
+            {"token": "little", "prob": 0.07, "color_rank": 5},
+            {"token": "drop", "prob": 0.04, "color_rank": 6},
+            {"token": "cup", "prob": 0.02, "color_rank": 7},
+            {"token": "sachet", "prob": 0.02, "color_rank": 8},
+            {"token": "bag", "prob": 0.01, "color_rank": 9},
+            {"token": "pinch", "prob": 0.01, "color_rank": 10},
+            {"token": "splash", "prob": 0.01, "color_rank": 11},
+            {"token": "mug", "prob": 0.00, "color_rank": 12},
+            {"token": "measure", "prob": 0.00, "color_rank": 13},
+            {"token": "generous", "prob": 0.00, "color_rank": 14},
+            {"token": "heaped", "prob": 0.00, "color_rank": 15}
+          ]
+        },
+        {
+          "step": 8,
+          "context": "To make a cup of tea, first boil the water. Then add a teabag",
+          "predictions": [
+            {"token": "to", "prob": 0.31, "color_rank": 1},
+            {"token": "and", "prob": 0.24, "color_rank": 2},
+            {"token": ",", "prob": 0.19, "color_rank": 3},
+            {"token": "or", "prob": 0.09, "color_rank": 4},
+            {"token": ".", "prob": 0.08, "color_rank": 5},
+            {"token": "in", "prob": 0.04, "color_rank": 6},
+            {"token": "into", "prob": 0.02, "color_rank": 7},
+            {"token": "carefully", "prob": 0.01, "color_rank": 8},
+            {"token": "before", "prob": 0.01, "color_rank": 9},
+            {"token": "then", "prob": 0.01, "color_rank": 10},
+            {"token": "slowly", "prob": 0.00, "color_rank": 11},
+            {"token": "gently", "prob": 0.00, "color_rank": 12},
+            {"token": "first", "prob": 0.00, "color_rank": 13},
+            {"token": "while", "prob": 0.00, "color_rank": 14},
+            {"token": "until", "prob": 0.00, "color_rank": 15}
+          ]
+        }
+      ]
+    }
+  ]
+}

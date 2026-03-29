@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probability, Not Certainty — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="3">
+  <header class="page-header">
+    <div class="page-number" data-phase="1">Page 3 of 18</div>
+    <div class="page-title-block">
+      <h1>Probability, Not Certainty</h1>
+      <p class="page-subtitle">The landscape of possibilities</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="1">
+      <p>The model doesn't pick one "right answer." It calculates a probability for every possible next token — thousands of candidates, each with a score. The top few are all plausible; the choice between them is where randomness and creativity live.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Every generation step is a fresh probability distribution over the entire vocabulary</li>
+        <li>The model doesn't "plan ahead" — it only sees up to the current point</li>
+        <li>Picking lower-probability tokens leads to more surprising text</li>
+        <li>This is the mechanical basis for the "creativity vs accuracy" trade-off</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>You've just done what an LLM does — predicted one token at a time from probabilities. But where do those probabilities come from?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-02.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-04.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { ProbabilityBuilder } from '../js/widgets/probability-builder.js';
+
+    initNavigation();
+    const widget = new ProbabilityBuilder(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

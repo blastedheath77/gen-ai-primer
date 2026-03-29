@@ -1,0 +1,167 @@
+{
+  "prompts": [
+    {
+      "id": 0,
+      "label": "Story opener",
+      "text": "The old house at the end of the street had always been"
+    },
+    {
+      "id": 1,
+      "label": "Advice",
+      "text": "The best way to learn something new is to"
+    },
+    {
+      "id": 2,
+      "label": "Metaphor",
+      "text": "The internet is like a"
+    }
+  ],
+  "tokenDistributions": {
+    "0": {
+      "tokens": ["mysterious", "abandoned", "empty", "dark", "quiet", "haunted", "strange", "old"],
+      "weights": {
+        "0.0": [0.72, 0.12, 0.07, 0.04, 0.02, 0.01, 0.01, 0.01],
+        "0.1": [0.68, 0.14, 0.08, 0.05, 0.02, 0.01, 0.01, 0.01],
+        "0.5": [0.45, 0.20, 0.13, 0.10, 0.06, 0.03, 0.02, 0.01],
+        "1.0": [0.28, 0.22, 0.16, 0.13, 0.09, 0.06, 0.04, 0.02],
+        "1.5": [0.18, 0.18, 0.16, 0.15, 0.13, 0.10, 0.06, 0.04],
+        "2.0": [0.14, 0.14, 0.13, 0.13, 0.13, 0.12, 0.11, 0.10]
+      }
+    },
+    "1": {
+      "tokens": ["practise", "start", "try", "repeat", "do", "read", "immerse", "teach"],
+      "weights": {
+        "0.0": [0.65, 0.15, 0.08, 0.05, 0.03, 0.02, 0.01, 0.01],
+        "0.1": [0.60, 0.17, 0.10, 0.06, 0.04, 0.02, 0.01, 0.00],
+        "0.5": [0.38, 0.22, 0.16, 0.10, 0.07, 0.04, 0.02, 0.01],
+        "1.0": [0.24, 0.20, 0.18, 0.14, 0.10, 0.07, 0.05, 0.02],
+        "1.5": [0.16, 0.16, 0.16, 0.15, 0.13, 0.11, 0.08, 0.05],
+        "2.0": [0.13, 0.13, 0.13, 0.13, 0.13, 0.12, 0.12, 0.11]
+      }
+    },
+    "2": {
+      "tokens": ["vast", "library", "city", "ocean", "web", "maze", "tool", "mirror"],
+      "weights": {
+        "0.0": [0.58, 0.20, 0.09, 0.06, 0.03, 0.02, 0.01, 0.01],
+        "0.1": [0.54, 0.22, 0.10, 0.07, 0.04, 0.02, 0.01, 0.00],
+        "0.5": [0.35, 0.25, 0.16, 0.12, 0.07, 0.03, 0.01, 0.01],
+        "1.0": [0.22, 0.20, 0.18, 0.15, 0.11, 0.07, 0.04, 0.03],
+        "1.5": [0.16, 0.16, 0.15, 0.14, 0.13, 0.11, 0.09, 0.06],
+        "2.0": [0.14, 0.13, 0.13, 0.13, 0.12, 0.12, 0.12, 0.11]
+      }
+    }
+  },
+  "completions": {
+    "0": {
+      "0.1": [
+        "mysterious. Nobody in the neighbourhood ever saw the lights on.",
+        "mysterious. Nobody in the neighbourhood ever saw the lights on.",
+        "mysterious. Nobody in the neighbourhood had ever seen lights on inside.",
+        "mysterious. Not one person on the street had ever seen anyone go in.",
+        "mysterious. Nobody in the neighbourhood ever saw anyone come or go."
+      ],
+      "0.5": [
+        "mysterious. Nobody in the neighbourhood had ever seen the lights on.",
+        "abandoned. The garden was overgrown and the windows were cracked.",
+        "mysterious. Children dared each other to knock, but none ever did.",
+        "abandoned. Its garden was wild and no one had lived there for years.",
+        "mysterious. Curtains twitched sometimes, but never when you were looking."
+      ],
+      "1.0": [
+        "abandoned. The garden had long since returned to wilderness.",
+        "mysterious, even to those who had grown up in its shadow.",
+        "a source of fascination and quiet dread for the children on Maple Close.",
+        "empty — or so everyone assumed, until the morning the lights came on.",
+        "the subject of rumours. Some said a widow lived there. Others said worse."
+      ],
+      "1.5": [
+        "a puzzle no one had ever quite solved, despite living next door for decades.",
+        "draped in fog, even on clear days — a local weather anomaly nobody questioned.",
+        "the place where lost things went: mittens, cats, the occasional bicycle.",
+        "avoided, intuitively, by every postman who'd ever worked the route.",
+        "where the neighbourhood children claimed you could hear a piano, faintly, at midnight."
+      ],
+      "2.0": [
+        "quietly wrong — not haunted, exactly, but incorrectly angled with respect to the sun.",
+        "a mystery wrapped in peeling paint and profound municipal indifference.",
+        "the kind of place that made pigeons reroute instinctively.",
+        "where Theodora Vine-Markham had once conducted unlicensed experiments in apiculture.",
+        "spoken of in the conditional tense: 'that house has always been about to fall down.'"
+      ]
+    },
+    "1": {
+      "0.1": [
+        "practise regularly and consistently.",
+        "practise regularly and consistently.",
+        "practise regularly and be patient with yourself.",
+        "practise regularly and be consistent.",
+        "practise consistently and be patient."
+      ],
+      "0.5": [
+        "practise regularly and be consistent.",
+        "start immediately and not overthink it.",
+        "break it into small steps and practise each one.",
+        "practise regularly — repetition builds fluency.",
+        "start with the basics and build up gradually."
+      ],
+      "1.0": [
+        "dive in and make lots of mistakes early.",
+        "find someone who already knows it and ask them to teach you.",
+        "practise a little every day rather than cramming.",
+        "get your hands dirty — theory only takes you so far.",
+        "connect it to something you already know and love."
+      ],
+      "1.5": [
+        "teach it to someone else before you've fully learned it yourself.",
+        "sleep on it — literally. Consolidation happens during deep sleep.",
+        "find the most boring part and master that first.",
+        "change your environment every time you study it.",
+        "give yourself a week, then deliberately forget it, then relearn."
+      ],
+      "2.0": [
+        "pay attention to the moment just before you give up.",
+        "misunderstand it spectacularly in public.",
+        "decide it doesn't matter — then notice you've learned it anyway.",
+        "stop trying to learn it and just use it badly.",
+        "find the person who hates it most and ask them why."
+      ]
+    },
+    "2": {
+      "0.1": [
+        "vast library where everything is available, but finding it is the challenge.",
+        "vast library where everything is available, but finding it takes skill.",
+        "vast library where all human knowledge is stored, but navigation is key.",
+        "vast library with everything ever written — but the filing system is chaos.",
+        "vast library where the information is free but the map is missing."
+      ],
+      "0.5": [
+        "vast library where everything is available, but the filing system is chaotic.",
+        "city that never sleeps — full of wonders, dangers, and back alleys.",
+        "ocean: vast, interconnected, and easy to drown in if you're not careful.",
+        "massive library with no librarian and a thousand people shouting at once.",
+        "parallel city built entirely of words, images, and attention."
+      ],
+      "1.0": [
+        "vast ocean — mostly unexplored, occasionally beautiful, occasionally treacherous.",
+        "mirror: it shows you what you already believe, reflected back more loudly.",
+        "library built by everyone, curated by no one, and on fire in several places.",
+        "city with a million neighbourhoods, most of which you'll never find.",
+        "megaphone given to every human simultaneously, for better and worse."
+      ],
+      "1.5": [
+        "geological strata: layers of past conversations slowly compressing into something new.",
+        "collective dream we've agreed to take seriously.",
+        "very old pub that has been extended so many times no one knows the original walls.",
+        "second mind that runs in parallel and shares your anxieties.",
+        "long argument nobody started and nobody will ever finish."
+      ],
+      "2.0": [
+        "vast filing cabinet held together with the ambient anxiety of strangers.",
+        "conversation between people who've never met and never will.",
+        "recursive question that generates more questions than it answers.",
+        "place where both cures and curses arrive in the same envelope.",
+        "planet-sized bulletin board pinned with notes from eight billion people, mostly unsigned."
+      ]
+    }
+  }
+}

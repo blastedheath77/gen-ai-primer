@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Prediction Game — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="1">
+  <header class="page-header">
+    <div class="page-number" data-phase="1">Page 1 of 18</div>
+    <div class="page-title-block">
+      <h1>The Prediction Game</h1>
+      <p class="page-subtitle">What AI actually does</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="1">
+      <p>A large language model does one thing at its core: given a sequence of words, it predicts what comes next. Conversations, essays, and code all emerge from repeating this single act.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>The model isn't "thinking" — it's calculating statistical likelihood</li>
+        <li>Even you can predict common phrases, which is what the model scales up enormously</li>
+        <li>Ambiguous sentences reveal that multiple valid continuations exist</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>But how does the model even read a sentence? It doesn't see words the way you do.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <a href="../index.html" class="nav-prev">←</a>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-02.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { PredictionGame } from '../js/widgets/prediction-game.js';
+
+    initNavigation();
+    const widget = new PredictionGame(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

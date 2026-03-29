@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In-Context Learning: Teaching by Example — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="12">
+  <header class="page-header">
+    <div class="page-number" data-phase="3">Page 12 of 18</div>
+    <div class="page-title-block">
+      <h1>In-Context Learning: Teaching by Example</h1>
+      <p class="page-subtitle">Show, don't just tell</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="3">
+      <p>LLMs can pick up a pattern from just a few examples given in the prompt — no retraining needed. Show three examples of translating English to Scots, and it'll attempt a fourth. This is called in-context learning, and it's why LLMs are so versatile.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>In-context learning is emergent — nobody designed it; it falls out of the prediction mechanism</li>
+        <li>This is why LLMs feel "magical" — they generalise from a few examples without retraining</li>
+        <li>The number of examples matters: 0 &lt; 1 &lt; 3, but beyond ~5 returns diminish</li>
+        <li>The model is still just predicting the next token, but examples create a pattern it can extend</li>
+      </ul>
+    </div>
+
+    <div class="reflection-panel" id="reflection-root"></div>
+
+    <div class="page-teaser">
+      <p>Few-shot prompting is powerful. But there's a dark side: sometimes the model generates text that sounds perfect but is completely wrong.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-11.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-13.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { PatternTeacher } from '../js/widgets/pattern-teacher.js';
+    import { ReflectionPanel } from '../js/core/reflection.js';
+
+    initNavigation();
+    const widget = new PatternTeacher(document.getElementById('widget-root'));
+    const reflection = new ReflectionPanel(
+      document.getElementById('reflection-root'),
+      'What\'s the difference between giving an LLM instructions and giving it examples?'
+    );
+  </script>
+</body>
+</html>

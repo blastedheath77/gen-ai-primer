@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokens: How AI Reads Text — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="2">
+  <header class="page-header">
+    <div class="page-number" data-phase="1">Page 2 of 18</div>
+    <div class="page-title-block">
+      <h1>Tokens: How AI Reads Text</h1>
+      <p class="page-subtitle">Breaking text into pieces</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="1">
+      <p>Before an LLM can process anything, text is split into tokens — small chunks that might be whole words, parts of words, or even single characters. This is how all text enters the model.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Tokens are the fundamental unit the model works with — not words, not characters</li>
+        <li>Common words = 1 token; rare or long words = multiple tokens</li>
+        <li>This is why AI pricing is per-token</li>
+        <li>Different models use different tokenisers</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>Now you know what gets predicted — tokens. But when the model sees "The cat sat on the ___" — how does it know "mat" is likely and "quantum" isn't?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-01.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-03.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { Tokeniser } from '../js/widgets/tokeniser.js';
+
+    initNavigation();
+    const widget = new Tokeniser(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

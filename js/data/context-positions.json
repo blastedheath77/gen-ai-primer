@@ -1,0 +1,149 @@
+{
+  "words": {
+    "bank": {
+      "clusters": {
+        "nature": { "x": 0.22, "y": 0.62, "label": "Riverbank / Nature" },
+        "finance": { "x": 0.78, "y": 0.38, "label": "Financial Bank" }
+      },
+      "neutral": { "x": 0.50, "y": 0.50 },
+      "contextSets": {
+        "A": {
+          "chips": ["river", "water", "fish", "muddy"],
+          "clusterKey": "nature",
+          "description": "Natural / geographical context"
+        },
+        "B": {
+          "chips": ["money", "account", "loan", "interest"],
+          "clusterKey": "finance",
+          "description": "Financial context"
+        }
+      },
+      "referenceWords": [
+        { "label": "river", "x": 0.18, "y": 0.58, "cluster": "nature" },
+        { "label": "stream", "x": 0.20, "y": 0.66, "cluster": "nature" },
+        { "label": "flood", "x": 0.16, "y": 0.62, "cluster": "nature" },
+        { "label": "soil", "x": 0.24, "y": 0.70, "cluster": "nature" },
+        { "label": "mortgage", "x": 0.82, "y": 0.34, "cluster": "finance" },
+        { "label": "savings", "x": 0.76, "y": 0.42, "cluster": "finance" },
+        { "label": "credit", "x": 0.80, "y": 0.44, "cluster": "finance" },
+        { "label": "vault", "x": 0.74, "y": 0.36, "cluster": "finance" }
+      ]
+    },
+    "bark": {
+      "clusters": {
+        "animal": { "x": 0.20, "y": 0.32, "label": "Dog / Animal bark" },
+        "tree": { "x": 0.80, "y": 0.68, "label": "Tree bark" }
+      },
+      "neutral": { "x": 0.50, "y": 0.50 },
+      "contextSets": {
+        "A": {
+          "chips": ["dog", "loud", "night", "growl"],
+          "clusterKey": "animal",
+          "description": "Animal / dog context"
+        },
+        "B": {
+          "chips": ["tree", "oak", "rough", "forest"],
+          "clusterKey": "tree",
+          "description": "Tree / nature context"
+        }
+      },
+      "referenceWords": [
+        { "label": "howl", "x": 0.16, "y": 0.28, "cluster": "animal" },
+        { "label": "leash", "x": 0.22, "y": 0.36, "cluster": "animal" },
+        { "label": "kennel", "x": 0.18, "y": 0.40, "cluster": "animal" },
+        { "label": "collar", "x": 0.24, "y": 0.28, "cluster": "animal" },
+        { "label": "trunk", "x": 0.76, "y": 0.64, "cluster": "tree" },
+        { "label": "branch", "x": 0.82, "y": 0.72, "cluster": "tree" },
+        { "label": "moss", "x": 0.84, "y": 0.64, "cluster": "tree" },
+        { "label": "sap", "x": 0.78, "y": 0.74, "cluster": "tree" }
+      ]
+    },
+    "crane": {
+      "clusters": {
+        "bird": { "x": 0.24, "y": 0.72, "label": "Crane bird" },
+        "construction": { "x": 0.76, "y": 0.28, "label": "Construction crane" }
+      },
+      "neutral": { "x": 0.50, "y": 0.50 },
+      "contextSets": {
+        "A": {
+          "chips": ["bird", "lake", "wings", "migrate"],
+          "clusterKey": "bird",
+          "description": "Bird / wildlife context"
+        },
+        "B": {
+          "chips": ["construction", "steel", "lift", "building"],
+          "clusterKey": "construction",
+          "description": "Engineering / construction context"
+        }
+      },
+      "referenceWords": [
+        { "label": "flock", "x": 0.20, "y": 0.76, "cluster": "bird" },
+        { "label": "feather", "x": 0.28, "y": 0.68, "cluster": "bird" },
+        { "label": "wetland", "x": 0.22, "y": 0.66, "cluster": "bird" },
+        { "label": "nest", "x": 0.26, "y": 0.78, "cluster": "bird" },
+        { "label": "scaffolding", "x": 0.80, "y": 0.32, "cluster": "construction" },
+        { "label": "beam", "x": 0.72, "y": 0.24, "cluster": "construction" },
+        { "label": "hoist", "x": 0.78, "y": 0.22, "cluster": "construction" },
+        { "label": "site", "x": 0.74, "y": 0.34, "cluster": "construction" }
+      ]
+    },
+    "bass": {
+      "clusters": {
+        "music": { "x": 0.28, "y": 0.78, "label": "Bass (music)" },
+        "fish": { "x": 0.72, "y": 0.22, "label": "Bass (fish)" }
+      },
+      "neutral": { "x": 0.50, "y": 0.50 },
+      "contextSets": {
+        "A": {
+          "chips": ["guitar", "music", "amp", "band"],
+          "clusterKey": "music",
+          "description": "Music context"
+        },
+        "B": {
+          "chips": ["fish", "lake", "catch", "deep"],
+          "clusterKey": "fish",
+          "description": "Fishing / aquatic context"
+        }
+      },
+      "referenceWords": [
+        { "label": "treble", "x": 0.24, "y": 0.82, "cluster": "music" },
+        { "label": "rhythm", "x": 0.32, "y": 0.74, "cluster": "music" },
+        { "label": "riff", "x": 0.26, "y": 0.74, "cluster": "music" },
+        { "label": "chord", "x": 0.30, "y": 0.80, "cluster": "music" },
+        { "label": "angling", "x": 0.76, "y": 0.18, "cluster": "fish" },
+        { "label": "lure", "x": 0.68, "y": 0.26, "cluster": "fish" },
+        { "label": "spawn", "x": 0.74, "y": 0.28, "cluster": "fish" },
+        { "label": "freshwater", "x": 0.70, "y": 0.18, "cluster": "fish" }
+      ]
+    },
+    "pitch": {
+      "clusters": {
+        "sports": { "x": 0.22, "y": 0.34, "label": "Football pitch" },
+        "music": { "x": 0.78, "y": 0.66, "label": "Musical pitch" }
+      },
+      "neutral": { "x": 0.50, "y": 0.50 },
+      "contextSets": {
+        "A": {
+          "chips": ["football", "field", "grass", "game"],
+          "clusterKey": "sports",
+          "description": "Sports / football context"
+        },
+        "B": {
+          "chips": ["music", "note", "sing", "tune"],
+          "clusterKey": "music",
+          "description": "Musical context"
+        }
+      },
+      "referenceWords": [
+        { "label": "goal", "x": 0.18, "y": 0.30, "cluster": "sports" },
+        { "label": "turf", "x": 0.26, "y": 0.38, "cluster": "sports" },
+        { "label": "penalty", "x": 0.20, "y": 0.40, "cluster": "sports" },
+        { "label": "stadium", "x": 0.24, "y": 0.28, "cluster": "sports" },
+        { "label": "scale", "x": 0.82, "y": 0.62, "cluster": "music" },
+        { "label": "tone", "x": 0.74, "y": 0.70, "cluster": "music" },
+        { "label": "harmony", "x": 0.80, "y": 0.72, "cluster": "music" },
+        { "label": "octave", "x": 0.76, "y": 0.62, "cluster": "music" }
+      ]
+    }
+  }
+}

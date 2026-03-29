@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layers of Understanding — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="8">
+  <header class="page-header">
+    <div class="page-number" data-phase="2">Page 8 of 18</div>
+    <div class="page-title-block">
+      <h1>Layers of Understanding</h1>
+      <p class="page-subtitle">From surface to meaning</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="2">
+      <p>An LLM processes text through many layers — sometimes over a hundred. Early layers detect basic patterns like spelling and grammar. Middle layers grasp meaning and relationships. Deep layers handle nuance, reasoning, and complex inference. Each layer refines the understanding passed to it.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Real models have 32–128 layers; we show 4 as a simplification</li>
+        <li>No single layer "knows" the answer — it emerges from progressive refinement</li>
+        <li>Bigger models (more layers) tend to be more capable</li>
+        <li>The actual computations are matrix operations</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>You've seen how a sentence gets processed. But the model had to learn all this from data. How much data? And how does learning actually happen?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-07.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-09.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { LayerExplorer } from '../js/widgets/layer-explorer.js';
+
+    initNavigation();
+    const widget = new LayerExplorer(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

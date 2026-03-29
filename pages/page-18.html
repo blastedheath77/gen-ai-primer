@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="4">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Big Picture: Concept Map — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="18">
+  <header class="page-header">
+    <div class="page-number" data-phase="4">Page 18 of 18</div>
+    <div class="page-title-block">
+      <h1>The Big Picture: Concept Map</h1>
+      <p class="page-subtitle">Everything connects</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="4">
+      <p>You now understand generative AI — not just as a user, but mechanically. From tokens to attention to temperature to alignment, you have a mental model of what's happening every time you interact with an LLM.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>Every concept in this guide connects to the same core mechanism: next-token prediction</li>
+        <li>The concept map is the synthesis — follow the edges to trace how ideas depend on each other</li>
+        <li>Bookmark this page. Come back when someone asks you how AI works.</li>
+        <li>Understanding the mechanism makes you a better user, collaborator, and critic of AI systems</li>
+      </ul>
+    </div>
+
+    <div class="completion-message" style="text-align:center; padding: 2rem; background: var(--color-surface-2); border-radius: var(--radius-lg); margin-top: 2rem;">
+      <p style="font-size: 1.5rem; font-weight: 600;">You understand how generative AI works.</p>
+      <p style="color: var(--color-text-muted); margin-top: 0.5rem;">Revisit any page, share this guide, or put your knowledge to work.</p>
+      <a href="../index.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--color-primary); color: white; border-radius: var(--radius-full); text-decoration: none; font-weight: 600;">← Back to Start</a>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-17.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next disabled" aria-disabled="true" onclick="window.location.href='../index.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { ConceptMap } from '../js/widgets/concept-map.js';
+
+    initNavigation();
+    const widget = new ConceptMap(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patterns from Text — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="4">
+  <header class="page-header">
+    <div class="page-number" data-phase="1">Page 4 of 18</div>
+    <div class="page-title-block">
+      <h1>Patterns from Text</h1>
+      <p class="page-subtitle">How data becomes knowledge</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="1">
+      <p>An LLM's predictions emerge from statistical patterns in vast quantities of text. If "Edinburgh" often follows "capital of Scotland is," the model learns this association — not because someone programmed it, but because the pattern appears in the data.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>No one programmed "Edinburgh is the capital of Scotland" — it learned from patterns</li>
+        <li>More data leads to better predictions</li>
+        <li>Simple pattern matching gets surprisingly far, but real LLMs go much deeper</li>
+        <li>Real LLMs train on a significant fraction of all text ever written</li>
+      </ul>
+    </div>
+
+    <div class="reflection-panel" id="reflection-root"></div>
+
+    <div class="page-teaser">
+      <p>Counting word patterns works, but real LLMs learn something much deeper — the meaning of words. Next: how a word becomes a number.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-03.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-05.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { PatternDetector } from '../js/widgets/pattern-detector.js';
+    import { ReflectionPanel } from '../js/core/reflection.js';
+
+    initNavigation();
+    const widget = new PatternDetector(document.getElementById('widget-root'));
+    const reflection = new ReflectionPanel(
+      document.getElementById('reflection-root'),
+      'In one sentence, what is an LLM actually doing when it generates text?'
+    );
+  </script>
+</body>
+</html>

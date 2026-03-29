@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="4">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Text: Images, Audio, and Code — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="15">
+  <header class="page-header">
+    <div class="page-number" data-phase="4">Page 15 of 18</div>
+    <div class="page-title-block">
+      <h1>Beyond Text: Images, Audio, and Code</h1>
+      <p class="page-subtitle">The universal prediction engine</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="4">
+      <p>You've seen how a transformer predicts the next word in a sentence. But the same trick works on <em>anything</em> that can be broken into a sequence. Images become grid patches. Audio becomes spectral slices. Even combinations of text and images get merged into one token stream. The mechanism is always the same: predict the next piece from context.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>"Generative AI" isn't just text — the same principles power image generators, music AI, code assistants</li>
+        <li>Tokenisation is the universal interface: any data that can be broken into pieces can be modelled</li>
+        <li>The transformer's power is domain-agnostic — it's a general-purpose sequence prediction machine</li>
+        <li>AI progress in one domain (text) often transfers to others (images, audio, code)</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>The same mechanism, applied everywhere. Where is generative AI actually being used — and where is it headed?</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-14.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-16.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { UniversalTokeniser } from '../js/widgets/universal-tokeniser.js';
+
+    initNavigation();
+    const widget = new UniversalTokeniser(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

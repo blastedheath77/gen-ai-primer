@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-phase="4">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-World Applications — How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-page="16">
+  <header class="page-header">
+    <div class="page-number" data-phase="4">Page 16 of 18</div>
+    <div class="page-title-block">
+      <h1>Real-World Applications</h1>
+      <p class="page-subtitle">AI across every domain</p>
+    </div>
+    <button class="settings-toggle" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="page-content">
+    <div class="core-concept" data-phase="4">
+      <p>Generative AI isn't one tool — it's a capability that reshapes work across every field. Understanding the mechanism (which you now do) lets you evaluate which applications are solid, which are overhyped, and where the real opportunities lie.</p>
+    </div>
+
+    <div class="widget-container" id="widget-root"></div>
+
+    <div class="explanation-content">
+      <h2>Key Points</h2>
+      <ul>
+        <li>AI capability varies enormously by application</li>
+        <li>"Green" tasks are ones where the prediction mechanism naturally excels (text transformation, summarisation, ideation)</li>
+        <li>"Red" tasks involve factual claims or high-stakes decisions where hallucination is dangerous</li>
+        <li>The best use of AI is typically collaborative: human expertise + AI capability</li>
+      </ul>
+    </div>
+
+    <div class="page-teaser">
+      <p>AI can do impressive things. But it also has real limits and raises genuine ethical questions. Let's be honest about both.</p>
+    </div>
+  </main>
+
+  <nav class="page-nav">
+    <button class="nav-prev" onclick="window.location.href='page-15.html'">←</button>
+    <div id="progress-dots"></div>
+    <button class="nav-next" onclick="window.location.href='page-17.html'">→</button>
+  </nav>
+
+  <script type="module">
+    import { initNavigation } from '../js/core/navigation.js';
+    import { AppExplorer } from '../js/widgets/app-explorer.js';
+
+    initNavigation();
+    const widget = new AppExplorer(document.getElementById('widget-root'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+{
+  "sentences": [
+    {
+      "id": 1,
+      "prompt": "Good ___",
+      "predictions": [
+        {"token": "morning", "probability": 0.42},
+        {"token": "luck", "probability": 0.24},
+        {"token": "night", "probability": 0.18},
+        {"token": "news", "probability": 0.08},
+        {"token": "day", "probability": 0.05}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The cat sat on the ___",
+      "predictions": [
+        {"token": "mat", "probability": 0.51},
+        {"token": "floor", "probability": 0.18},
+        {"token": "table", "probability": 0.12},
+        {"token": "sofa", "probability": 0.08},
+        {"token": "chair", "probability": 0.06}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "She opened the door and ___",
+      "predictions": [
+        {"token": "walked", "probability": 0.28},
+        {"token": "stepped", "probability": 0.22},
+        {"token": "saw", "probability": 0.19},
+        {"token": "froze", "probability": 0.11},
+        {"token": "gasped", "probability": 0.07}
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "The capital of Scotland is ___",
+      "predictions": [
+        {"token": "Edinburgh", "probability": 0.72},
+        {"token": "Glasgow", "probability": 0.14},
+        {"token": "Stirling", "probability": 0.05},
+        {"token": "Inverness", "probability": 0.03},
+        {"token": "Aberdeen", "probability": 0.02}
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "To be or not to ___",
+      "predictions": [
+        {"token": "be", "probability": 0.89},
+        {"token": "have", "probability": 0.04},
+        {"token": "do", "probability": 0.03},
+        {"token": "go", "probability": 0.02},
+        {"token": "know", "probability": 0.01}
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "The board voted to ___",
+      "predictions": [
+        {"token": "approve", "probability": 0.31},
+        {"token": "reject", "probability": 0.22},
+        {"token": "postpone", "probability": 0.16},
+        {"token": "accept", "probability": 0.13},
+        {"token": "table", "probability": 0.08}
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I never expected the ___",
+      "predictions": [
+        {"token": "news", "probability": 0.27},
+        {"token": "results", "probability": 0.19},
+        {"token": "response", "probability": 0.14},
+        {"token": "outcome", "probability": 0.13},
+        {"token": "reaction", "probability": 0.09}
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "In the beginning, there was ___",
+      "predictions": [
+        {"token": "darkness", "probability": 0.33},
+        {"token": "nothing", "probability": 0.26},
+        {"token": "light", "probability": 0.19},
+        {"token": "silence", "probability": 0.10},
+        {"token": "only", "probability": 0.05}
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "The best thing about Mondays is ___",
+      "predictions": [
+        {"token": "nothing", "probability": 0.38},
+        {"token": "the", "probability": 0.17},
+        {"token": "that", "probability": 0.14},
+        {"token": "getting", "probability": 0.09},
+        {"token": "a", "probability": 0.07}
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Machine learning models are trained by ___",
+      "predictions": [
+        {"token": "adjusting", "probability": 0.29},
+        {"token": "optimising", "probability": 0.22},
+        {"token": "feeding", "probability": 0.18},
+        {"token": "processing", "probability": 0.12},
+        {"token": "updating", "probability": 0.10}
+      ]
+    }
+  ]
+}

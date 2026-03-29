@@ -1,0 +1,105 @@
+{
+  "tasks": [
+    {
+      "id": "photosynthesis",
+      "label": "Photosynthesis",
+      "basePrompt": "Explain photosynthesis",
+      "variants": [
+        {
+          "features": [],
+          "output": "Photosynthesis is the process by which plants convert light energy into chemical energy. Plants use sunlight, water, and carbon dioxide to produce glucose and oxygen. The process takes place in the chloroplasts, where chlorophyll absorbs light. The overall equation is: 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂."
+        },
+        {
+          "features": ["audience"],
+          "output": "Photosynthesis is how plants make their own food using sunlight — kind of like a solar-powered kitchen! Here's what happens: the plant takes in water through its roots and carbon dioxide from the air through tiny holes in its leaves. Then, using energy from sunlight, it mixes these ingredients together to make sugar (glucose) — the plant's food — and releases oxygen as a by-product. That oxygen is what we breathe!"
+        },
+        {
+          "features": ["format"],
+          "output": "**Photosynthesis — Key Points:**\n\n• **What it is:** The process plants use to convert light into food\n• **Inputs:** Sunlight + water (from roots) + CO₂ (from air)\n• **Outputs:** Glucose (food for the plant) + oxygen (released into air)\n• **Where it happens:** In chloroplasts (contain green pigment chlorophyll)\n• **The equation:** 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n• **Why it matters:** Foundation of almost all food chains on Earth"
+        },
+        {
+          "features": ["persona"],
+          "output": "As a botanist who has spent thirty years studying plant biology, let me tell you: photosynthesis is one of the most elegant chemical processes in nature.\n\nAt its core, a plant is a biological solar panel. Chlorophyll molecules in the chloroplasts absorb photons, and that energy drives a series of reactions that split water molecules and fix carbon dioxide into sugars. The light-dependent reactions capture energy; the Calvin cycle uses it.\n\nWhat never stops amazing me is the efficiency: millions of years of evolution have optimised this system to capture and use light with remarkable precision."
+        },
+        {
+          "features": ["audience", "format"],
+          "output": "**Photosynthesis for Year 7 — Simple Guide**\n\n**The Big Idea:**\nPlants make their own food using sunlight. They don't need to eat like we do!\n\n**What plants need:**\n☀️ Sunlight (energy source)\n💧 Water (from soil via roots)\n🌬️ Carbon dioxide (from air via leaf pores)\n\n**What plants make:**\n🍬 Glucose — their food and energy store\n💨 Oxygen — released into the air (lucky for us!)\n\n**Where it happens:** Inside chloroplasts — tiny green structures in leaves\n\n**Simple equation:** Water + CO₂ + Light → Sugar + Oxygen"
+        },
+        {
+          "features": ["audience", "format", "constraints"],
+          "output": "**Photosynthesis in 30 words:**\n\nPlants use sunlight to turn water and carbon dioxide into glucose (food) and oxygen. It happens in chloroplasts. This is how almost all life on Earth gets its energy."
+        },
+        {
+          "features": ["audience", "persona", "examples"],
+          "output": "Hello, Year 7! I'm Mr. Higgins, and photosynthesis is my favourite topic — so pay attention!\n\nThink of a plant like a chef. A chef takes ingredients (flour, eggs, butter) and uses energy (the cooker) to make a cake. A plant does the same: it takes ingredients (water and CO₂) and uses energy (sunlight) to make glucose — its food.\n\nFor example: the oak tree outside — it's not eating anything. Every gram of that tree was built from carbon dioxide and water, powered by sunlight. Isn't that extraordinary?\n\nRemember: no photosynthesis, no plants. No plants, no food chain. No food chain, no us."
+        },
+        {
+          "features": ["audience", "format", "persona", "constraints", "examples"],
+          "output": "**Photosynthesis: A Year 7 Revision Card**\n*Written as if by your Biology teacher — concise, under 150 words*\n\n**Definition (one sentence):** Photosynthesis is how green plants make glucose from water and CO₂ using light energy.\n\n**Key facts (bullet points only):**\n• Happens in chloroplasts (contain chlorophyll)\n• Inputs: H₂O + CO₂ + light energy\n• Outputs: glucose + O₂\n• Equation: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n\n**Exam tip:** Always mention chlorophyll and chloroplasts — examiners look for these.\n\n**Remember:** Like a solar-powered factory. Sun = power source. CO₂ + water = raw materials. Glucose = product. Oxygen = waste product (that we breathe!)."
+        }
+      ]
+    },
+    {
+      "id": "email",
+      "label": "Professional email",
+      "basePrompt": "Write an email about a meeting",
+      "variants": [
+        {
+          "features": [],
+          "output": "Subject: Meeting\n\nHi,\n\nI wanted to reach out about a meeting. Let me know when you're available.\n\nThanks"
+        },
+        {
+          "features": ["audience"],
+          "output": "Subject: Team Meeting — Q3 Planning\n\nHi everyone,\n\nI'd like to schedule a team meeting to discuss our Q3 planning priorities. This is relevant for all team members involved in the upcoming product roadmap.\n\nPlease let me know your availability this week or next.\n\nBest regards"
+        },
+        {
+          "features": ["format"],
+          "output": "Subject: Meeting Request — Q3 Planning Discussion\n\nDear [Name],\n\n**Purpose:** To align on Q3 priorities and resource allocation\n**Proposed date:** [Date/Time]\n**Duration:** 45 minutes\n**Format:** Video call (link to follow)\n\n**Agenda:**\n1. Review Q2 outcomes (10 min)\n2. Q3 priorities overview (20 min)\n3. Resource and timeline discussion (10 min)\n4. Next steps (5 min)\n\nPlease confirm your attendance or suggest an alternative time.\n\nKind regards,\n[Name]"
+        },
+        {
+          "features": ["persona"],
+          "output": "Subject: Project Sync — Friday?\n\nHey [Name],\n\nAs head of the design team, I try to get everyone aligned before we kick off a new sprint, and I think now's the right moment.\n\nWould Friday at 2pm work for a 30-minute check-in? I want to make sure we're building on the same assumptions before the engineers start scoping.\n\nLet me know — happy to shift if that doesn't work.\n\nCheers,\n[Name]"
+        },
+        {
+          "features": ["audience", "format", "constraints"],
+          "output": "Subject: 30-min Team Sync — Please respond by EOD Thursday\n\nHi all,\n\nQuick meeting request — no more than 30 minutes, I promise.\n\n**What:** Q3 sprint planning sync\n**When:** Friday 14th, 2:00–2:30pm\n**Where:** Google Meet (link below)\n**RSVP needed:** Please reply YES/NO by Thursday 5pm\n\nAgenda (three items only):\n1. What shipped in Q2\n2. Top 3 priorities for Q3\n3. Who owns what\n\nNo prep required. See you Friday.\n[Name]"
+        },
+        {
+          "features": ["audience", "format", "persona", "constraints", "examples"],
+          "output": "Subject: 45-min Strategy Sync — Exec Team — Thursday 10am\n\nDear Executive Team,\n\nAs COO, I am convening a focused session to finalise our Q3 strategic priorities before the all-hands on Friday. This is a decision-making meeting, not a discussion — please come prepared.\n\n**Meeting details:**\n• When: Thursday 10:00–10:45am (hard stop)\n• Where: Boardroom 2 / Zoom (link below)\n• Who: C-suite + Heads of Product, Engineering, Finance\n• Pre-read: Q2 results pack (attached — required reading)\n\n**Three decisions to make:**\n1. Approve or revise Q3 OKRs\n2. Confirm headcount allocation for new product line\n3. Sign off go/no-go on international expansion\n\nFormat example: each item gets 10 minutes max; decisions logged in real time by [EA name].\n\nIf you cannot attend, please send a delegate with authority to decide.\n\nRegards,\n[Name]"
+        }
+      ]
+    },
+    {
+      "id": "newsletter",
+      "label": "College newsletter",
+      "basePrompt": "Write a college newsletter",
+      "variants": [
+        {
+          "features": [],
+          "output": "Welcome to the college newsletter. Here is some information about what has been happening. We have had some events and there are more coming up. Thank you for reading."
+        },
+        {
+          "features": ["audience"],
+          "output": "Hello students and staff!\n\nWelcome to this month's college newsletter. We've got lots of updates for you — from new clubs starting up to important dates for your diary. Whether you're in Year 12 or a returning sixth former, there's something here for everyone. Read on!"
+        },
+        {
+          "features": ["format"],
+          "output": "**Greenfield College — Monthly Newsletter**\n\n**Headlines this month:**\n• 🏆 Debate team wins regional finals\n• 📅 Open Day: 15th November — volunteers needed\n• 🎓 University application support sessions now booking\n• ⚠️ Car park closures: 7–9 November\n\n**Upcoming dates:**\n| Date | Event |\n|------|-------|\n| 1 Nov | Half-term ends |\n| 15 Nov | Open Day |\n| 22 Nov | UCAS deadline — Year 13 |\n\n**Staff spotlight:** Meet our new Head of Art, Ms Okonkwo →"
+        },
+        {
+          "features": ["persona"],
+          "output": "Hi everyone — Principal Aldridge here.\n\nIt's been a remarkable half-term, and as I walk the corridors I'm struck by the energy in this building. From the robotics team's late nights to the theatre group's ambitious production choices, I see students pushing themselves in ways that genuinely impress me.\n\nThis newsletter is a chance for us to share those stories. Because the best schools aren't the ones with the best league table positions — they're the ones where things happen that matter to real people.\n\nOn that note — well done to the Debate Team. Regional champions. Brilliant."
+        },
+        {
+          "features": ["audience", "format", "persona", "constraints"],
+          "output": "**Greenfield College — Autumn Term Newsletter**\n*From Principal Aldridge — November edition — max 300 words*\n\nHello Greenfield community!\n\nThree things I want you to know this month:\n\n**1. You won something big.**\nOur Debate Team brought home the regional trophy last week. First time in eight years. If you see Amara, Josh, or Priya in the corridor — tell them they were brilliant.\n\n**2. Open Day is on the 15th.**\nWe need 40 student ambassadors. If you'd like to represent the college (and get a free lunch), sign up at reception by Friday. No experience needed — just enthusiasm.\n\n**3. Year 13 — your UCAS deadline is 22 November.**\nThat is three weeks away. Book a session with your tutor now, not the night before.\n\n**Quick diary:**\n• 1 Nov — Back after half-term\n• 15 Nov — Open Day (volunteers needed!)\n• 22 Nov — UCAS deadline\n• 5 Dec — Sixth Form Winter Social\n\nSee you in the corridors.\n*Principal Aldridge*"
+        },
+        {
+          "features": ["audience", "format", "persona", "constraints", "examples"],
+          "output": "**Greenfield College — November Newsletter**\n*Tone: warm, direct, like a letter from a trusted friend — under 350 words*\n\n---\n\n**From the Principal's desk**\n\nHello Greenfield,\n\nI'll keep this brief because I know your inboxes are busy.\n\nThe headline: **we won the Regional Debate Championship**. Amara Osei-Mensah, Josh Karim, and Priya Chandrasekaran represented this college with intelligence and grace. The judges called their final argument 'the clearest reasoning we've heard in ten years of this competition.' Print that out and stick it on your wall, team.\n\n---\n\n**What's coming up — your November calendar:**\n\n| Date | Event | Action needed? |\n|------|-------|----------------|\n| 1 Nov | Back from half-term | — |\n| 8 Nov | Year 13 UCAS workshop | Book via portal |\n| 15 Nov | Open Day | Volunteer at reception |\n| 22 Nov | UCAS deadline (Yr 13) | Submit by 6pm |\n| 5 Dec | Sixth Form Winter Social | Tickets £3, Student Services |\n\n---\n\n**Seen around Greenfield this month:**\n\n*Example of the kind of story we love:* Last week, the art department's 'Found Object' exhibition opened in the main corridor. Student Cara Webb's sculpture — built entirely from discarded library books — stopped three visitors in their tracks on the first day. This is the kind of thing that makes us proud.\n\nGot a story like that? Email newsletter@greenfield.ac.uk. We publish everything.\n\n---\n\n**One ask:** We need 40 student ambassadors for Open Day on the 15th. It's a Saturday, we pay in gratitude and sandwiches, and honestly it's a lot of fun. Sign up at reception by Friday.\n\nSee you around,\n*Principal Aldridge*\n\n---\n*Greenfield College Newsletter — published monthly during term time*"
+        }
+      ]
+    }
+  ]
+}

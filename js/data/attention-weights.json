@@ -1,0 +1,122 @@
+{
+  "sentences": [
+    {
+      "id": 0,
+      "text": "The cat sat on the mat because it was tired.",
+      "tokens": ["The", "cat", "sat", "on", "the", "mat", "because", "it", "was", "tired"],
+      "weights": {
+        "0": [0.40, 0.20, 0.10, 0.05, 0.10, 0.05, 0.03, 0.03, 0.02, 0.02],
+        "1": [0.15, 0.40, 0.15, 0.05, 0.05, 0.08, 0.03, 0.05, 0.02, 0.02],
+        "2": [0.08, 0.25, 0.30, 0.10, 0.08, 0.08, 0.04, 0.03, 0.02, 0.02],
+        "3": [0.05, 0.08, 0.15, 0.35, 0.15, 0.12, 0.04, 0.03, 0.02, 0.01],
+        "4": [0.35, 0.10, 0.08, 0.05, 0.20, 0.15, 0.03, 0.02, 0.01, 0.01],
+        "5": [0.08, 0.12, 0.10, 0.10, 0.12, 0.35, 0.05, 0.03, 0.03, 0.02],
+        "6": [0.05, 0.10, 0.08, 0.05, 0.05, 0.08, 0.35, 0.12, 0.07, 0.05],
+        "7": [0.05, 0.42, 0.08, 0.03, 0.05, 0.05, 0.10, 0.12, 0.05, 0.05],
+        "8": [0.03, 0.10, 0.08, 0.03, 0.03, 0.05, 0.10, 0.25, 0.20, 0.13],
+        "9": [0.02, 0.35, 0.08, 0.02, 0.03, 0.05, 0.08, 0.20, 0.10, 0.07]
+      },
+      "interpretations": {
+        "0": "\"The\" looks ahead strongly, anchoring the noun phrase — it attends mainly to itself and nearby words.",
+        "1": "\"cat\" is the subject and draws strong attention. Notice how \"it\" (index 7) attends back here — the model has learned 'it' refers to the cat.",
+        "2": "\"sat\" is the main verb and attends to the subject \"cat\" — subject–verb agreement in action.",
+        "3": "\"on\" is a preposition and looks strongly at the following noun \"mat\" to form the prepositional phrase.",
+        "4": "The second \"the\" attends back to the first article, tracking parallel structure in the sentence.",
+        "5": "\"mat\" attends to itself and \"the\" — it's the object of the preposition phrase.",
+        "6": "\"because\" is a connector. It attends to itself and bridges to \"it\" and \"tired\" — setting up the causal clause.",
+        "7": "\"it\" is ambiguous — watch it attend strongly to \"cat\", not \"mat\". The model resolves this pronoun correctly based on what makes semantic sense as the tired entity.",
+        "8": "\"was\" is the auxiliary verb and attends to \"it\" (its subject) and \"tired\" (its complement).",
+        "9": "\"tired\" is the predicate adjective and attends back to the subject \"cat\" via \"it\" — a long-range dependency."
+      }
+    },
+    {
+      "id": 1,
+      "text": "The nurse told the doctor that she was ready.",
+      "tokens": ["The", "nurse", "told", "the", "doctor", "that", "she", "was", "ready"],
+      "weights": {
+        "0": [0.40, 0.25, 0.10, 0.10, 0.05, 0.03, 0.03, 0.02, 0.02],
+        "1": [0.12, 0.42, 0.18, 0.05, 0.08, 0.04, 0.05, 0.03, 0.03],
+        "2": [0.06, 0.28, 0.25, 0.06, 0.14, 0.06, 0.08, 0.04, 0.03],
+        "3": [0.30, 0.08, 0.08, 0.28, 0.14, 0.04, 0.04, 0.02, 0.02],
+        "4": [0.05, 0.12, 0.15, 0.10, 0.38, 0.08, 0.06, 0.04, 0.02],
+        "5": [0.04, 0.08, 0.12, 0.04, 0.12, 0.35, 0.14, 0.08, 0.03],
+        "6": [0.04, 0.30, 0.10, 0.04, 0.20, 0.08, 0.12, 0.07, 0.05],
+        "7": [0.03, 0.12, 0.08, 0.03, 0.08, 0.10, 0.28, 0.18, 0.10],
+        "8": [0.03, 0.22, 0.06, 0.03, 0.12, 0.06, 0.25, 0.12, 0.11]
+      },
+      "interpretations": {
+        "0": "\"The\" attends to the noun it introduces — \"nurse\".",
+        "1": "\"nurse\" is the subject. Notice the model doesn't yet know who \"she\" refers to.",
+        "2": "\"told\" attends to its subject \"nurse\" and its object \"doctor\" — the verb anchors the main clause.",
+        "3": "The second \"the\" attends to the first \"the\" and introduces \"doctor\".",
+        "4": "\"doctor\" is the indirect object. \"she\" attends to both \"nurse\" and \"doctor\" — genuine ambiguity here.",
+        "5": "\"that\" is a complementiser. It introduces the subordinate clause and attends to the verb \"told\".",
+        "6": "\"she\" is genuinely ambiguous — it attends to both \"nurse\" and \"doctor\". Without more context, the model cannot fully resolve this. This illustrates the limits of attention for social pronoun resolution.",
+        "7": "\"was\" attends to \"she\" (its subject) and links to \"ready\".",
+        "8": "\"ready\" attends back to \"she\", \"nurse\", and \"doctor\" — the model is tracking who is ready."
+      }
+    },
+    {
+      "id": 2,
+      "text": "The keys which I left on the table near the door were missing.",
+      "tokens": ["The", "keys", "which", "I", "left", "on", "the", "table", "near", "the", "door", "were", "missing"],
+      "weights": {
+        "0":  [0.35, 0.28, 0.08, 0.04, 0.05, 0.04, 0.05, 0.04, 0.03, 0.02, 0.01, 0.01, 0.00],
+        "1":  [0.10, 0.38, 0.18, 0.04, 0.06, 0.04, 0.03, 0.05, 0.03, 0.02, 0.03, 0.03, 0.01],
+        "2":  [0.04, 0.38, 0.22, 0.10, 0.08, 0.05, 0.03, 0.04, 0.02, 0.02, 0.01, 0.01, 0.00],
+        "3":  [0.03, 0.08, 0.10, 0.38, 0.20, 0.08, 0.04, 0.04, 0.02, 0.01, 0.01, 0.01, 0.00],
+        "4":  [0.03, 0.12, 0.08, 0.14, 0.25, 0.12, 0.04, 0.10, 0.04, 0.02, 0.02, 0.02, 0.02],
+        "5":  [0.03, 0.06, 0.04, 0.05, 0.10, 0.28, 0.08, 0.18, 0.08, 0.04, 0.04, 0.01, 0.01],
+        "6":  [0.20, 0.05, 0.03, 0.03, 0.04, 0.06, 0.28, 0.18, 0.04, 0.06, 0.02, 0.01, 0.00],
+        "7":  [0.04, 0.10, 0.04, 0.06, 0.14, 0.12, 0.08, 0.28, 0.08, 0.03, 0.01, 0.01, 0.01],
+        "8":  [0.02, 0.05, 0.02, 0.03, 0.06, 0.08, 0.05, 0.14, 0.28, 0.12, 0.12, 0.01, 0.02],
+        "9":  [0.15, 0.04, 0.02, 0.02, 0.03, 0.04, 0.14, 0.08, 0.05, 0.28, 0.14, 0.01, 0.00],
+        "10": [0.02, 0.05, 0.02, 0.02, 0.04, 0.06, 0.05, 0.08, 0.14, 0.10, 0.32, 0.06, 0.04],
+        "11": [0.02, 0.30, 0.06, 0.04, 0.08, 0.04, 0.03, 0.06, 0.03, 0.02, 0.04, 0.20, 0.08],
+        "12": [0.01, 0.32, 0.05, 0.03, 0.06, 0.03, 0.02, 0.05, 0.02, 0.02, 0.03, 0.18, 0.18]
+      },
+      "interpretations": {
+        "0":  "\"The\" introduces \"keys\" and anchors the main noun phrase.",
+        "1":  "\"keys\" is the main subject, buried under a long relative clause. Watch how \"were\" attends strongly back to \"keys\" — essential for grammatical agreement.",
+        "2":  "\"which\" is a relative pronoun. It attends to \"keys\" — establishing the referent of the relative clause.",
+        "3":  "\"I\" is the subject of the embedded clause and attends to itself and the verb \"left\".",
+        "4":  "\"left\" attends to its subject \"I\" and its object location — the table.",
+        "5":  "\"on\" looks at \"table\" — locating the keys in the prepositional phrase.",
+        "6":  "The third \"the\" introduces \"table\" and attends to prior articles.",
+        "7":  "\"table\" is the location and attends back to \"left\" — confirming where the keys were left.",
+        "8":  "\"near\" attends to both \"table\" and \"door\" — bridging the two locational phrases.",
+        "9":  "The fourth \"the\" introduces \"door\" and attends to the article pattern in the sentence.",
+        "10": "\"door\" attends to \"near\" and \"table\" — providing spatial context.",
+        "11": "\"were\" is the main verb. It must attend to \"keys\" across the entire relative clause — a long-range dependency of 10 tokens.",
+        "12": "\"missing\" attends to \"keys\" and \"were\" — confirming that the keys are what is missing."
+      }
+    },
+    {
+      "id": 3,
+      "text": "Edinburgh is to Scotland as Tokyo is to Japan.",
+      "tokens": ["Edinburgh", "is", "to", "Scotland", "as", "Tokyo", "is", "to", "Japan"],
+      "weights": {
+        "0": [0.35, 0.10, 0.05, 0.18, 0.08, 0.12, 0.05, 0.03, 0.04],
+        "1": [0.18, 0.25, 0.12, 0.10, 0.08, 0.08, 0.10, 0.05, 0.04],
+        "2": [0.08, 0.10, 0.25, 0.28, 0.08, 0.05, 0.05, 0.08, 0.03],
+        "3": [0.20, 0.08, 0.08, 0.32, 0.10, 0.05, 0.04, 0.04, 0.09],
+        "4": [0.12, 0.08, 0.06, 0.10, 0.28, 0.12, 0.08, 0.06, 0.10],
+        "5": [0.18, 0.05, 0.04, 0.12, 0.10, 0.35, 0.06, 0.05, 0.05],
+        "6": [0.08, 0.18, 0.10, 0.06, 0.10, 0.18, 0.20, 0.06, 0.04],
+        "7": [0.05, 0.06, 0.18, 0.05, 0.08, 0.08, 0.10, 0.22, 0.18],
+        "8": [0.08, 0.04, 0.03, 0.12, 0.10, 0.20, 0.05, 0.08, 0.30]
+      },
+      "interpretations": {
+        "0": "\"Edinburgh\" attends to itself and \"Scotland\" — the model has encoded the capital–country relationship.",
+        "1": "\"is\" links Edinburgh to the analogical structure and mirrors the second \"is\" in the sentence.",
+        "2": "\"to\" marks the relational structure — it attends to \"Scotland\", completing the analogy half.",
+        "3": "\"Scotland\" attends to \"Edinburgh\" strongly. It also attends to \"Japan\" — the parallel country. The model understands both are nations with capitals.",
+        "4": "\"as\" is the analogy connector. It attends to both halves symmetrically — key to recognising this as an analogy.",
+        "5": "\"Tokyo\" attends strongly to itself and to \"Edinburgh\" — the model recognises both are capitals, enabling analogical reasoning.",
+        "6": "The second \"is\" mirrors the first and attends to \"Tokyo\" and the structural parallel.",
+        "7": "The second \"to\" mirrors the first and attends to \"Japan\" — completing the second half of the analogy.",
+        "8": "\"Japan\" attends to \"Tokyo\" and \"Scotland\" — completing the four-way analogy: Edinburgh:Scotland :: Tokyo:Japan."
+      }
+    }
+  ]
+}
