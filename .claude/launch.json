@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "gen-ai-primer",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", ".", "-p", "3000", "--no-clipboard"],
-      "port": 3000
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["dev-server.js"],
+      "autoPort": true
     }
   ]
 }

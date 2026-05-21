@@ -1,64 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="1">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patterns from Text — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>04 — Patterns from Text · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="4">
-  <header class="page-header">
-    <div class="page-number" data-phase="1">Page 4 of 18</div>
-    <div class="page-title-block">
-      <h1>Patterns from Text</h1>
-      <p class="page-subtitle">How data becomes knowledge</p>
+<body class="bg-tint--06">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4 — Patterns" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-03.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-05.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="1">
-      <p>An LLM's predictions emerge from statistical patterns in vast quantities of text. If "Edinburgh" often follows "capital of Scotland is," the model learns this association — not because someone programmed it, but because the pattern appears in the data.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>No one programmed "Edinburgh is the capital of Scotland" — it learned from patterns</li>
-        <li>More data leads to better predictions</li>
-        <li>Simple pattern matching gets surprisingly far, but real LLMs go much deeper</li>
-        <li>Real LLMs train on a significant fraction of all text ever written</li>
-      </ul>
-    </div>
-
-    <div class="reflection-panel" id="reflection-root"></div>
-
-    <div class="page-teaser">
-      <p>Counting word patterns works, but real LLMs learn something much deeper — the meaning of words. Next: how a word becomes a number.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-03.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-05.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { PatternDetector } from '../js/widgets/pattern-detector.js';
-    import { ReflectionPanel } from '../js/core/reflection.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new PatternDetector(document.getElementById('widget-root'));
-    const reflection = new ReflectionPanel(
-      document.getElementById('reflection-root'),
-      'In one sentence, what is an LLM actually doing when it generates text?'
-    );
+      <header class="page-header">
+        <span class="page-number">04 / 18</span>
+        <h1 class="page-title">Patterns from Text</h1>
+        <p class="page-subtitle">How piles of data turn into something that feels like knowledge.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        An LLM's predictions emerge from <strong>statistical patterns</strong> in vast quantities of text. If "Edinburgh" often follows "capital of Scotland is," the model learns this association — not because someone programmed it, but because the pattern appears in the data.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="No engineer typed <em>'Edinburgh is the capital of Scotland'</em> into a rulebook. The model <strong>derived</strong> the fact from seeing the phrase millions of times across web pages, books, and articles. Everything it 'knows' is learned, not programmed.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Learned, not programmed</span>
+          <span class="concept__sub">no rulebook</span>
+        </div>
+
+        <div class="concept" data-detail="More data <strong>doesn't mean cleaner facts</strong> — it means more statistical signal. A model trained on a billion words notices weak patterns that one trained on a million words misses. That's why frontier models swallow hundreds of billions of tokens.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Scale matters</span>
+          <span class="concept__sub">more = sharper</span>
+        </div>
+
+        <div class="concept" data-detail="Plain word-co-occurrence (n-gram models) already gets a long way — but it's <strong>shallow</strong>. It can't tell synonyms apart, can't handle long-range references, and trips on anything it hasn't literally seen before.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Counting goes far, but not far enough</span>
+          <span class="concept__sub">shallow patterns</span>
+        </div>
+
+        <div class="concept" data-detail="LLMs go deeper than counting — they encode <strong>meaning</strong> (next page) and <strong>relationships</strong> (further on). The 'patterns' aren't just 'X follows Y' but 'words that occupy similar positions in similar contexts'.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">From counts to meaning</span>
+          <span class="concept__sub">deeper layers ahead</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Try it</span><div class="detail-viewport__body">The detector on the right has seen a small corpus. Pick a starting phrase and watch which continuations it predicts — those are the patterns it picked up just from counting.</div>'>
+        <span class="detail-viewport__hint">Try it</span>
+        <div class="detail-viewport__body">The detector on the right has seen a small corpus. Pick a starting phrase and watch which continuations it predicts — those are the patterns it picked up just from counting.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Pattern Detector widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { PatternDetector } from '../js/widgets/pattern-detector.js';
+    new PatternDetector(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 4, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-03.html', 'page-05.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'How does an LLM "know" that Edinburgh is the capital of Scotland?',
+        options: [
+          'A fact database is built into the model',
+          'It has seen the phrase paired together many times in training text',
+          'It looks it up online when asked',
+          'Engineers hand-coded geography rules'
+        ],
+        correct: 1,
+        explain: 'There\'s no rulebook and no live lookup. The model has seen <strong>"Edinburgh"</strong> co-occur with <strong>"capital of Scotland"</strong> millions of times in its training data, and that statistical pull is strong enough to surface as a confident answer.'
+      },
+      {
+        q: 'In one sentence, what is an LLM actually doing when it generates text?',
+        options: [
+          'Looking up answers in a fact database',
+          'Predicting one likely next token at a time, using statistical patterns learned from huge amounts of text',
+          'Translating your prompt into computer code',
+          'Reasoning like a human, only faster'
+        ],
+        correct: 1,
+        explain: 'That\'s the whole game — <strong>predict the next token, repeat</strong>. Everything that looks like reasoning, knowledge, or style is a consequence of doing that step very well with patterns learned from training data.'
+      },
+      {
+        q: 'A simple word-counting (n-gram) model can already complete common phrases well. So why do we need huge transformer LLMs?',
+        options: [
+          'We don\'t — n-grams are equally capable',
+          'Counting alone can\'t handle synonyms, long-range context, or anything it hasn\'t literally seen — you need deeper representations',
+          'N-gram models are slower',
+          'Larger models simply memorise more facts'
+        ],
+        correct: 1,
+        explain: 'Counting co-occurrences is <strong>shallow</strong>. To handle paraphrasing, ambiguity, and long-distance references, the model needs to represent meaning and relationships — not just frequencies. That\'s what the next few pages unpack.'
+      }
+    ]);
   </script>
 </body>
 </html>

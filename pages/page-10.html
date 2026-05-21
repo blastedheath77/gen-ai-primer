@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="3">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temperature: The Creativity Dial — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>10 — Temperature: The Creativity Dial · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="10">
-  <header class="page-header">
-    <div class="page-number" data-phase="3">Page 10 of 18</div>
-    <div class="page-title-block">
-      <h1>Temperature: The Creativity Dial</h1>
-      <p class="page-subtitle">Controlling randomness</p>
+<body class="bg-tint--10">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10 — Temperature" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-09.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-11.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="3">
-      <p>Temperature controls how the model samples from its probability distribution. Low temperature → almost always picks the most likely token (safe, predictable). High temperature → willing to pick less likely tokens (varied, surprising, sometimes nonsensical). This is the mechanical basis of "creativity" in AI.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Temperature is a setting you'll see in most AI tools — now you know what it does</li>
-        <li>It doesn't change what the model "knows" — it changes how it chooses</li>
-        <li>There's no "correct" temperature — it depends on the task (code: low, creative writing: higher)</li>
-        <li>This connects directly to Page 3's probability distributions</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>Temperature controls how the model chooses. But what it's choosing from is shaped by something you control directly: your prompt.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-09.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-11.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { TemperatureDial } from '../js/widgets/temperature-dial.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new TemperatureDial(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">10 / 18</span>
+        <h1 class="page-title">Temperature: The Creativity Dial</h1>
+        <p class="page-subtitle">Controlling randomness — from deterministic to surprising.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Temperature controls <strong>how the model samples</strong> from its probability distribution. It doesn't change what the model knows — it changes how it chooses. This single dial underpins the mechanical basis of "creativity" in AI.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="At temperature 0, the model <strong>always picks the most probable next token</strong>. Output is deterministic and consistent — great for code, summaries, or factual Q&amp;A where you want the same answer every time.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Low = predictable</span>
+          <span class="concept__sub">deterministic, safe, consistent</span>
+        </div>
+
+        <div class="concept" data-detail="Higher temperature <strong>flattens the probability distribution</strong>, making less-likely tokens more competitive. Outputs become more varied and surprising — useful for brainstorming, creative writing, or generating diverse alternatives.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">High = varied</span>
+          <span class="concept__sub">diverse, surprising, sometimes wild</span>
+        </div>
+
+        <div class="concept" data-detail="Temperature only affects how the model samples — it doesn't change what the model has learnt. <strong>Low temperature doesn't make a model smarter</strong>, and high temperature doesn't make it dumber. It changes the choice, not the options.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Changes choice, not knowledge</span>
+          <span class="concept__sub">sampling method, not capabilities</span>
+        </div>
+
+        <div class="concept" data-detail="Professionals use temperature strategically. <strong>Code generation</strong>: low (0.2). <strong>Summarisation</strong>: low (0–0.3). <strong>Creative writing</strong>: medium to high (0.7–1.2). Many tools set it behind the scenes without telling you.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Task-dependent setting</span>
+          <span class="concept__sub">code low, creativity high</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Move the temperature slider on the right and watch the probability bars reshape. A flat distribution = more randomness; a peaked one = more determinism. Hover a concept above for detail.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Move the temperature slider on the right and watch the probability bars reshape. A flat distribution = more randomness; a peaked one = more determinism. Hover a concept above for detail.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Temperature Dial widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { TemperatureDial } from '../js/widgets/temperature-dial.js';
+    new TemperatureDial(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 10, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-09.html', 'page-11.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'You\'re using AI to generate hundreds of marketing slogans for a product launch. Which temperature makes most sense?',
+        options: [
+          '0.0 — to get one consistent result every time',
+          'A higher temperature like 0.9 — for varied, creative output',
+          'Temperature has no effect on creative tasks',
+          'The maximum possible value always produces the best results'
+        ],
+        correct: 1,
+        explain: 'You want <strong>diverse outputs</strong> — many different slogans to choose from. Higher temperature flattens the distribution, letting the model explore less-likely but potentially interesting continuations. Low temperature would give you nearly identical outputs each run.'
+      },
+      {
+        q: 'What does raising the temperature actually do to the probability distribution?',
+        options: [
+          'Pushes the highest-probability token even higher',
+          'Flattens it, making less-likely tokens more competitive',
+          'Erases all low-probability options from consideration',
+          'Makes the model forget what it learned during training'
+        ],
+        correct: 1,
+        explain: 'Temperature divides the logits (raw scores) before the softmax. A higher temperature produces a <strong>flatter distribution</strong> — the gap between likely and unlikely tokens shrinks, so the model samples more unpredictably. Temperature 0 = always pick the top token.'
+      },
+      {
+        q: 'A developer\'s code assistant sometimes gives different answers to the same question. Which setting should they adjust?',
+        options: [
+          'Increase temperature for more consistency',
+          'Lower the temperature to make outputs more deterministic',
+          'Temperature doesn\'t affect code generation',
+          'Switch to a different model version'
+        ],
+        correct: 1,
+        explain: 'High temperature introduces sampling randomness. <strong>Lowering temperature toward 0</strong> makes the model\'s token choices more deterministic — given the same input, you\'ll get the same (or very similar) output. This is standard practice for code generation tools.'
+      }
+    ]);
   </script>
 </body>
 </html>

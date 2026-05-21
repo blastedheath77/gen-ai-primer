@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="4">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond Text: Images, Audio, and Code — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>15 — Beyond Text: Images, Audio, and Code · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="15">
-  <header class="page-header">
-    <div class="page-number" data-phase="4">Page 15 of 18</div>
-    <div class="page-title-block">
-      <h1>Beyond Text: Images, Audio, and Code</h1>
-      <p class="page-subtitle">The universal prediction engine</p>
+<body class="bg-tint--03">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15 — Beyond Text" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-14.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-16.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="4">
-      <p>You've seen how a transformer predicts the next word in a sentence. But the same trick works on <em>anything</em> that can be broken into a sequence. Images become grid patches. Audio becomes spectral slices. Even combinations of text and images get merged into one token stream. The mechanism is always the same: predict the next piece from context.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>"Generative AI" isn't just text — the same principles power image generators, music AI, code assistants</li>
-        <li>Tokenisation is the universal interface: any data that can be broken into pieces can be modelled</li>
-        <li>The transformer's power is domain-agnostic — it's a general-purpose sequence prediction machine</li>
-        <li>AI progress in one domain (text) often transfers to others (images, audio, code)</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>The same mechanism, applied everywhere. Where is generative AI actually being used — and where is it headed?</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-14.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-16.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { UniversalTokeniser } from '../js/widgets/universal-tokeniser.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new UniversalTokeniser(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">15 / 18</span>
+        <h1 class="page-title">Beyond Text</h1>
+        <p class="page-subtitle">The same prediction trick — applied to images, audio, and code.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        You've seen how a transformer predicts the next word. The same mechanism works on <em>anything</em> that can be broken into a sequence. <strong>Images, audio, video, code</strong> — all become token streams. The architecture is domain-agnostic.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="Any data type that can be split into pieces can be tokenised: pixels become <strong>image patches</strong>, audio becomes mel-spectrogram slices, code becomes sub-word tokens. The transformer sees sequences — it doesn't care what the sequences originally were.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Universal tokenisation</span>
+          <span class="concept__sub">any data → sequences → transformer</span>
+        </div>
+
+        <div class="concept" data-detail="DALL-E, Whisper, GitHub Copilot, and Claude all use the same core architecture. The 'generative AI revolution' isn't five different breakthroughs — it's <strong>one breakthrough applied to five different data types</strong>.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">One mechanism, many domains</span>
+          <span class="concept__sub">images, audio, code — same engine</span>
+        </div>
+
+        <div class="concept" data-detail="A multimodal model doesn't process text and images in separate pipelines and combine the results. It <strong>merges both into a single interleaved token stream</strong>, then runs the same attention mechanism over everything at once.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Multimodal = one stream</span>
+          <span class="concept__sub">text and image tokens interleaved</span>
+        </div>
+
+        <div class="concept" data-detail="Advances in language modelling accelerated image generation, and vice versa. Pre-training on images helps language tasks involving spatial concepts. This <strong>cross-domain transfer</strong> is one reason progress across all modalities has been unusually rapid.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Cross-domain transfer</span>
+          <span class="concept__sub">progress in one domain speeds up others</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Use the tokeniser on the right to see how different data types get broken into token sequences. Notice the same structure regardless of whether you&#39;re looking at text, an image patch, or code. Hover to explore.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Use the tokeniser on the right to see how different data types get broken into token sequences. Notice the same structure regardless of whether you're looking at text, an image patch, or code. Hover to explore.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Universal Tokeniser widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { UniversalTokeniser } from '../js/widgets/universal-tokeniser.js';
+    new UniversalTokeniser(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 15, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-14.html', 'page-16.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'How does a text-to-image model like DALL-E relate to a text model like GPT?',
+        options: [
+          'They use completely different architectures with no shared principles',
+          'Both use the transformer\'s sequence-prediction mechanism — applied to image patches instead of (or alongside) words',
+          'Image models don\'t use tokens at all',
+          'Text models inspired only text models; image models developed independently'
+        ],
+        correct: 1,
+        explain: 'Images are split into patches, patches are tokenised, and the transformer predicts the next patch token — exactly as it predicts the next word token. <strong>The architecture is the same</strong>; only the tokenisation strategy differs. This is why progress in text AI transfers so readily to images.'
+      },
+      {
+        q: 'How does a multimodal model process a prompt containing both text and an image?',
+        options: [
+          'It processes text and image in separate pipelines, then merges the outputs at the end',
+          'It merges both into a single interleaved token stream and runs attention over everything at once',
+          'It ignores the image and processes only the text',
+          'It converts the image to a text description first, then discards the image'
+        ],
+        correct: 1,
+        explain: 'Modern multimodal models create a <strong>unified token sequence</strong> — image patch tokens are interleaved with text tokens. The same self-attention mechanism then operates over the whole sequence, allowing image and text information to cross-attend to each other.'
+      },
+      {
+        q: 'What makes the transformer architecture "domain-agnostic"?',
+        options: [
+          'It was specifically designed from the start to handle all data types',
+          'Any sequential data can be tokenised and fed to the same attention mechanism — the architecture doesn\'t care about data type',
+          'Separate sub-models for each domain are trained and then combined',
+          'It\'s the feed-forward layers specifically that handle domain adaptation'
+        ],
+        correct: 1,
+        explain: 'The transformer\'s self-attention operates on sequences of vectors. <strong>What those vectors represent — words, pixels, audio frames, code tokens — is irrelevant to the mechanism</strong>. This generality is why the same architectural breakthrough powered simultaneous advances across text, image, audio, and code.'
+      }
+    ]);
   </script>
 </body>
 </html>

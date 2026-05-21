@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="3">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompting: Shaping the Output — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>11 — Prompting: Shaping the Output · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="11">
-  <header class="page-header">
-    <div class="page-number" data-phase="3">Page 11 of 18</div>
-    <div class="page-title-block">
-      <h1>Prompting: Shaping the Output</h1>
-      <p class="page-subtitle">Your words, their influence</p>
+<body class="bg-tint--04">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11 — Prompting" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-10.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-12.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="3">
-      <p>Because an LLM generates by continuing a sequence, the text you provide — your prompt — fundamentally shapes what follows. A vague prompt gives vague results. A specific, structured prompt guides the model precisely. Prompting isn't a trick; it's the primary interface between human intent and model behaviour.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Prompting is a skill, not a gimmick</li>
-        <li>The model has no hidden understanding of what you "really mean"</li>
-        <li>Specificity wins: the more precise your prompt, the more useful the output</li>
-        <li>Five techniques (audience, format, persona, constraints, examples) cover ~90% of everyday prompting needs</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>You've been writing instructions. But LLMs can do something remarkable: learn new tasks from just a few examples, right there in the prompt.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-10.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-12.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { PromptLab } from '../js/widgets/prompt-lab.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new PromptLab(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">11 / 18</span>
+        <h1 class="page-title">Prompting: Shaping the Output</h1>
+        <p class="page-subtitle">Your words are the primary interface between intent and model behaviour.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Because an LLM generates by <strong>continuing a sequence</strong>, the text you provide fundamentally shapes what follows. A vague prompt gives vague results. A specific, structured prompt guides the model precisely — not by magic, by mechanics.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="The model has no hidden understanding of what you 'really mean.' A prompt like <em>'write something about climate'</em> gives the model enormous latitude — and it'll use it. <strong>Output precision mirrors instruction precision</strong>.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Vague in, vague out</span>
+          <span class="concept__sub">precision of prompt = precision of output</span>
+        </div>
+
+        <div class="concept" data-detail="Good prompting isn't magic words. It's being explicit about audience, format, persona, constraints, and examples — the same clarity you'd want from a <strong>detailed brief to a human professional</strong>.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Prompting is a skill</span>
+          <span class="concept__sub">learnable, not mysterious</span>
+        </div>
+
+        <div class="concept" data-detail="Specifying your audience changes <strong>vocabulary and depth</strong>. Specifying format (bullet points, JSON, a haiku) steers structure. Together, these two alone do more work than most people expect from a prompt.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Audience + format</span>
+          <span class="concept__sub">who reads it and how it's structured</span>
+        </div>
+
+        <div class="concept" data-detail="<strong>Audience</strong> (who reads it) · <strong>Format</strong> (how it's structured) · <strong>Persona</strong> (who the AI plays) · <strong>Constraints</strong> (what to avoid) · <strong>Examples</strong> (show, don't just tell). Cover these five and you'll handle ~90% of prompting situations.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">5 core techniques</span>
+          <span class="concept__sub">audience, format, persona, constraints, examples</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Try the prompt lab on the right — pick a technique and see how the same base request produces very different output when you add specificity. Hover a concept above to explore further.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Try the prompt lab on the right — pick a technique and see how the same base request produces very different output when you add specificity. Hover a concept above to explore further.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Prompt Lab widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { PromptLab } from '../js/widgets/prompt-lab.js';
+    new PromptLab(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 11, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-10.html', 'page-12.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'Which prompt is more likely to produce a useful output?',
+        options: [
+          '"Explain AI"',
+          '"Explain AI to a 16-year-old student with no prior knowledge, in 3 short paragraphs using everyday analogies"',
+          '"Tell me everything about AI"',
+          'All of these would produce identical results'
+        ],
+        correct: 1,
+        explain: 'The second prompt specifies <strong>audience</strong> (16-year-old, no prior knowledge), <strong>format</strong> (3 short paragraphs), and <strong>style</strong> (everyday analogies). The model uses exactly this information to shape its continuation — vague prompts get vague continuations.'
+      },
+      {
+        q: 'A teacher wants a 5-question quiz on volcanoes for 10-year-olds in a numbered list. Which prompting elements are at work?',
+        options: [
+          'Only persona matters here',
+          'Specifying audience (10-year-olds) and format (numbered list, 5 questions) together',
+          'The prompt is too long — shorter is always better',
+          'Topic alone is enough; the model infers the rest'
+        ],
+        correct: 1,
+        explain: '<strong>Audience</strong> (10-year-olds → appropriate vocabulary and difficulty) and <strong>format</strong> (numbered list, exact count) are both doing real work here. Each element constrains the model\'s continuation space further, producing more precisely useful output.'
+      },
+      {
+        q: 'You want an AI customer-service bot to always respond in the voice of a friendly, professional Scottish shop assistant. Which technique applies?',
+        options: [
+          'Constraints — tell it what not to do',
+          'Persona — give it a specific role and voice to adopt',
+          'Examples — show it some sample dialogues',
+          'Format — specify the response structure'
+        ],
+        correct: 1,
+        explain: '<strong>Persona</strong> prompting assigns the model a role with specific characteristics — tone, register, identity. It\'s one of the most powerful techniques because it shifts the model\'s entire distribution of likely continuations toward that character\'s style.'
+      }
+    ]);
   </script>
 </body>
 </html>

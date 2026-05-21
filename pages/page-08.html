@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="2">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layers of Understanding — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>08 — Layers of Understanding · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="8">
-  <header class="page-header">
-    <div class="page-number" data-phase="2">Page 8 of 18</div>
-    <div class="page-title-block">
-      <h1>Layers of Understanding</h1>
-      <p class="page-subtitle">From surface to meaning</p>
+<body class="bg-tint--07">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8 — Layers" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-07.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-09.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="2">
-      <p>An LLM processes text through many layers — sometimes over a hundred. Early layers detect basic patterns like spelling and grammar. Middle layers grasp meaning and relationships. Deep layers handle nuance, reasoning, and complex inference. Each layer refines the understanding passed to it.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Real models have 32–128 layers; we show 4 as a simplification</li>
-        <li>No single layer "knows" the answer — it emerges from progressive refinement</li>
-        <li>Bigger models (more layers) tend to be more capable</li>
-        <li>The actual computations are matrix operations</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>You've seen how a sentence gets processed. But the model had to learn all this from data. How much data? And how does learning actually happen?</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-07.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-09.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { LayerExplorer } from '../js/widgets/layer-explorer.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new LayerExplorer(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">08 / 18</span>
+        <h1 class="page-title">Layers of Understanding</h1>
+        <p class="page-subtitle">From surface patterns to deep meaning — one layer at a time.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        An LLM processes text through <strong>many layers</strong> — sometimes over a hundred. No single layer "knows" the answer. Understanding <em>emerges</em> as each layer refines the representations passed to it by the one before.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="The first few layers act like a spell-checker writ large — they detect obvious <strong>syntactic patterns</strong>: word endings, punctuation relationships, adjacent word combinations. The raw token sequence becomes structured.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Early layers: basics</span>
+          <span class="concept__sub">spelling, grammar, structure</span>
+        </div>
+
+        <div class="concept" data-detail="Midway through the stack, representations begin capturing <strong>semantic relationships</strong> — what is similar to what, cause-and-effect, entity types. These are the layers that encode something like 'understanding.'">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Middle layers: meaning</span>
+          <span class="concept__sub">facts, relationships, entities</span>
+        </div>
+
+        <div class="concept" data-detail="The final layers handle the hardest inference tasks — metaphor, implication, long-range reasoning, irony. This is why bigger models (more layers) handle <strong>subtlety</strong> better than smaller ones.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Deep layers: nuance</span>
+          <span class="concept__sub">inference, irony, abstraction</span>
+        </div>
+
+        <div class="concept" data-detail="Nobody programmed 'layer 7 handles coreference.' The division of labour between layers <strong>emerged from training</strong>. Each layer learnt what to specialise in by being useful to the layers above it.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Emergent, not designed</span>
+          <span class="concept__sub">specialisation falls out of training</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Use the widget to step through layers and watch how the same sentence gets processed at different depths. Hover a concept above to explore further.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Use the widget to step through layers and watch how the same sentence gets processed at different depths. Hover a concept above to explore further.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Layer Explorer widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { LayerExplorer } from '../js/widgets/layer-explorer.js';
+    new LayerExplorer(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 8, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-07.html', 'page-09.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'A 96-layer model is shown the metaphor "Life is a journey." Which layers are most involved in interpreting the <em>metaphorical</em> meaning?',
+        options: [
+          'The first few layers — they handle everything',
+          'The final deep layers, which specialise in nuance and abstraction',
+          'Only the middle layer',
+          'None — models can\'t understand metaphor'
+        ],
+        correct: 1,
+        explain: 'Early layers handle surface-level features like word form and adjacent patterns. <strong>Deep layers</strong> are where abstract concepts like metaphor, irony, and implication get processed — they build on the refined representations from all the layers below.'
+      },
+      {
+        q: 'Why do larger LLMs (more layers) generally handle nuanced reasoning better?',
+        options: [
+          'They respond faster',
+          'More layers allow progressively deeper refinement of meaning',
+          'Bigger models have better fonts',
+          'They have fewer parameters to confuse them'
+        ],
+        correct: 1,
+        explain: 'Each layer refines the representation passed from the one before. <strong>More layers = more refinement stages</strong>. With enough depth, abstract concepts, long-range relationships, and subtle inferences that would be lost in a shallow model can be captured.'
+      },
+      {
+        q: 'What actually happens computationally inside each transformer layer?',
+        options: [
+          'Database lookups against a stored knowledge base',
+          'Matrix multiplications applied to token representations',
+          'Dictionary searches for word meanings',
+          'Random sampling from training data'
+        ],
+        correct: 1,
+        explain: 'The transformer is essentially a sequence of <strong>matrix operations</strong>: attention (a weighted combination of value vectors) plus a feed-forward network, all applied to the token representations. No lookup tables, no explicit rules — just learned numerical transformations.'
+      }
+    ]);
   </script>
 </body>
 </html>

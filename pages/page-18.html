@@ -1,59 +1,175 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="4">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Big Picture: Concept Map — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>18 — The Big Picture: Concept Map · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="18">
-  <header class="page-header">
-    <div class="page-number" data-phase="4">Page 18 of 18</div>
-    <div class="page-title-block">
-      <h1>The Big Picture: Concept Map</h1>
-      <p class="page-subtitle">Everything connects</p>
+<body class="bg-tint--05">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18 — The Big Picture" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-17.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow nav__arrow--disabled" href="../index.html" aria-label="Back to start" aria-disabled="true">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="4">
-      <p>You now understand generative AI — not just as a user, but mechanically. From tokens to attention to temperature to alignment, you have a mental model of what's happening every time you interact with an LLM.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Every concept in this guide connects to the same core mechanism: next-token prediction</li>
-        <li>The concept map is the synthesis — follow the edges to trace how ideas depend on each other</li>
-        <li>Bookmark this page. Come back when someone asks you how AI works.</li>
-        <li>Understanding the mechanism makes you a better user, collaborator, and critic of AI systems</li>
-      </ul>
-    </div>
-
-    <div class="completion-message" style="text-align:center; padding: 2rem; background: var(--color-surface-2); border-radius: var(--radius-lg); margin-top: 2rem;">
-      <p style="font-size: 1.5rem; font-weight: 600;">You understand how generative AI works.</p>
-      <p style="color: var(--color-text-muted); margin-top: 0.5rem;">Revisit any page, share this guide, or put your knowledge to work.</p>
-      <a href="../index.html" style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--color-primary); color: white; border-radius: var(--radius-full); text-decoration: none; font-weight: 600;">← Back to Start</a>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-17.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next disabled" aria-disabled="true" onclick="window.location.href='../index.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { ConceptMap } from '../js/widgets/concept-map.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new ConceptMap(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">18 / 18</span>
+        <h1 class="page-title">The Big Picture</h1>
+        <p class="page-subtitle">Everything connects — and it all traces back to one idea.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        You now understand generative AI — not just as a user, but <strong>mechanically</strong>. From tokens to attention to temperature to alignment, every concept in this guide is a consequence of one core idea: <em>predict the next token, very well, at massive scale</em>.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="Embeddings, attention, layers, temperature, hallucination, alignment — every concept in this guide is a <strong>consequence or extension</strong> of next-token prediction. Follow the concept map edges and you'll always end up back at the same source.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Everything traces back</span>
+          <span class="concept__sub">one mechanism, all consequences</span>
+        </div>
+
+        <div class="concept" data-detail="You now have a <strong>mechanical understanding</strong>: not just that AI produces text, but how the architecture works, where its capabilities come from, and where it breaks. This makes you a more capable user, collaborator, and critic.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Mental model complete</span>
+          <span class="concept__sub">user → informed practitioner</span>
+        </div>
+
+        <div class="concept" data-detail="Multimodal, reasoning, and agent-based capabilities are the current frontier. But the <strong>core mechanism hasn't changed</strong>. Understanding it means new developments will make sense to you faster than to those who never dug in.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Still evolving rapidly</span>
+          <span class="concept__sub">foundation stays — capabilities grow</span>
+        </div>
+
+        <div class="concept" data-detail="The point isn't to be impressed or scared. It's to <strong>use AI wisely</strong>: knowing when to trust outputs, when to verify, how to prompt better, and when to choose a different tool entirely. That's the practical payoff of mechanistic understanding.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Use this knowledge</span>
+          <span class="concept__sub">trust, verify, prompt, choose</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Explore the concept map on the right. Follow the edges — each connection shows how one idea depends on another, all tracing back to next-token prediction. Bookmark this page.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Explore the concept map on the right. Follow the edges — each connection shows how one idea depends on another, all tracing back to next-token prediction. Bookmark this page.</div>
+      </div>
+
+      <a href="../index.html" class="btn btn-primary" style="margin-top: auto; text-align: center;">&#8592; Back to start</a>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Concept Map widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { ConceptMap } from '../js/widgets/concept-map.js';
+    new ConceptMap(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 18, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-17.html', null);
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'Which single mechanism underlies everything covered in this course — tokens, attention, temperature, hallucination, alignment?',
+        options: [
+          'Database lookup against a stored knowledge base',
+          'Next-token prediction — learning to predict the most likely next piece of a sequence',
+          'Pattern matching using programmed if/else rules',
+          'Human supervision applied at inference time'
+        ],
+        correct: 1,
+        explain: 'Every concept in this guide is either a component of the <strong>next-token prediction</strong> system (tokenisation, embeddings, attention, layers) or a consequence of it (hallucination, temperature effects, in-context learning, alignment challenges). One mechanism; everything else follows.'
+      },
+      {
+        q: 'Why does understanding how an LLM works make you a more effective AI user?',
+        options: [
+          'It doesn\'t — practical skills are all that matter for everyday use',
+          'Mechanistic understanding helps you predict when outputs will be reliable, how to prompt better, and when to verify',
+          'Understanding training means you can retrain models yourself on your own data',
+          'It only matters for ML researchers, not everyday users'
+        ],
+        correct: 1,
+        explain: 'When you know <em>why</em> hallucination happens, you know when to verify. When you know <em>why</em> vague prompts give vague outputs, you write better prompts. <strong>Mechanistic understanding converts surprising AI behaviour into predictable, manageable behaviour</strong> — that\'s the practical payoff.'
+      },
+      {
+        q: 'Future AI models will likely have new capabilities the current generation doesn\'t. Will understanding today\'s transformer mechanism still help you?',
+        options: [
+          'No — future models will be completely different, making current knowledge useless',
+          'Yes — the core architecture is the foundation; new capabilities build on it, so understanding the base helps you make sense of developments faster',
+          'Only if you also learn the new models\'s specific architecture in full',
+          'It will only help if you work in AI research'
+        ],
+        correct: 1,
+        explain: 'Even as capabilities advance dramatically, the <strong>core transformer mechanism remains the foundation</strong>. Multimodal, reasoning, and agentic capabilities are built on top of — not instead of — the architecture you\'ve learnt. A strong foundation lets you build understanding of new developments quickly.'
+      }
+    ]);
   </script>
 </body>
 </html>

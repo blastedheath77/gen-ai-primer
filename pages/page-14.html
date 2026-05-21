@@ -1,65 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="3">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alignment: Steering the Model — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>14 — Alignment: Steering the Model · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="14">
-  <header class="page-header">
-    <div class="page-number" data-phase="3">Page 14 of 18</div>
-    <div class="page-title-block">
-      <h1>Alignment: Steering the Model</h1>
-      <p class="page-subtitle">Teaching AI to be helpful</p>
+<body class="bg-tint--06">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14 — Alignment" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-13.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-15.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="3">
-      <p>A raw LLM trained only on prediction can generate toxic, unhelpful, or dangerous content — it just produces what's statistically likely. Alignment steers the model toward helpful, honest, and harmless behaviour. The key technique: humans rate model outputs, and the model learns to prefer highly-rated responses.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>RLHF (Reinforcement Learning from Human Feedback) is the dominant alignment technique</li>
-        <li>The learner just performed the human side of RLHF</li>
-        <li>Alignment is an ongoing process, not a one-time fix</li>
-        <li>Over-alignment is a real problem: models that refuse too much are less useful</li>
-        <li>Alignment shifts probabilities toward better behaviour, doesn't make models infallible</li>
-      </ul>
-    </div>
-
-    <div class="reflection-panel" id="reflection-root"></div>
-
-    <div class="page-teaser">
-      <p>You now understand how text-based AI works. But generative AI has moved beyond text.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-13.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-15.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { FeedbackLoop } from '../js/widgets/feedback-loop.js';
-    import { ReflectionPanel } from '../js/core/reflection.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new FeedbackLoop(document.getElementById('widget-root'));
-    const reflection = new ReflectionPanel(
-      document.getElementById('reflection-root'),
-      'Why might an aligned model refuse a request that a raw model would answer?'
-    );
+      <header class="page-header">
+        <span class="page-number">14 / 18</span>
+        <h1 class="page-title">Alignment: Steering the Model</h1>
+        <p class="page-subtitle">Teaching AI to be helpful — through human feedback, not rules.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        A raw LLM trained only on prediction will also produce toxic, harmful, or misleading content — because those patterns exist in training data. <strong>Alignment steers the model</strong> toward helpful, honest, and harmless behaviour by learning what humans prefer.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="In RLHF, humans rate pairs of model responses. A <strong>reward model</strong> learns to predict human preferences. The main model then fine-tunes to maximise that score — effectively learning what kinds of responses humans find good. You just did the human side.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Human feedback loop</span>
+          <span class="concept__sub">RLHF — learning from human ratings</span>
+        </div>
+
+        <div class="concept" data-detail="Alignment doesn't delete problematic knowledge from the model. It <strong>shifts the probability</strong> of generating problematic outputs very low. This is why 'jailbreaks' sometimes work — unusual prompts can shift the model toward its pre-alignment distribution.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Shifts probabilities</span>
+          <span class="concept__sub">suppresses, doesn't erase</span>
+        </div>
+
+        <div class="concept" data-detail="Alignment is <strong>ongoing engineering</strong>, not a one-time fix. Models are continuously evaluated, re-tuned, and updated as new failure modes are discovered. Getting alignment right at deployment doesn't mean it stays right as the world changes.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Ongoing, not one-time</span>
+          <span class="concept__sub">continuous evaluation and re-tuning</span>
+        </div>
+
+        <div class="concept" data-detail="An overly cautious model refuses too many legitimate requests — reducing usefulness. AI labs calibrate: <strong>safe enough to be trustworthy, permissive enough to be genuinely useful</strong>. Getting this balance right is an ongoing engineering and ethical challenge.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Over-alignment tradeoff</span>
+          <span class="concept__sub">too cautious = too useless</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Rate the responses in the feedback loop widget on the right — you&#39;re performing the same task human raters do in RLHF. Hover a concept above to understand the mechanism behind your clicks.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Rate the responses in the feedback loop widget on the right — you're performing the same task human raters do in RLHF. Hover a concept above to understand the mechanism behind your clicks.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Feedback Loop widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { FeedbackLoop } from '../js/widgets/feedback-loop.js';
+    new FeedbackLoop(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 14, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-13.html', 'page-15.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'What is the core purpose of RLHF (Reinforcement Learning from Human Feedback)?',
+        options: [
+          'To make the model respond faster',
+          'To steer the model toward outputs humans rate as helpful, honest, and harmless',
+          'To teach the model new factual knowledge after training',
+          'To replace human workers with automated responses'
+        ],
+        correct: 1,
+        explain: 'RLHF trains a reward model on human preference ratings, then fine-tunes the LLM to maximise that reward. The result is a model that <strong>preferentially generates responses humans find good</strong> — not because it has better values, but because it\'s learnt what humans reward.'
+      },
+      {
+        q: 'A user complains that an aligned model refuses to explain how to safely dispose of household chemicals. What is this an example of?',
+        options: [
+          'Good alignment working exactly as designed',
+          'Over-alignment — refusing a legitimate, safety-focused request',
+          'The model not having the relevant knowledge',
+          'A system error unrelated to alignment'
+        ],
+        correct: 1,
+        explain: '<strong>Over-alignment</strong> happens when the model\'s calibration is too conservative — it refuses requests that are clearly legitimate out of excessive caution. AI labs work hard to find the balance between safety and usefulness; this kind of refusal represents the balance being poorly set.'
+      },
+      {
+        q: 'Why can clever prompt engineering sometimes bypass an aligned model\'s safety refusals?',
+        options: [
+          'Alignment makes models completely unable to reason about the request',
+          'Alignment shifts probabilities but doesn\'t delete the underlying capability — unusual prompts can sometimes shift the model toward its pre-alignment distribution',
+          'All models can be bypassed equally easily with the same tricks',
+          'Bypassing only works on older, smaller models'
+        ],
+        correct: 1,
+        explain: 'Alignment adjusts probability distributions — it doesn\'t remove the underlying knowledge or capability. A <strong>jailbreak</strong> attempts to construct a context where the aligned behaviour\'s probability is suppressed and the pre-alignment behaviour becomes likely again. It\'s a battle of distributions.'
+      }
+    ]);
   </script>
 </body>
 </html>

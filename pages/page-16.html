@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="4">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-World Applications — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>16 — Real-World Applications · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="16">
-  <header class="page-header">
-    <div class="page-number" data-phase="4">Page 16 of 18</div>
-    <div class="page-title-block">
-      <h1>Real-World Applications</h1>
-      <p class="page-subtitle">AI across every domain</p>
+<body class="bg-tint--02">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16 — Applications" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-15.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-17.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="4">
-      <p>Generative AI isn't one tool — it's a capability that reshapes work across every field. Understanding the mechanism (which you now do) lets you evaluate which applications are solid, which are overhyped, and where the real opportunities lie.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>AI capability varies enormously by application</li>
-        <li>"Green" tasks are ones where the prediction mechanism naturally excels (text transformation, summarisation, ideation)</li>
-        <li>"Red" tasks involve factual claims or high-stakes decisions where hallucination is dangerous</li>
-        <li>The best use of AI is typically collaborative: human expertise + AI capability</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>AI can do impressive things. But it also has real limits and raises genuine ethical questions. Let's be honest about both.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-15.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-17.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { AppExplorer } from '../js/widgets/app-explorer.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new AppExplorer(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">16 / 18</span>
+        <h1 class="page-title">Real-World Applications</h1>
+        <p class="page-subtitle">AI across every domain — knowing where it thrives and where it fails.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Generative AI isn't one tool — it's a capability that <strong>reshapes work across every field</strong>. Understanding the mechanism lets you evaluate which applications are solid, which are overhyped, and where the real opportunities are.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="LLMs excel at <strong>text transformation tasks</strong> — summarising, translating, reformatting, generating alternatives. They're weaker at precise factual retrieval, multi-step arithmetic, or tasks requiring current information. Knowing this spectrum makes you a strategic AI user.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Capability varies by task</span>
+          <span class="concept__sub">strong at transformation, weak at facts</span>
+        </div>
+
+        <div class="concept" data-detail="Tasks where hallucination risk is low or verifiable: <strong>drafting, brainstorming, code generation, summarising documents you already have, rewriting for tone</strong>. The output can be checked without special expertise. These are AI's natural home.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">"Green" tasks</span>
+          <span class="concept__sub">transformation, generation, ideation</span>
+        </div>
+
+        <div class="concept" data-detail="Tasks involving <strong>specific facts, citations, legal or medical advice, or high-stakes decisions</strong>. Confident-sounding wrong outputs are dangerous here. Treat AI as a starting point only — always verify through authoritative sources.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">"Red" tasks</span>
+          <span class="concept__sub">facts, advice, high-stakes decisions</span>
+        </div>
+
+        <div class="concept" data-detail="The most effective AI use isn't replacing the human — it's <strong>AI's speed and breadth combined with human judgement and domain expertise</strong>. AI drafts; human refines. AI suggests; human decides. This hybrid consistently outperforms either working alone.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Human + AI collaboration</span>
+          <span class="concept__sub">hybrid beats either alone</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Explore real-world applications in the widget on the right. Rate each use case — does it play to AI&#39;s strengths or expose its weaknesses? Hover a concept above to frame your thinking.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Explore real-world applications in the widget on the right. Rate each use case — does it play to AI's strengths or expose its weaknesses? Hover a concept above to frame your thinking.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="App Explorer widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { AppExplorer } from '../js/widgets/app-explorer.js';
+    new AppExplorer(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 16, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-15.html', 'page-17.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'A paralegal uses AI to find specific case law citations for a court brief. What risk applies?',
+        options: [
+          'None — AI is highly accurate for legal research',
+          'Hallucination — the model may generate plausible but entirely non-existent case citations',
+          'The model will refuse to engage with legal questions',
+          'It can only retrieve very recent cases'
+        ],
+        correct: 1,
+        explain: 'Legal citation is a classic <strong>red task</strong>. The model knows the <em>form</em> of a citation perfectly — but facts, case names, and references can be entirely invented. Paralegal work requires verifying every citation against authoritative legal databases. AI can help draft; a human must verify.'
+      },
+      {
+        q: 'Which of the following is a "green" use of generative AI?',
+        options: [
+          'Checking whether a prescribed medication dose is correct for a patient',
+          'Generating five alternative headlines for an article you\'ve already written',
+          'Verifying a scientific claim you\'re unsure about',
+          'Calculating precise tax liability from financial records'
+        ],
+        correct: 1,
+        explain: 'Generating headline alternatives is a <strong>green task</strong>: the output is creative and easy to evaluate — you can simply read them and choose the best. There are no factual stakes, and the AI\'s speed and variety are genuine advantages. The human makes the final call.'
+      },
+      {
+        q: 'Why does the "human + AI" collaboration model often outperform AI working alone?',
+        options: [
+          'Humans slow AI down, forcing it to be more careful',
+          'Human judgement and domain expertise catch AI errors and add context that improves overall outcomes',
+          'AI automatically defers to human opinions once connected',
+          'This model is only useful for creative or artistic tasks'
+        ],
+        correct: 1,
+        explain: 'AI brings speed, breadth, and generation capacity. Humans bring <strong>domain expertise, critical evaluation, and responsibility</strong>. Neither alone matches the combination: AI drafts at scale; humans verify, refine, and make the decisions that matter.'
+      }
+    ]);
   </script>
 </body>
 </html>

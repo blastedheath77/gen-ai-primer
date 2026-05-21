@@ -1,56 +1,188 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="1">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Prediction Game — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>01 — The Prediction Game · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    /* PredictionGame widget fills the hero card */
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right .pg-widget { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="1">
-  <header class="page-header">
-    <div class="page-number" data-phase="1">Page 1 of 18</div>
-    <div class="page-title-block">
-      <h1>The Prediction Game</h1>
-      <p class="page-subtitle">What AI actually does</p>
+<body class="bg-tint--01">
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1 — The Prediction Game" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <span class="nav__arrow nav__arrow--disabled" aria-hidden="true">&larr;</span>
+      <a class="nav__arrow" href="page-02.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="1">
-      <p>A large language model does one thing at its core: given a sequence of words, it predicts what comes next. Conversations, essays, and code all emerge from repeating this single act.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>The model isn't "thinking" — it's calculating statistical likelihood</li>
-        <li>Even you can predict common phrases, which is what the model scales up enormously</li>
-        <li>Ambiguous sentences reveal that multiple valid continuations exist</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>But how does the model even read a sentence? It doesn't see words the way you do.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <a href="../index.html" class="nav-prev">←</a>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-02.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { PredictionGame } from '../js/widgets/prediction-game.js';
+  <!-- BODY -->
+  <div class="page-wrapper">
 
-    initNavigation();
-    const widget = new PredictionGame(document.getElementById('widget-root'));
+    <!-- LEFT PANEL -->
+    <div class="panel panel--left">
+
+      <header class="page-header">
+        <span class="page-number">01 / 18</span>
+        <h1 class="page-title">The Prediction Game</h1>
+        <p class="page-subtitle">What AI actually does, under the hood.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        A large language model does <strong>one thing</strong> at its core: given a sequence of words, it predicts what comes next. Conversations, essays, and code all emerge from repeating this single act.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="The model receives a sequence of tokens and outputs a probability for <strong>every</strong> word in its vocabulary. The highest-probability word isn't picked automatically — but it's the foundation of every response you've ever read.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Next-token prediction</span>
+          <span class="concept__sub">core loop</span>
+        </div>
+
+        <div class="concept" data-detail="The output is a <strong>distribution</strong>, not a single answer. After 'The cat sat on the…' you might see <code>mat (42%)</code>, <code>floor (18%)</code>, <code>sofa (11%)</code>, and thousands more with tiny probabilities.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Probability distribution</span>
+          <span class="concept__sub">not one answer</span>
+        </div>
+
+        <div class="concept" data-detail="Those probabilities come from <strong>patterns in the training data</strong>. The model has seen 'cat sat on the mat' far more often than 'cat sat on the toaster', so common phrasings rank higher. There's no understanding — just counting at scale.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Statistical patterns</span>
+          <span class="concept__sub">no understanding</span>
+        </div>
+
+        <div class="concept" data-detail="To produce text, the model <strong>samples</strong> one token from the distribution and feeds it back as input. Always pick the top word and you get bland, repetitive prose; sample with some randomness and you get variety — and the occasional surprise.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Sampling</span>
+          <span class="concept__sub">pick → repeat</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Try it</span><div class="detail-viewport__body">Hover any concept on the left to read more here. Or play the game on the right — guess what word the model would pick next, then see the real distribution.</div>'>
+        <span class="detail-viewport__hint">Try it</span>
+        <div class="detail-viewport__body">Hover any concept on the left to read more here. Or play the game on the right — guess what word the model would pick next, then see the real distribution.</div>
+      </div>
+
+    </div><!-- /panel--left -->
+
+    <!-- RIGHT PANEL -->
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Prediction Game widget">
+        <!-- widget mounts here -->
+      </section>
+    </div>
+
+  </div><!-- /page-wrapper -->
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { PredictionGame } from '../js/widgets/prediction-game.js';
+    new PredictionGame(document.getElementById('widget-root'));
+  </script>
+  <script>
+    /* Visit tracking — reuses the existing ai-primer-visited key */
+    (function () {
+      const PAGE = 1;
+      const KEY = 'ai-primer-visited';
+      let visited = [];
+      try { visited = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!visited.includes(PAGE)) { visited.push(PAGE); localStorage.setItem(KEY, JSON.stringify(visited)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const marker = link.querySelector('.nav__dot-marker');
+        if (marker && visited.includes(i + 1) && i + 1 !== PAGE) marker.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    /* Concept hover → detail viewport */
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const conceptList = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      conceptList.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    /* Register keyboard navigation neighbours */
+    if (typeof updateNav === 'function') updateNav(null, 'page-02.html');
+
+    /* Knowledge-check quiz */
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'A language model has just been given the prompt <code>"The cat sat on the"</code>. What does it actually output at this step?',
+        options: [
+          'The single most likely next word',
+          'A probability score for every word in its vocabulary',
+          'A complete sentence',
+          'A search of the internet for similar phrases'
+        ],
+        correct: 1,
+        explain: 'The model produces a <strong>probability distribution</strong> over its entire vocabulary — thousands of words, each with a score. Which one actually gets used depends on a separate sampling step.'
+      },
+      {
+        q: 'You ask the same model the same question twice and get two different answers. Why?',
+        options: [
+          'The model has changed its mind',
+          'There\'s a bug in the model',
+          'The model samples from a distribution — different draws give different words',
+          'The model is searching different parts of the internet each time'
+        ],
+        correct: 2,
+        explain: 'Output isn\'t deterministic by default. The model <strong>samples</strong> from its probability distribution, so multiple valid continuations can win on different runs. Set temperature to 0 and you\'d get the same answer every time.'
+      },
+      {
+        q: 'When you guessed the same word as the model\'s top prediction, what did that demonstrate?',
+        options: [
+          'You are thinking exactly like the AI',
+          'Common phrases have statistical patterns both humans and models pick up on',
+          'The AI is copying you',
+          'The sentence has only one possible continuation'
+        ],
+        correct: 1,
+        explain: 'You and the model both <strong>recognise statistical patterns</strong> in language — common phrasings are common because they\'re used a lot. The model has no understanding; it has just seen them more often than the alternatives.'
+      }
+    ]);
   </script>
 </body>
 </html>

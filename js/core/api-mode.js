@@ -69,6 +69,38 @@ export const apiMode = {
         );
         return Promise.all(promises);
     },
+
+    // ---- Gemini next-token predictions (used by page 3) ----
+    // The browser does NOT hold the key — it calls our /api/gemini-predict
+    // serverless function, which proxies to Gemini using a server-side env var.
+
+    /**
+     * Calls the local /api/gemini-predict serverless function for top-K next
+     * continuation candidates.
+     * @param {string} text - The text to continue.
+     * @param {number} [topK=10]
+     * @returns {Promise<Array<{token:string, prob:number}>>}
+     */
+    async geminiPredictNext(text, topK = 10) {
+        const res = await fetch('/api/gemini-predict', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, topK })
+        });
+        if (!res.ok) {
+            let msg = `HTTP ${res.status}`;
+            try {
+                const data = await res.json();
+                if (data && data.error) msg = data.error;
+            } catch (_) { /* non-JSON error body */ }
+            throw new Error(msg);
+        }
+        const data = await res.json();
+        if (!Array.isArray(data.predictions) || !data.predictions.length) {
+            throw new Error('No predictions returned.');
+        }
+        return data.predictions;
+    },
 };
 
 // ============================================================

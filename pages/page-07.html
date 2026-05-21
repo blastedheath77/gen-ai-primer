@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="2">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attention: What Relates to What — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>07 — Attention: What Relates to What · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="7">
-  <header class="page-header">
-    <div class="page-number" data-phase="2">Page 7 of 18</div>
-    <div class="page-title-block">
-      <h1>Attention: What Relates to What</h1>
-      <p class="page-subtitle">Selective focus in action</p>
+<body class="bg-tint--04">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7 — Attention" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-06.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-08.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="2">
-      <p>Attention is the mechanism that lets a model decide, for each word, which other words in the sentence matter most to its meaning. In "The cat sat on the mat because it was tired," attention connects "it" to "cat" — not "mat." This selective focus is what makes modern AI so capable.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Attention is learnt, not programmed</li>
-        <li>"Self-attention" means every word attends to every other word simultaneously</li>
-        <li>Real models have multiple attention heads running in parallel</li>
-        <li>This is the core innovation of the transformer architecture (2017)</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>Attention works at one level. But LLMs stack many layers of this — each one understanding at a different depth.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-06.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-08.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { AttentionVis } from '../js/widgets/attention-vis.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new AttentionVis(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">07 / 18</span>
+        <h1 class="page-title">Attention: What Relates to What</h1>
+        <p class="page-subtitle">Selective focus — the mechanism that made the transformer work.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        In "The cat sat on the mat because it was tired," attention connects <strong><em>it</em> to <em>cat</em></strong> — not <em>mat</em>. That selective focus is <strong>learnt</strong>, not programmed. Nobody wrote a rule; the model discovered the relationship by predicting text at massive scale.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="Attention weights are parameters the model <strong>learns during training</strong>, not rules someone wrote. Nobody told the model that <em>it</em> connects to <em>cat</em> — the model discovered that relationship by being exposed to millions of sentences.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Learnt, not programmed</span>
+          <span class="concept__sub">emerges from exposure to text</span>
+        </div>
+
+        <div class="concept" data-detail="Every token attends to every other token <strong>simultaneously</strong>. Each word gets to 'look' at all other words and decide how much each one contributes to its own meaning — that's self-attention.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Self-attention</span>
+          <span class="concept__sub">all words attend to all words</span>
+        </div>
+
+        <div class="concept" data-detail="Real models run 8, 16, or even 32 attention heads in parallel. Each head looks for <strong>different relationship types</strong> — some for syntax, some for coreference, some for topic. Results are combined.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Multiple heads in parallel</span>
+          <span class="concept__sub">different heads, different patterns</span>
+        </div>
+
+        <div class="concept" data-detail="The attention mechanism as used today comes from <em>Attention Is All You Need</em> (Vaswani et al., 2017). Before it, models processed tokens sequentially. Attention processes them <strong>all at once</strong>, enabling massive parallelisation.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">The transformer (2017)</span>
+          <span class="concept__sub">the core architectural innovation</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Use the widget on the right to see how attention connects different words in a sentence. Hover a concept above to learn more.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Use the widget on the right to see how attention connects different words in a sentence. Hover a concept above to learn more.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Attention Vis widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { AttentionVis } from '../js/widgets/attention-vis.js';
+    new AttentionVis(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 7, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-06.html', 'page-08.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'In "The cat sat on the mat because it was tired," what does the attention mechanism determine?',
+        options: [
+          'The most common word in the sentence',
+          'That <em>it</em> relates most strongly to <em>cat</em> rather than <em>mat</em>',
+          'The correct spelling of each word',
+          'The total length of the sentence'
+        ],
+        correct: 1,
+        explain: 'Attention assigns weights to word pairs. <em>It</em> being a pronoun for an entity that can be tired pulls its attention toward <em>cat</em> (a living thing) over <em>mat</em> (an object). This disambiguation happens through <strong>learned weights</strong>, not rules.'
+      },
+      {
+        q: 'What does "self-attention" mean in the context of a transformer?',
+        options: [
+          'The model pays attention only to itself',
+          'Each token attends to every other token in the same sequence simultaneously',
+          'The model ignores the input and checks its own memory',
+          'It means the model corrects its own spelling'
+        ],
+        correct: 1,
+        explain: 'Self-attention means <strong>every token in a sequence looks at every other token</strong> and computes a weighted sum of their representations. There is no external "attention signal" — the sequence attends to itself.'
+      },
+      {
+        q: 'Why does the transformer run multiple attention heads in parallel?',
+        options: [
+          'To make the model run slower and more carefully',
+          'Each head learns to detect different relationship types — syntax, coreference, topic, etc.',
+          'Only one head processes the input; the others are backup',
+          'To reduce the number of parameters needed'
+        ],
+        correct: 1,
+        explain: 'Multiple heads let the model <strong>look for different kinds of relationships simultaneously</strong>. One head might track who-does-what; another tracks what-modifies-what. Their outputs are concatenated, giving the model a richer view of the sequence.'
+      }
+    ]);
   </script>
 </body>
 </html>

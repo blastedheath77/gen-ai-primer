@@ -1,58 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="4">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Limitations, Bias &amp; Responsible Use — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>17 — Limitations, Bias &amp; Responsible Use · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="17">
-  <header class="page-header">
-    <div class="page-number" data-phase="4">Page 17 of 18</div>
-    <div class="page-title-block">
-      <h1>Limitations, Bias &amp; Responsible Use</h1>
-      <p class="page-subtitle">The honest conversation</p>
+<body class="bg-tint--08">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17 — Limitations" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-16.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-18.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="4">
-      <p>Generative AI has structural limitations — not just current weaknesses that'll be fixed in the next version, but fundamental constraints that follow from how the mechanism works. Understanding them is as important as understanding the capabilities.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Knowledge cutoff means the model literally cannot know about events after training</li>
-        <li>Bias isn't just a PR problem — it's a structural consequence of learning from human-generated text</li>
-        <li>"Pattern matching" is extremely powerful but not equivalent to logical reasoning</li>
-        <li>Each limitation maps directly to the mechanism</li>
-        <li>Responsible use means knowing when to trust, when to verify, and when not to use AI at all</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>You've seen the full picture. Let's put it all together.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-16.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-18.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { LimitationLab } from '../js/widgets/limitation-lab.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new LimitationLab(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">17 / 18</span>
+        <h1 class="page-title">Limitations, Bias &amp; Responsible Use</h1>
+        <p class="page-subtitle">The honest conversation — constraints that follow from the mechanism.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Generative AI has <strong>structural limitations</strong> — not just current weaknesses that'll be fixed in the next version, but fundamental constraints that follow directly from how the mechanism works. Understanding them matters as much as understanding the capabilities.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="A model's training data has a fixed end date. It <strong>cannot know about anything that happened after that date</strong> — not because it forgot, but because the data wasn't there. Asking about recent events gets confident-sounding speculation, not fact.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Knowledge cutoff</span>
+          <span class="concept__sub">training data ends — knowledge ends too</span>
+        </div>
+
+        <div class="concept" data-detail="Human-generated text reflects human biases — cultural, demographic, historical. A model trained on that text absorbs those biases. This isn't a problem with the AI's 'values'; it's a direct reflection of <strong>what was in the data</strong>. Outputs can perpetuate stereotypes uninstructed.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Bias from data</span>
+          <span class="concept__sub">garbage in, bias out</span>
+        </div>
+
+        <div class="concept" data-detail="LLMs are extraordinarily good at recognising and extending patterns — and this looks like reasoning. But the mechanism is <strong>statistical extrapolation</strong>, not formal logic. Novel puzzles or unusual edge cases can expose this gap dramatically.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Pattern matching ≠ logic</span>
+          <span class="concept__sub">looks like reasoning, isn't always</span>
+        </div>
+
+        <div class="concept" data-detail="Responsible use means recognising <strong>when AI is the wrong tool</strong>: high-stakes factual claims, decisions affecting lives, tasks needing up-to-date knowledge, anything requiring guaranteed accuracy. Knowing the mechanism helps you judge when those conditions apply.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Know when not to use AI</span>
+          <span class="concept__sub">the right tool for the right task</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Explore AI limitations in the widget on the right. Each scenario illustrates a structural constraint. Understanding <em>why</em> each limitation exists helps you work around it responsibly. Hover a concept above to dig in.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Explore AI limitations in the widget on the right. Each scenario illustrates a structural constraint. Understanding <em>why</em> each limitation exists helps you work around it responsibly. Hover a concept above to dig in.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Limitation Lab widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { LimitationLab } from '../js/widgets/limitation-lab.js';
+    new LimitationLab(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 17, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-16.html', 'page-18.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'A student asks an AI assistant who won an award announced last week. What should the student expect?',
+        options: [
+          'A correct answer — AI is always kept up to date',
+          'Either no answer or a confidently stated but incorrect answer — the model\'s knowledge has a training cutoff',
+          'The AI will automatically search the internet for recent information',
+          'The AI will refuse to answer questions about current events'
+        ],
+        correct: 1,
+        explain: 'The model\'s training data ends at a fixed date. Events after that date simply <strong>don\'t exist in its knowledge</strong>. When asked anyway, it may generate a plausible-sounding answer — but that answer is speculation, not fact. Always use current sources for recent information.'
+      },
+      {
+        q: 'Why might an AI language model produce text that reinforces gender stereotypes when writing a story about a nurse?',
+        options: [
+          'The model has been programmed with personal beliefs about gender',
+          'It absorbed patterns from training data that reflect historical biases present in human-written text',
+          'Nurses are always portrayed accurately and fairly in AI output',
+          'This only happens with poorly made or unaligned models'
+        ],
+        correct: 1,
+        explain: 'The model learns from human-generated text, which reflects historical and cultural biases. When those biases exist in the data, they appear in the model\'s outputs — not because the model holds views, but because <strong>biased patterns were statistically common in training</strong>.'
+      },
+      {
+        q: 'Which of these tasks is most appropriate to delegate to AI without mandatory human review of the output?',
+        options: [
+          'Generating a diagnosis from a patient\'s described symptoms',
+          'Drafting five possible subject lines for a marketing email',
+          'Interpreting the legal meaning of a specific contract clause',
+          'Calculating the correct medication dosage for a patient'
+        ],
+        correct: 1,
+        explain: 'Email subject line drafting is low-stakes, easy to evaluate, and exactly where AI\'s generative strengths help most. <strong>No expertise is required to choose the best one</strong>, and a wrong choice has trivial consequences. Medical and legal outputs always require expert human review.'
+      }
+    ]);
   </script>
 </body>
 </html>

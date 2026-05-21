@@ -1,57 +1,168 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="1">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tokens: How AI Reads Text — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>02 — Tokens: How AI Reads Text · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="2">
-  <header class="page-header">
-    <div class="page-number" data-phase="1">Page 2 of 18</div>
-    <div class="page-title-block">
-      <h1>Tokens: How AI Reads Text</h1>
-      <p class="page-subtitle">Breaking text into pieces</p>
+<body class="bg-tint--09">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2 — Tokens" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-01.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-03.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="1">
-      <p>Before an LLM can process anything, text is split into tokens — small chunks that might be whole words, parts of words, or even single characters. This is how all text enters the model.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Tokens are the fundamental unit the model works with — not words, not characters</li>
-        <li>Common words = 1 token; rare or long words = multiple tokens</li>
-        <li>This is why AI pricing is per-token</li>
-        <li>Different models use different tokenisers</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>Now you know what gets predicted — tokens. But when the model sees "The cat sat on the ___" — how does it know "mat" is likely and "quantum" isn't?</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-01.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-03.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { Tokeniser } from '../js/widgets/tokeniser.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new Tokeniser(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">02 / 18</span>
+        <h1 class="page-title">Tokens: How AI Reads Text</h1>
+        <p class="page-subtitle">Breaking text into pieces the model can count.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Before an LLM can process anything, text is split into <strong>tokens</strong> — small chunks that might be whole words, parts of words, or even single characters. This is how all text enters the model.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="A token is the model's <strong>atomic unit</strong>. Some tokens are whole words (<code>the</code>, <code>cat</code>), some are word fragments (<code>token</code> + <code>iser</code>), some are single characters or punctuation. The model never sees raw letters or words — only tokens.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Tokens, not words</span>
+          <span class="concept__sub">atomic unit</span>
+        </div>
+
+        <div class="concept" data-detail="Common words like <code>the</code> or <code>and</code> are one token. Rare or technical words like <code>antidisestablishmentarianism</code> get split into several. The tokeniser is learned from data — frequent character sequences become their own tokens.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Common = short, rare = split</span>
+          <span class="concept__sub">learned vocabulary</span>
+        </div>
+
+        <div class="concept" data-detail="AI APIs charge <strong>per token</strong>, not per word. Roughly 100 tokens ≈ 75 English words. Code, non-Latin scripts, and emoji typically use more tokens per character — which is why a Japanese paragraph can cost more than its English translation.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Why pricing is per-token</span>
+          <span class="concept__sub">£ × tokens</span>
+        </div>
+
+        <div class="concept" data-detail="Each model family has its own tokeniser. GPT and Claude use different vocabularies, so the <strong>same sentence has different token counts</strong> in different models. Context windows (e.g. 200K tokens) are measured in each model's own tokens.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Different models, different splits</span>
+          <span class="concept__sub">no shared standard</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Try it</span><div class="detail-viewport__body">Type any sentence into the tokeniser on the right and watch it split. Try common words, rare words, your name, and an emoji — see what the model actually sees.</div>'>
+        <span class="detail-viewport__hint">Try it</span>
+        <div class="detail-viewport__body">Type any sentence into the tokeniser on the right and watch it split. Try common words, rare words, your name, and an emoji — see what the model actually sees.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Tokeniser widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { Tokeniser } from '../js/widgets/tokeniser.js';
+    new Tokeniser(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 2, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-01.html', 'page-03.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'You type the sentence <code>"The cat sat on the mat"</code> into a tokeniser. How many tokens is it likely to be?',
+        options: ['1 token', 'About 6 — roughly one per word', '26 — one per letter', 'It depends entirely on punctuation'],
+        correct: 1,
+        explain: 'Common short words each map to <strong>one token</strong>, so a six-word everyday sentence is usually around six tokens. Rare or long words get split into multiple sub-word pieces.'
+      },
+      {
+        q: 'Why does the same paragraph translated into Japanese often cost more tokens than the English version?',
+        options: [
+          'Japanese sentences are always longer',
+          'Tokenisers are trained mostly on English, so non-Latin scripts get split into more pieces',
+          'The model translates internally and charges for both',
+          'There is no difference'
+        ],
+        correct: 1,
+        explain: 'Most tokenisers learned their vocabulary from <strong>English-dominant data</strong>. Languages with different scripts get fewer dedicated tokens, so a single character may use 2–3 tokens. That\'s why per-token pricing is uneven across languages.'
+      },
+      {
+        q: 'Why do API providers like OpenAI and Anthropic charge per token instead of per word or per character?',
+        options: [
+          'It\'s simpler maths',
+          'Tokens are the actual unit of work the model performs — every token is one prediction step',
+          'Words are too small to bill on',
+          'To make pricing more confusing'
+        ],
+        correct: 1,
+        explain: 'The model runs <strong>one prediction step per token</strong>, so cost scales directly with token count. Pricing per token reflects the real computational cost, even though it\'s less intuitive than pricing per word.'
+      }
+    ]);
   </script>
 </body>
 </html>

@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="1">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Probability, Not Certainty — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>03 — Probability, Not Certainty · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="3">
-  <header class="page-header">
-    <div class="page-number" data-phase="1">Page 3 of 18</div>
-    <div class="page-title-block">
-      <h1>Probability, Not Certainty</h1>
-      <p class="page-subtitle">The landscape of possibilities</p>
+<body class="bg-tint--02">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3 — Probability" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-02.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-04.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="1">
-      <p>The model doesn't pick one "right answer." It calculates a probability for every possible next token — thousands of candidates, each with a score. The top few are all plausible; the choice between them is where randomness and creativity live.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Every generation step is a fresh probability distribution over the entire vocabulary</li>
-        <li>The model doesn't "plan ahead" — it only sees up to the current point</li>
-        <li>Picking lower-probability tokens leads to more surprising text</li>
-        <li>This is the mechanical basis for the "creativity vs accuracy" trade-off</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>You've just done what an LLM does — predicted one token at a time from probabilities. But where do those probabilities come from?</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-02.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-04.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { ProbabilityBuilder } from '../js/widgets/probability-builder.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new ProbabilityBuilder(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">03 / 18</span>
+        <h1 class="page-title">Probability, Not Certainty</h1>
+        <p class="page-subtitle">A landscape of possibilities, not a single right answer.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        The model doesn't pick one "right answer." It calculates a <strong>probability for every possible next token</strong> — thousands of candidates, each with a score. The top few are all plausible; the choice between them is where randomness and creativity live.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="At every step the model outputs a <strong>fresh distribution</strong> over its entire vocabulary — tens of thousands of scores. Nothing carries over from the previous step beyond what's already in the visible text.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Fresh distribution each step</span>
+          <span class="concept__sub">no memory beyond text</span>
+        </div>
+
+        <div class="concept" data-detail="The model has no plan. It can't <strong>see ahead</strong> to know how the sentence will end — it only knows what's already been written. Surprisingly coherent paragraphs emerge anyway, one token at a time.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">No look-ahead</span>
+          <span class="concept__sub">one token at a time</span>
+        </div>
+
+        <div class="concept" data-detail="Always picking the top probability gives <strong>safe, repetitive text</strong>. Allowing lower-probability tokens through gives variety, creativity, and the occasional wild swing. This is what 'temperature' controls — you'll meet it on page 10.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Top vs. surprising</span>
+          <span class="concept__sub">creativity dial</span>
+        </div>
+
+        <div class="concept" data-detail="The same trade-off runs through everything generative: <strong>safe and accurate</strong> versus <strong>creative and original</strong>. You can't have both at once — and that's a feature, not a bug.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Accuracy vs. creativity</span>
+          <span class="concept__sub">core trade-off</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Try it</span><div class="detail-viewport__body">Use the widget on the right to step through a generation, one token at a time. Pick the top option, then go back and try a less likely one — see how the rest of the sentence changes.</div>'>
+        <span class="detail-viewport__hint">Try it</span>
+        <div class="detail-viewport__body">Use the widget on the right to step through a generation, one token at a time. Pick the top option, then go back and try a less likely one — see how the rest of the sentence changes.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Probability Builder widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { ProbabilityBuilder } from '../js/widgets/probability-builder.js';
+    new ProbabilityBuilder(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 3, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-02.html', 'page-04.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'After the prompt <code>"My favourite season is"</code>, the model is about to pick the next token. What is the model holding internally?',
+        options: [
+          'The single best answer',
+          'A list of the top 5 guesses',
+          'A probability score for every token in its vocabulary',
+          'A search of similar sentences from the web'
+        ],
+        correct: 2,
+        explain: 'The model produces a <strong>full distribution</strong> over every token it knows — tens of thousands of scores. Only after that does a sampling step pick one of them to emit.'
+      },
+      {
+        q: 'A model is halfway through writing a poem. Does it know how the poem will end?',
+        options: [
+          'Yes — it plans the whole poem first',
+          'No — it only sees what\'s been written so far and predicts the next token',
+          'Only if the user gives it a title',
+          'It checks its training data for similar poems'
+        ],
+        correct: 1,
+        explain: 'There is <strong>no look-ahead</strong>. The model only sees the text written so far at each step. Coherent endings emerge because each next-token decision is informed by all the previous ones, not because anything was planned.'
+      },
+      {
+        q: 'Why might always picking the highest-probability token produce <em>worse</em> writing than letting some randomness in?',
+        options: [
+          'Because the highest-probability tokens are always wrong',
+          'Because it leads to safe, repetitive, predictable text — variety needs lower-probability picks',
+          'Because the model gets bored',
+          'Because the top probabilities are random anyway'
+        ],
+        correct: 1,
+        explain: 'Greedy "always-the-top" decoding tends to <strong>loop and stay generic</strong>. Allowing the model to sometimes pick the 2nd or 3rd most likely token is what creates variety and surprise. That dial is what you\'ll see called "temperature" later.'
+      }
+    ]);
   </script>
 </body>
 </html>

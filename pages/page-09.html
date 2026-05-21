@@ -1,64 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="2">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Training: Learning at Scale — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>09 — Training: Learning at Scale · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="9">
-  <header class="page-header">
-    <div class="page-number" data-phase="2">Page 9 of 18</div>
-    <div class="page-title-block">
-      <h1>Training: Learning at Scale</h1>
-      <p class="page-subtitle">From random to remarkable</p>
+<body class="bg-tint--08">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9 — Training" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-08.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-10.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="2">
-      <p>Training is the process of showing the model billions of sentences and adjusting it to predict better each time. It starts knowing nothing — predicting randomly. After trillions of tokens, the patterns it absorbs are so rich that coherent text, answers, and code emerge as consequences of getting better at one thing: prediction.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Nobody "programs" knowledge into the model — it emerges from exposure to data</li>
-        <li>Training is iterative: millions of small adjustments</li>
-        <li>Scale matters enormously — the jump from 1M to 1B tokens is where real capabilities emerge</li>
-        <li>This is why training is so expensive</li>
-      </ul>
-    </div>
-
-    <div class="reflection-panel" id="reflection-root"></div>
-
-    <div class="page-teaser">
-      <p>You've built the full picture of how a model learns. Now let's explore how you control what it generates — starting with a powerful dial: temperature.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-08.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-10.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { TrainingSim } from '../js/widgets/training-sim.js';
-    import { ReflectionPanel } from '../js/core/reflection.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new TrainingSim(document.getElementById('widget-root'));
-    const reflection = new ReflectionPanel(
-      document.getElementById('reflection-root'),
-      'Why does an LLM need so much data to work well?'
-    );
+      <header class="page-header">
+        <span class="page-number">09 / 18</span>
+        <h1 class="page-title">Training: Learning at Scale</h1>
+        <p class="page-subtitle">From random guessing to remarkable — through trillions of tiny corrections.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Training starts knowing <strong>nothing</strong> — predicting randomly. After trillions of tokens, the patterns absorbed are so rich that coherent text, answers, and code emerge — all as a consequence of getting better at one task: <em>predict the next token</em>.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="A trained LLM was never told 'the capital of France is Paris.' Facts and relationships are absorbed <strong>indirectly</strong> by repeatedly predicting the next token in real text. Knowledge emerges from exposure, not programming.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Nobody programs knowledge</span>
+          <span class="concept__sub">it emerges from exposure to data</span>
+        </div>
+
+        <div class="concept" data-detail="Each prediction error produces a tiny gradient — a nudge to millions of parameters. Over trillions of examples, those nudges accumulate into a model that <strong>generalises</strong> to text it's never seen. This is backpropagation at scale.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Iterative adjustment</span>
+          <span class="concept__sub">millions of small gradient steps</span>
+        </div>
+
+        <div class="concept" data-detail="Researchers have found that capability seems to <strong>jump at certain scale thresholds</strong> — not smooth improvement, but sudden emergent abilities. This is why training scale has grown so aggressively year on year.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Scale = capability</span>
+          <span class="concept__sub">emergent jumps at key thresholds</span>
+        </div>
+
+        <div class="concept" data-detail="Training a frontier model involves thousands of specialised GPUs running for months. Electricity, hardware, and cooling costs run into <strong>tens or hundreds of millions of dollars</strong>. Inference (using the model) is far cheaper than training it.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Why training is expensive</span>
+          <span class="concept__sub">GPUs, months, millions of dollars</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Watch the training simulator on the right. Each tick represents the model getting a prediction wrong, computing a gradient, and nudging its parameters. Hover a concept above to dig deeper.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Watch the training simulator on the right. Each tick represents the model getting a prediction wrong, computing a gradient, and nudging its parameters. Hover a concept above to dig deeper.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Training Sim widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { TrainingSim } from '../js/widgets/training-sim.js';
+    new TrainingSim(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 9, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-08.html', 'page-10.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'An LLM "knows" that antibiotics don\'t cure viral infections. How did it acquire this knowledge?',
+        options: [
+          'A programmer wrote an explicit rule about it',
+          'It absorbed the pattern from seeing it stated and implied across millions of medical and general texts',
+          'It guessed randomly and happened to be right',
+          'It downloaded a medical database'
+        ],
+        correct: 1,
+        explain: 'No rule was written. The model encountered the fact (explicitly stated, implied, referenced) <strong>many millions of times</strong> across its training corpus. Getting the next token right required learning it — and so it did.'
+      },
+      {
+        q: 'What happens when a model makes a wrong prediction during training?',
+        options: [
+          'Training stops and the example is discarded',
+          'The error is used to calculate a gradient and nudge the model\'s parameters slightly',
+          'The correct answer is displayed to users',
+          'The model resets to its previous state'
+        ],
+        correct: 1,
+        explain: 'The wrong prediction produces a loss. That loss is backpropagated through the network, producing <strong>gradients</strong> — tiny signals telling each parameter which direction to shift. A small update is applied. Repeat this billions of times and a capable model emerges.'
+      },
+      {
+        q: 'What explains why going from 1 billion to 10 billion training tokens often produces disproportionate jumps in capability?',
+        options: [
+          'More tokens makes the model respond faster',
+          'Capability can emerge suddenly at certain scale thresholds, not just improve smoothly',
+          'The model gets bored with fewer tokens and performs worse intentionally',
+          'Token count and capability are entirely unrelated'
+        ],
+        correct: 1,
+        explain: 'Scaling laws research shows that certain abilities appear <strong>discontinuously</strong> — they don\'t exist at lower scale, then suddenly appear above a threshold. This is why frontier labs invest heavily in scale: the jumps in capability can be dramatic.'
+      }
+    ]);
   </script>
 </body>
 </html>

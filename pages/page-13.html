@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="3">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hallucination: Confident but Wrong — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>13 — Hallucination: Confident but Wrong · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="13">
-  <header class="page-header">
-    <div class="page-number" data-phase="3">Page 13 of 18</div>
-    <div class="page-title-block">
-      <h1>Hallucination: Confident but Wrong</h1>
-      <p class="page-subtitle">When prediction goes off the rails</p>
+<body class="bg-tint--09">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13 — Hallucination" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-12.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-14.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="3">
-      <p>An LLM doesn't "know" things — it predicts likely-sounding continuations. It can generate text that is fluent, confident, and completely false: citing papers that don't exist, stating incorrect facts, fabricating plausible details. This isn't a bug to be patched — it's an inherent consequence of the prediction mechanism.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Hallucination is structural, not a bug — the model optimises for likelihood, not truth</li>
-        <li>Confidence in tone has zero correlation with accuracy</li>
-        <li>This is why human verification remains essential for any factual AI output</li>
-        <li>The model predicts what sounds right, not what is right</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>If models can hallucinate and generate harmful content, how do companies make them safer? The answer involves something surprising: human feedback.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-12.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-14.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { SpotFabrication } from '../js/widgets/spot-fabrication.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new SpotFabrication(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">13 / 18</span>
+        <h1 class="page-title">Hallucination: Confident but Wrong</h1>
+        <p class="page-subtitle">When prediction goes off the rails — fluently.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        An LLM doesn't "know" things — it predicts <strong>likely-sounding continuations</strong>. It can generate text that is fluent, confident, and completely false. This isn't a bug to patch — it's an inherent consequence of optimising for plausibility, not truth.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="The training objective is to predict the most <strong>plausible next token</strong>, not the most truthful one. A fluent, confident sentence that happens to be factually wrong is still a training 'win.' Truth is never directly optimised.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Optimises for likelihood</span>
+          <span class="concept__sub">plausibility, not truth</span>
+        </div>
+
+        <div class="concept" data-detail="A hallucinating model doesn't add disclaimers — it produces the same authoritative tone it uses for everything. <strong>Users often can't tell</strong> from the response whether the content is reliable. This is one of the biggest practical dangers.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Confidence ≠ accuracy</span>
+          <span class="concept__sub">tone reveals nothing about truth</span>
+        </div>
+
+        <div class="concept" data-detail="Citation hallucination is common: the model generates plausible-looking paper titles, author names, journal names, and DOI numbers — <strong>none of which exist</strong>. The pattern of a citation is correct; the content is invented.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Fabricated references</span>
+          <span class="concept__sub">real-looking sources that don't exist</span>
+        </div>
+
+        <div class="concept" data-detail="Retrieval augmentation, chain-of-thought prompting, and fine-tuning on verified data all <strong>reduce</strong> hallucination rates. But they can't eliminate it entirely: as long as the model optimises for likely text rather than verified truth, hallucination remains a structural risk.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Not a bug to simply fix</span>
+          <span class="concept__sub">structural — can be reduced, not eliminated</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Try spotting the fabrication on the right. One of the AI responses contains a plausible-sounding but invented fact — can you tell which without looking it up? Hover a concept to explore the mechanism.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Try spotting the fabrication on the right. One of the AI responses contains a plausible-sounding but invented fact — can you tell which without looking it up? Hover a concept to explore the mechanism.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Spot Fabrication widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { SpotFabrication } from '../js/widgets/spot-fabrication.js';
+    new SpotFabrication(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 13, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-12.html', 'page-14.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'Why does an LLM sometimes generate plausible-sounding academic citations that don\'t exist?',
+        options: [
+          'It is deliberately fabricating to mislead the user',
+          'It produces the statistical pattern of a citation — title, authors, journal — without checking whether the source exists',
+          'It can\'t access the internet, so it guesses randomly',
+          'The training data contained incorrect citations'
+        ],
+        correct: 1,
+        explain: 'The model has learnt the <strong>form</strong> of a citation extremely well. When asked for a citation, it generates a plausible-looking one — because that\'s what plausibly continues the sequence. There is no truth-checking step; fluency is the only criterion being optimised.'
+      },
+      {
+        q: 'Which statement best describes the relationship between an LLM\'s confident tone and its factual accuracy?',
+        options: [
+          'Confident tone signals the model is more likely to be correct',
+          'There is no reliable correlation between confident tone and factual accuracy',
+          'The model always adds "I think" or "I\'m not sure" when it\'s uncertain',
+          'Hedged answers are less likely to be accurate'
+        ],
+        correct: 1,
+        explain: 'Tone is generated the same way as content — by predicting likely text. An authoritative tone is often the most statistically likely continuation in many contexts. <strong>Confidence tells you nothing about truth</strong>; always verify factual claims from AI output independently.'
+      },
+      {
+        q: 'What makes hallucination a structural issue rather than just a fixable technical bug?',
+        options: [
+          'Nobody has seriously tried to fix it yet',
+          'It\'s a consequence of optimising for plausible text rather than verified truth — the two objectives sometimes conflict',
+          'It only affects the smallest, cheapest models',
+          'It could be fully eliminated with enough training data'
+        ],
+        correct: 1,
+        explain: 'As long as the training signal rewards <strong>plausibility</strong> rather than verified truth, the model has no strong gradient pushing it away from confident falsehoods. Techniques like retrieval augmentation help, but they don\'t change the fundamental prediction objective.'
+      }
+    ]);
   </script>
 </body>
 </html>

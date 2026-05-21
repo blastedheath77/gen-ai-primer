@@ -1,57 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="2">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Context Changes Everything — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>06 — Context Changes Everything · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="6">
-  <header class="page-header">
-    <div class="page-number" data-phase="2">Page 6 of 18</div>
-    <div class="page-title-block">
-      <h1>Context Changes Everything</h1>
-      <p class="page-subtitle">The same word, different meanings</p>
+<body class="bg-tint--05">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6 — Context" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-05.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-07.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="2">
-      <p>A word in isolation is ambiguous. An LLM doesn't look up a fixed meaning — it recalculates meaning from the surrounding context. "Bank" near "river" points to one location in meaning-space; "bank" near "money" points somewhere entirely different.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>Static word embeddings are a starting point; real LLMs use contextual embeddings</li>
-        <li>This is what makes LLMs far more capable than simple keyword matching</li>
-        <li>The same mechanism explains why word order matters</li>
-        <li>This contextual recalculation happens for every token at every layer</li>
-      </ul>
-    </div>
-
-    <div class="page-teaser">
-      <p>Context shifts meaning. But in a long sentence, not every word matters equally. How does the model decide which words to focus on?</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-05.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-07.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { MeaningShifter } from '../js/widgets/meaning-shifter.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new MeaningShifter(document.getElementById('widget-root'));
+      <header class="page-header">
+        <span class="page-number">06 / 18</span>
+        <h1 class="page-title">Context Changes Everything</h1>
+        <p class="page-subtitle">Same word, different meaning — it depends entirely on the neighbours.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        A word in isolation is ambiguous. An LLM doesn't look up a fixed meaning — it <strong>recalculates meaning from the surrounding context</strong>. <em>Bank</em> near <em>river</em> points to one location in meaning-space; <em>bank</em> near <em>money</em> points somewhere entirely different.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="The fixed embeddings from the previous page are only a <strong>starting point</strong>. Inside the model, every token's meaning is updated based on what surrounds it — and that update is what we call a <em>contextual embedding</em>.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Static → contextual</span>
+          <span class="concept__sub">meaning gets updated</span>
+        </div>
+
+        <div class="concept" data-detail="This is why LLMs blow past simple keyword search. A search engine that sees <em>bank</em> can't tell finance from rivers; an LLM <strong>shifts the meaning vector</strong> based on the surrounding words before doing anything else.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Beyond keywords</span>
+          <span class="concept__sub">disambiguation built in</span>
+        </div>
+
+        <div class="concept" data-detail="Word <strong>order</strong> matters because order changes the neighbours. <em>Dog bites man</em> and <em>man bites dog</em> share words, but each token's contextual meaning lands somewhere very different.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Order matters</span>
+          <span class="concept__sub">same words ≠ same meaning</span>
+        </div>
+
+        <div class="concept" data-detail="The same context-shaping happens <strong>at every layer</strong> of the model. Token meanings keep being refined as information passes through the stack — this is how subtle, long-range references resolve.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">It happens repeatedly</span>
+          <span class="concept__sub">layer after layer</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Try it</span><div class="detail-viewport__body">Swap the surrounding words on the right and watch the focal word position in meaning-space move. The word itself never changes — only its company does.</div>'>
+        <span class="detail-viewport__hint">Try it</span>
+        <div class="detail-viewport__body">Swap the surrounding words on the right and watch the focal word position in meaning-space move. The word itself never changes — only its company does.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Meaning Shifter widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { MeaningShifter } from '../js/widgets/meaning-shifter.js';
+    new MeaningShifter(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 6, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-05.html', 'page-07.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'A user types: <em>"I sat on the bank watching the boats go by."</em> How does the LLM tell which kind of <em>bank</em> this is?',
+        options: [
+          'It looks up <em>bank</em> in a dictionary',
+          'It uses the surrounding words to shift the meaning vector toward "riverbank"',
+          'It always picks the most common meaning',
+          'It asks the user'
+        ],
+        correct: 1,
+        explain: 'Context words like <em>sat</em>, <em>watching</em>, and <em>boats</em> pull the <strong>contextual embedding</strong> of <em>bank</em> toward the riverbank cluster in meaning-space. No dictionary, no fallback — just neighbours.'
+      },
+      {
+        q: 'Why does the sentence <em>"man bites dog"</em> mean something completely different from <em>"dog bites man"</em>, even though both contain the same three words?',
+        options: [
+          'The model alphabetises the words',
+          'Each token\'s contextual meaning depends on its position and neighbours, so swapping order changes every token\'s representation',
+          'It doesn\'t — LLMs treat them as identical',
+          'Only the verb matters'
+        ],
+        correct: 1,
+        explain: 'Contextual embeddings are <strong>position-aware</strong>. The vector for <em>dog</em> after <em>man bites</em> is not the same as the vector for <em>dog</em> before <em>bites man</em>. Order shapes neighbours; neighbours shape meaning.'
+      },
+      {
+        q: 'What is the main reason a transformer-based LLM outperforms a keyword search engine on questions like <em>"What did the bank do after the flood?"</em>',
+        options: [
+          'It has memorised more web pages',
+          'It can update word meanings from context, so it knows <em>bank</em> here means the river edge, not a financial institution',
+          'It can read faster',
+          'It uses better fonts'
+        ],
+        correct: 1,
+        explain: 'Keyword search treats <em>bank</em> as one symbol. An LLM <strong>recomputes meaning from context</strong>, so it can route the query to flooding/erosion-related answers instead of pulling up financial pages. That contextual shift is the breakthrough that made modern LLMs possible.'
+      }
+    ]);
   </script>
 </body>
 </html>

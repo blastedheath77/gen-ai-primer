@@ -1,64 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" data-phase="3">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>In-Context Learning: Teaching by Example — How Generative AI Actually Works</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>12 — In-Context Learning: Teaching by Example · How Generative AI Actually Works</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    .panel--right > section { padding: 20px 24px; }
+    .panel--right > section > * { width: 100%; max-width: 720px; }
+  </style>
 </head>
-<body data-page="12">
-  <header class="page-header">
-    <div class="page-number" data-phase="3">Page 12 of 18</div>
-    <div class="page-title-block">
-      <h1>In-Context Learning: Teaching by Example</h1>
-      <p class="page-subtitle">Show, don't just tell</p>
+<body class="bg-tint--01">
+
+  <nav class="nav" aria-label="Course navigation">
+    <a class="nav__logo" href="../index.html">Gen AI Primer</a>
+    <ol class="nav__dots" aria-label="Pages">
+      <li><a class="nav__dot-link" href="page-01.html" aria-label="Page 1"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-02.html" aria-label="Page 2"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-03.html" aria-label="Page 3"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-04.html" aria-label="Page 4"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-05.html" aria-label="Page 5"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-06.html" aria-label="Page 6"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-07.html" aria-label="Page 7"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-08.html" aria-label="Page 8"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-09.html" aria-label="Page 9"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-10.html" aria-label="Page 10"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-11.html" aria-label="Page 11"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-12.html" aria-label="Page 12 — In-Context Learning" aria-current="page"><span class="nav__dot-marker nav__dot-marker--current"></span></a></li>
+      <li><a class="nav__dot-link" href="page-13.html" aria-label="Page 13"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-14.html" aria-label="Page 14"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-15.html" aria-label="Page 15"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-16.html" aria-label="Page 16"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-17.html" aria-label="Page 17"><span class="nav__dot-marker"></span></a></li>
+      <li><a class="nav__dot-link" href="page-18.html" aria-label="Page 18"><span class="nav__dot-marker"></span></a></li>
+    </ol>
+    <div class="nav__arrows">
+      <a class="nav__arrow" href="page-11.html" aria-label="Previous page">&larr;</a>
+      <a class="nav__arrow" href="page-13.html" aria-label="Next page">&rarr;</a>
     </div>
-    <button class="settings-toggle" aria-label="Settings">⚙</button>
-  </header>
-
-  <main class="page-content">
-    <div class="core-concept" data-phase="3">
-      <p>LLMs can pick up a pattern from just a few examples given in the prompt — no retraining needed. Show three examples of translating English to Scots, and it'll attempt a fourth. This is called in-context learning, and it's why LLMs are so versatile.</p>
-    </div>
-
-    <div class="widget-container" id="widget-root"></div>
-
-    <div class="explanation-content">
-      <h2>Key Points</h2>
-      <ul>
-        <li>In-context learning is emergent — nobody designed it; it falls out of the prediction mechanism</li>
-        <li>This is why LLMs feel "magical" — they generalise from a few examples without retraining</li>
-        <li>The number of examples matters: 0 &lt; 1 &lt; 3, but beyond ~5 returns diminish</li>
-        <li>The model is still just predicting the next token, but examples create a pattern it can extend</li>
-      </ul>
-    </div>
-
-    <div class="reflection-panel" id="reflection-root"></div>
-
-    <div class="page-teaser">
-      <p>Few-shot prompting is powerful. But there's a dark side: sometimes the model generates text that sounds perfect but is completely wrong.</p>
-    </div>
-  </main>
-
-  <nav class="page-nav">
-    <button class="nav-prev" onclick="window.location.href='page-11.html'">←</button>
-    <div id="progress-dots"></div>
-    <button class="nav-next" onclick="window.location.href='page-13.html'">→</button>
   </nav>
 
-  <script type="module">
-    import { initNavigation } from '../js/core/navigation.js';
-    import { PatternTeacher } from '../js/widgets/pattern-teacher.js';
-    import { ReflectionPanel } from '../js/core/reflection.js';
+  <div class="page-wrapper">
+    <div class="panel panel--left">
 
-    initNavigation();
-    const widget = new PatternTeacher(document.getElementById('widget-root'));
-    const reflection = new ReflectionPanel(
-      document.getElementById('reflection-root'),
-      'What\'s the difference between giving an LLM instructions and giving it examples?'
-    );
+      <header class="page-header">
+        <span class="page-number">12 / 18</span>
+        <h1 class="page-title">In-Context Learning</h1>
+        <p class="page-subtitle">Show, don't just tell — and the model generalises without retraining.</p>
+      </header>
+
+      <aside class="callout" role="note">
+        Show the model three examples of a pattern in your prompt, and it attempts a fourth — <strong>no retraining required</strong>. Nobody designed this; it emerged when models reached sufficient scale. It's one of the most powerful and surprising properties of LLMs.
+      </aside>
+
+      <div class="concepts">
+        <p class="concepts__heading"><span>Key concepts</span></p>
+
+        <div class="concept" data-detail="In-context learning wasn't a deliberate design decision — it <strong>emerged unexpectedly</strong> when researchers scaled models up. Below certain sizes it barely works; above them, it becomes remarkably reliable. An emergent property of scale.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Emergent ability</span>
+          <span class="concept__sub">not designed — appeared at scale</span>
+        </div>
+
+        <div class="concept" data-detail="Show three English→Scots translations, and the model attempts a fourth with the same register and vocabulary choices. It's inferring a <strong>pattern from the mini-dataset</strong> you placed in the prompt, then extending it.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Generalise from examples</span>
+          <span class="concept__sub">pattern → extension, no weight update</span>
+        </div>
+
+        <div class="concept" data-detail="<strong>Zero-shot</strong>: instruction only, no examples. <strong>One-shot</strong>: a single example. <strong>Few-shot</strong>: two to five examples. Beyond five, returns diminish for most tasks. The examples must be representative — <em>bad examples mislead</em>.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">0-shot, 1-shot, few-shot</span>
+          <span class="concept__sub">more examples helps — up to a point</span>
+        </div>
+
+        <div class="concept" data-detail="There's no fine-tuning, no memory update. The model uses examples as context it can <strong>predict from</strong>. When the pattern fits, it's very powerful. When examples are misleading or noisy, the model follows the noise.">
+          <span class="concept__bullet"></span>
+          <span class="concept__label">Still just prediction</span>
+          <span class="concept__sub">examples shape context, not weights</span>
+        </div>
+      </div>
+
+      <div class="detail-viewport" id="detail-viewport"
+           data-default='<span class="detail-viewport__hint">Hover a concept</span><div class="detail-viewport__body">Use the pattern teacher on the right to add examples and watch how the model&#39;s continuation shifts. Hover a concept above to dig deeper into why this works.</div>'>
+        <span class="detail-viewport__hint">Hover a concept</span>
+        <div class="detail-viewport__body">Use the pattern teacher on the right to add examples and watch how the model's continuation shifts. Hover a concept above to dig deeper into why this works.</div>
+      </div>
+
+    </div>
+
+    <div class="panel panel--right">
+      <section id="widget-root" aria-label="Pattern Teacher widget"></section>
+    </div>
+  </div>
+
+  <script src="../shared.js"></script>
+  <script src="../quiz.js"></script>
+  <script type="module">
+    import { PatternTeacher } from '../js/widgets/pattern-teacher.js';
+    new PatternTeacher(document.getElementById('widget-root'));
+  </script>
+  <script>
+    (function () {
+      const PAGE = 12, KEY = 'ai-primer-visited';
+      let v = []; try { v = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (_) {}
+      if (!v.includes(PAGE)) { v.push(PAGE); localStorage.setItem(KEY, JSON.stringify(v)); }
+      document.querySelectorAll('.nav__dot-link').forEach(function (link, i) {
+        const m = link.querySelector('.nav__dot-marker');
+        if (m && v.includes(i + 1) && i + 1 !== PAGE) m.classList.add('nav__dot-marker--visited');
+      });
+    })();
+
+    (function () {
+      const concepts = document.querySelectorAll('.concept');
+      const viewport = document.getElementById('detail-viewport');
+      const defaultHTML = viewport.dataset.default;
+      const list = document.querySelector('.concepts');
+      concepts.forEach(function (c) {
+        c.addEventListener('mouseenter', function () {
+          concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+          c.classList.add('concept--active');
+          viewport.innerHTML =
+            '<span class="detail-viewport__hint">' + c.querySelector('.concept__label').textContent + '</span>' +
+            '<div class="detail-viewport__body">' + c.dataset.detail + '</div>';
+        });
+      });
+      list.addEventListener('mouseleave', function () {
+        concepts.forEach(function (x) { x.classList.remove('concept--active'); });
+        viewport.innerHTML = defaultHTML;
+      });
+    })();
+
+    if (typeof updateNav === 'function') updateNav('page-11.html', 'page-13.html');
+
+    mountQuiz(document.querySelector('.panel--right'), [
+      {
+        q: 'What is "in-context learning"?',
+        options: [
+          'The model retrains on your examples in real time',
+          'The model infers a pattern from examples in the prompt and extends it — without any weight update',
+          'The model memorises your examples permanently for future sessions',
+          'A technique only available in paid API tiers'
+        ],
+        correct: 1,
+        explain: 'In-context learning requires <strong>no retraining</strong>. The examples become part of the sequence the model predicts from. It spots the pattern in the examples, then continues that pattern into the completion. Weights are not changed — context is.'
+      },
+      {
+        q: 'A user gives three examples of formal-to-casual email rewrites, then asks for a fourth. What is happening?',
+        options: [
+          'The model is retrieving similar emails from the internet',
+          'Few-shot in-context learning — the model generalises the rewriting pattern from the three examples',
+          'The model already knows casual email style from training and ignores the examples',
+          'The examples tell the model which emails to refuse'
+        ],
+        correct: 1,
+        explain: 'Three examples is classic <strong>few-shot prompting</strong>. The model uses the input→output pattern of the examples as context, then applies that same transformation to the fourth input. No internet access, no retraining — just prediction from context.'
+      },
+      {
+        q: 'Why do returns from adding more examples tend to diminish after about five?',
+        options: [
+          'The model stops reading after 5 examples',
+          'The pattern is usually clear from a few good examples; more tends to add noise rather than signal',
+          'The context window can\'t fit more than five examples',
+          'This claim is false — more examples always help'
+        ],
+        correct: 1,
+        explain: 'A well-chosen example or two communicates the pattern clearly. Extra examples rarely add new information — they just repeat the same signal. And <strong>bad or redundant examples can introduce noise</strong> that slightly degrades performance.'
+      }
+    ]);
   </script>
 </body>
 </html>
